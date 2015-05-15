@@ -5,7 +5,9 @@
  */
 package monopofast;
 
+import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
+import java.util.Scanner;
 
 /**
  *
@@ -25,6 +27,17 @@ public class Monopofast {
         
         String playerInfo = logan.toString();
         System.out.println(playerInfo);
+        
+        Game newGame = new Game();
+        Scanner scan = new Scanner(System.in);
+        
+        newGame.setName("New Game");
+        newGame.setId(1);
+        newGame.setLastSublevel(1);
+        
+        String gameInfo = newGame.toString();
+        System.out.println(gameInfo);
+        
     }
     
 }
