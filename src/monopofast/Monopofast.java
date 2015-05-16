@@ -9,6 +9,7 @@ import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
+import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Level;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.SubLevel;
@@ -99,6 +100,15 @@ public class Monopofast {
         
         String ingrInfo = cola.toString();
         System.out.println(ingrInfo);
+        
+        // Products toString()
+        Products triple = new Products();
+        
+        triple.setId(1);
+        triple.setName("triple");
+        
+        String prodInfo = triple.toString();
+        System.out.println(prodInfo);
     }
     
 }
