@@ -1,0 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cit260.lhcz.monopofast.control;
+
+import cit260.lhcz.monopofast.model.Game;
+
+/**
+ *
+ * @author Christopher
+ */
+public class GameControl {
+    private String setGameName = setName();
+    private String startNewGame(String setGameName)
+    {
+        return "Your game has been created.";
+    }
+    private String getGameName = getName(); 
+    public String loadGame(String getGameName)
+    {
+       
+        return "Your game has been loaded.";
+    }
+    
+    private String saveGame(String getGameName)
+    {
+        return "Your game has been saved.";
+    }
+}

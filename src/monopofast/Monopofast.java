@@ -14,6 +14,9 @@ import cit260.lhcz.monopofast.model.Level;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.SubLevel;
 import cit260.lhcz.monopofast.model.World;
+import cit260.lhcz.monopofast.control.ChallengeControl;
+import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.control.ProductControl;
 import java.util.Scanner;
 
 /**
