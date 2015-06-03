@@ -18,6 +18,7 @@ import cit260.lhcz.monopofast.control.ChallengeControl;
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.control.ProductControl;
 import java.util.Scanner;
+import cit260.lhcz.monopofast.view.StartView;
 
 /**
  *
@@ -112,6 +113,16 @@ public class Monopofast {
         
         String prodInfo = triple.toString();
         System.out.println(prodInfo);
+        
+         // StartView toString()
+        Products triple = new Products();
+        
+        triple.setId(1);
+        triple.setName("triple");
+        
+        String prodInfo = triple.toString();
+        System.out.println(prodInfo);
     }
+   
     
 }
