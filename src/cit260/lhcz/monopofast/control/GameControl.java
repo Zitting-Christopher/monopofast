@@ -12,12 +12,13 @@ import cit260.lhcz.monopofast.model.Game;
  * @author Christopher
  */
 public class GameControl {
-    private String setGameName = setName();
+    
+    public String setGameName = setName();
     private String startNewGame(String setGameName)
     {
         return "Your game has been created.";
     }
-    private String getGameName = getName(); 
+    public String getGameName = getName(); 
     public String loadGame(String getGameName)
     {
        
@@ -27,5 +28,13 @@ public class GameControl {
     private String saveGame(String getGameName)
     {
         return "Your game has been saved.";
+    }
+
+    private String setName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private String getName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
