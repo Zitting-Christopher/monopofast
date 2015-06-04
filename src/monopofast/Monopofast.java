@@ -18,6 +18,7 @@ import cit260.lhcz.monopofast.control.ChallengeControl;
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.control.ProductControl;
 import java.util.Scanner;
+import cit260.lhcz.monopofast.view.StartView;
 
 /**
  *
@@ -29,6 +30,11 @@ public class Monopofast {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        //Create startView and start the program
+        StartView startView = new StartView();
+        startView.startProgram();
+        
         // Player toString()
         Player logan = new Player();
         
@@ -112,6 +118,8 @@ public class Monopofast {
         
         String prodInfo = triple.toString();
         System.out.println(prodInfo);
+        
     }
+   
     
 }
