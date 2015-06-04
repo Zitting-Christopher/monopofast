@@ -30,6 +30,11 @@ public class Monopofast {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        //Create startView and start the program
+        StartView startView = new StartView();
+        startView.startProgram();
+        
         // Player toString()
         Player logan = new Player();
         
@@ -114,14 +119,6 @@ public class Monopofast {
         String prodInfo = triple.toString();
         System.out.println(prodInfo);
         
-         // StartView toString()
-        Products triple = new Products();
-        
-        triple.setId(1);
-        triple.setName("triple");
-        
-        String prodInfo = triple.toString();
-        System.out.println(prodInfo);
     }
    
     
