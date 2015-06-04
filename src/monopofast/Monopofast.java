@@ -47,7 +47,7 @@ public class Monopofast {
         // Game toString()
         Game newGame = new Game();
         
-        newGame.setName("New Game");
+        newGame.setGameName("New Game");
         newGame.setId(1);
         newGame.setLastSublevel(1);
         
