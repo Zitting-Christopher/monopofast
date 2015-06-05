@@ -23,9 +23,9 @@ public class GameControlTest {
     @Test
     public void testLoadGame() {
         System.out.println("loadGame");
-        String getGameName = "";
+        String getGameName = "Pizza";
         GameControl instance = new GameControl();
-        String expResult = "";
+        String expResult = "Pizza";
         String result = instance.loadGame(getGameName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

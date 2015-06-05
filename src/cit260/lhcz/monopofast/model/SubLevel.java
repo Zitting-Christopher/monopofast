@@ -10,16 +10,16 @@ import java.io.Serializable;
  * @author Christopher
  */
 public class SubLevel {
-    private int id;
     private double recordTime;
     private double maxTime;
+    private int subLevelId;
 
-    public int getId() {
-        return id;
+    public int getSubLevelId() {
+        return subLevelId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSubLevelId(int subLevelId) {
+        this.subLevelId = subLevelId;
     }
 
     public double getRecordTime() {
@@ -41,7 +41,7 @@ public class SubLevel {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 23 * hash + this.id;
+        hash = 23 * hash + this.subLevelId;
         hash = 23 * hash + (int) (Double.doubleToLongBits(this.recordTime) ^ (Double.doubleToLongBits(this.recordTime) >>> 32));
         hash = 23 * hash + (int) (Double.doubleToLongBits(this.maxTime) ^ (Double.doubleToLongBits(this.maxTime) >>> 32));
         return hash;
@@ -56,21 +56,18 @@ public class SubLevel {
             return false;
         }
         final SubLevel other = (SubLevel) obj;
-        if (this.id != other.id) {
+        if (this.subLevelId != other.subLevelId) {
             return false;
         }
         if (Double.doubleToLongBits(this.recordTime) != Double.doubleToLongBits(other.recordTime)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.maxTime) != Double.doubleToLongBits(other.maxTime)) {
-            return false;
-        }
-        return true;
+        return Double.doubleToLongBits(this.maxTime) == Double.doubleToLongBits(other.maxTime);
     }
 
     @Override
     public String toString() {
-        return "SubLevel{" + "id=" + id + ", recordTime=" + recordTime + ", maxTime=" + maxTime + '}';
+        return "SubLevel{" + "subLevelId=" + subLevelId + ", recordTime=" + recordTime + ", maxTime=" + maxTime + '}';
     }
 
     public SubLevel() {

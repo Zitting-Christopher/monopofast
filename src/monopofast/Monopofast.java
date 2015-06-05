@@ -47,7 +47,7 @@ public class Monopofast {
         Game newGame = new Game();
         
         newGame.setGameName("New Game");
-        newGame.setId(1);
+        newGame.setGameId(1);
         newGame.setLastSublevel(1);
         
         String gameInfo = newGame.toString();
@@ -56,8 +56,8 @@ public class Monopofast {
         // Character toString()
         Character frank = new Character();
         
-        frank.setName("Frank");
-        frank.setId(1);
+        frank.setCharacterName("Frank");
+        frank.setCharacterId(1);
         
         String charInfo = frank.toString();
         System.out.println(charInfo);
@@ -65,7 +65,7 @@ public class Monopofast {
         // SubLevel toString()
         SubLevel sOne = new SubLevel();
         
-        sOne.setId(1);
+        sOne.setSubLevelId(1);
         sOne.setMaxTime(30.0);
         sOne.setRecordTime(10.0);
         
