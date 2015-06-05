@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class Game implements Serializable {
     private String gameName;
-    private int id;
+    private int gameId;
     private String lastSaveDateTime;
     private int score;
     private int lastSublevel;
@@ -25,12 +25,12 @@ public class Game implements Serializable {
         this.gameName = gameName;
     }
 
-    public int getId() {
-        return id;
+    public int getGameId() {
+        return gameId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setGameId(int gameId) {
+        this.gameId = gameId;
     }
 
     public String getLastSaveDateTime() {
@@ -59,7 +59,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "name=" + gameName + ", id=" + id + ", lastSaveDateTime=" + lastSaveDateTime + ", score=" + score + ", lastSublevel=" + lastSublevel + '}';
+        return "Game{" + "gameName=" + gameName + ", gameId=" + gameId + ", lastSaveDateTime=" + lastSaveDateTime + ", score=" + score + ", lastSublevel=" + lastSublevel + '}';
     }
     
 
@@ -71,7 +71,7 @@ public class Game implements Serializable {
     public int hashCode() {
         int hash = 5;
         hash = 53 * hash + Objects.hashCode(this.gameName);
-        hash = 53 * hash + this.id;
+        hash = 53 * hash + this.gameId;
         hash = 53 * hash + Objects.hashCode(this.lastSaveDateTime);
         hash = 53 * hash + this.score;
         hash = 53 * hash + this.lastSublevel;
@@ -90,7 +90,7 @@ public class Game implements Serializable {
         if (!Objects.equals(this.gameName, other.gameName)) {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.gameId, other.gameId)) {
             return false;
         }
         if (!Objects.equals(this.lastSaveDateTime, other.lastSaveDateTime)) {

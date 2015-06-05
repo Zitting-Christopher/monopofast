@@ -17,7 +17,6 @@ import cit260.lhcz.monopofast.model.World;
 import cit260.lhcz.monopofast.control.ChallengeControl;
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.control.ProductControl;
-import java.util.Scanner;
 import cit260.lhcz.monopofast.view.StartView;
 
 /**
@@ -38,8 +37,8 @@ public class Monopofast {
         // Player toString()
         Player logan = new Player();
         
-        logan.setName("Logan Hamson");
-        logan.setId(1);
+        logan.setPlayerName("Logan Hamson");
+        logan.setPlayerId(1);
         
         String playerInfo = logan.toString();
         System.out.println(playerInfo);
