@@ -11,35 +11,35 @@ import java.util.Objects;
  * @author Christopher
  */
 public class Player implements Serializable{
-    private String name;
-    private int id;
+    private String playerName;
+    private int playerId;
 
-    public String getName() {
-        return name;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 
-    public int getId() {
-        return id;
+    public int getPlayerId() {
+        return playerId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", id=" + id + '}';
+        return "Player{" + "playerName=" + playerName + ", playerId=" + playerId + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.name);
-        hash = 83 * hash + this.id;
+        hash = 83 * hash + Objects.hashCode(this.playerName);
+        hash = 83 * hash + this.playerId;
         return hash;
     }
 
@@ -52,10 +52,10 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.playerName, other.playerName)) {
             return false;
         }
-        if (this.id != other.id) {
+        if (this.playerId != other.playerId) {
             return false;
         }
         return true;
