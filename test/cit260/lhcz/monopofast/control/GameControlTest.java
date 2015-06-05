@@ -31,5 +31,35 @@ public class GameControlTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of startNewGame method, of class GameControl.
+     */
+    @Test
+    public void testStartNewGame() {
+        System.out.println("startNewGame");
+        String setGameName = "";
+        GameControl instance = new GameControl();
+        String expResult = "";
+        String result = instance.startNewGame(setGameName);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of saveGame method, of class GameControl.
+     */
+    @Test
+    public void testSaveGame() {
+        System.out.println("saveGame");
+        String getGameName = "";
+        GameControl instance = new GameControl();
+        String expResult = "";
+        String result = instance.saveGame(getGameName);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
     
 }

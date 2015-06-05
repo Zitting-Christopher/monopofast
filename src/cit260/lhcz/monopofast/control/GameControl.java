@@ -6,36 +6,51 @@
 package cit260.lhcz.monopofast.control;
 
 import cit260.lhcz.monopofast.model.Game;
+import cit260.lhcz.monopofast.model.Player;
+
+
 
 /**
  *
- * @author Christopher
+ * @author Logan
  */
+
 public class GameControl {
+    private Game game;
+    private Player player; 
     
-    public String setGameName = setName();
-   public String startNewGame(String setGameName)
-    {
-        return "Your game has been created.";
-    }
-    public String getGameName = getName(); 
-    public String loadGame(String getGameName)
-    {
-       
-        return "Your game has been loaded.";
-    }
-    
-    public String saveGame(String getGameName)
-    {
-        return "Your game has been saved.";
+ public Game getGame() {
+        return game;
     }
 
-    private String setName() {
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    
+    
+    public Player createPlayer(String name) {
+        
+        player = new Player();
+        player.setPlayerName(name);
+        
+        return player;
+    
+    }
+
+    public void saveGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+    
     
 }
