@@ -37,10 +37,10 @@ public class GameControl {
 
     
     
-    public Player createPlayer(String name) {
+    public Player createPlayer(String PlayerName) {
         
         player = new Player();
-        player.setPlayerName(name);
+        player.setPlayerName(PlayerName);
         
         return player;
     

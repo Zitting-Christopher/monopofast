@@ -5,6 +5,8 @@
  */
 package cit260.lhcz.monopofast.control;
 
+import cit260.lhcz.monopofast.model.Game;
+import cit260.lhcz.monopofast.model.Player;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,30 +20,69 @@ public class GameControlTest {
     }
 
     /**
-     * Test of loadGame method, of class GameControl.
+     * Test of getGame method, of class GameControl.
      */
     @Test
-    public void testLoadGame() {
-        System.out.println("loadGame");
-        String getGameName = "Pizza";
+    public void testGetGame() {
+        System.out.println("getGame");
         GameControl instance = new GameControl();
-        String expResult = "Pizza";
-        String result = instance.loadGame(getGameName);
+        Game expResult = null;
+        Game result = instance.getGame();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of startNewGame method, of class GameControl.
+     * Test of setGame method, of class GameControl.
      */
     @Test
-    public void testStartNewGame() {
-        System.out.println("startNewGame");
-        String setGameName = "";
+    public void testSetGame() {
+        System.out.println("setGame");
+        Game game = null;
         GameControl instance = new GameControl();
-        String expResult = "";
-        String result = instance.startNewGame(setGameName);
+        instance.setGame(game);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getPlayer method, of class GameControl.
+     */
+    @Test
+    public void testGetPlayer() {
+        System.out.println("getPlayer");
+        GameControl instance = new GameControl();
+        Player expResult = null;
+        Player result = instance.getPlayer();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setPlayer method, of class GameControl.
+     */
+    @Test
+    public void testSetPlayer() {
+        System.out.println("setPlayer");
+        Player player = null;
+        GameControl instance = new GameControl();
+        instance.setPlayer(player);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of createPlayer method, of class GameControl.
+     */
+    @Test
+    public void testCreatePlayer() {
+        System.out.println("createPlayer");
+        String PlayerName = "";
+        GameControl instance = new GameControl();
+        Player expResult = null;
+        Player result = instance.createPlayer(PlayerName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -53,11 +94,8 @@ public class GameControlTest {
     @Test
     public void testSaveGame() {
         System.out.println("saveGame");
-        String getGameName = "";
         GameControl instance = new GameControl();
-        String expResult = "";
-        String result = instance.saveGame(getGameName);
-        assertEquals(expResult, result);
+        instance.saveGame();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
