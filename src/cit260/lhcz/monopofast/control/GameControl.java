@@ -14,7 +14,7 @@ import cit260.lhcz.monopofast.model.Game;
 public class GameControl {
     
     public String setGameName = setName();
-    private String startNewGame(String setGameName)
+   public String startNewGame(String setGameName)
     {
         return "Your game has been created.";
     }
@@ -25,7 +25,7 @@ public class GameControl {
         return "Your game has been loaded.";
     }
     
-    private String saveGame(String getGameName)
+    public String saveGame(String getGameName)
     {
         return "Your game has been saved.";
     }

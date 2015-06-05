@@ -11,18 +11,18 @@ import java.util.Objects;
  * @author Christopher
  */
 public class Game implements Serializable {
-    private String name;
+    private String gameName;
     private int id;
     private String lastSaveDateTime;
     private int score;
     private int lastSublevel;
-
-    public String getName() {
-        return name;
+    
+    public String getGameName() {
+        return gameName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
     }
 
     public int getId() {
@@ -59,7 +59,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "name=" + name + ", id=" + id + ", lastSaveDateTime=" + lastSaveDateTime + ", score=" + score + ", lastSublevel=" + lastSublevel + '}';
+        return "Game{" + "name=" + gameName + ", id=" + id + ", lastSaveDateTime=" + lastSaveDateTime + ", score=" + score + ", lastSublevel=" + lastSublevel + '}';
     }
     
 
@@ -70,7 +70,7 @@ public class Game implements Serializable {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.name);
+        hash = 53 * hash + Objects.hashCode(this.gameName);
         hash = 53 * hash + this.id;
         hash = 53 * hash + Objects.hashCode(this.lastSaveDateTime);
         hash = 53 * hash + this.score;
@@ -87,7 +87,7 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.gameName, other.gameName)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
