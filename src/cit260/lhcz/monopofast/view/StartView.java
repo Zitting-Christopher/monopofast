@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.view;
+import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.model.Player;
 import java.util.Scanner;
 
 /**
@@ -20,8 +22,10 @@ public class StartView {
         this.displayBanner();
         
         //Prompt the user to press S for Start
+        String playerName = this.getPlayerName();
         
         //Prompt the Player for their name
+        Player player = GameControl.createPlayer(playerName);
         
         //Create and save the player
         
@@ -47,4 +51,27 @@ public class StartView {
             
             
             }
+
+    private String getPlayerName() {
+        boolean valid = false; //indicates if the name has been retrieved
+        String playerName = null;
+        Scanner keyboard = new Scanner(System.in); //keyboard input
+        
+        while(!valid) {
+            //prompt player for name
+            System.out.println("Enter the player's name below:");
+            
+            //get the name from the keyboard and trim the blanks
+            playerName = keyboard.nextLine();
+            playerName = playerName.trim();
+            
+            //if name is invalid (less than two character in length)
+            if (playerName.length() < 2) {
+                System.out.println("Invalid name - the name must not be blank");
+                continue; // and repeat again
+            }            
+            break; // out of the (exit) the repition
+        }
+        return playerName; //returns the player name 
+    }
 }
