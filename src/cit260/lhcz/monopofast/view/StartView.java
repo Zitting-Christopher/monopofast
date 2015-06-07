@@ -24,14 +24,15 @@ public class StartView {
         //Prompt the user to press S for Start
         String playerName = this.getPlayerName();
         
-        //Prompt the Player for their name
+        //Create and save the player object
         Player player = GameControl.createPlayer(playerName);
         
-        //Create and save the player
+        //Create a personalized welcome message
+        this.displayWelcomeMessage(player);
         
-        //Display a personalized welcome message
-        
-        //Display the Main Menu.
+        //Display the Main Menu
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     }
     
     
@@ -74,5 +75,14 @@ public class StartView {
             break; // out of the (exit) the repition
         }
         return playerName; //returns the player name 
+    }
+
+    public void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n================================================="
+                         + "\n\tWelcome to Monopofast, " + player.getPlayerName() + "!");
+        System.out.println("\tWe hope you enjoy our game!"
+                + "\n=================================================") ;
+    
+    
     }
 }

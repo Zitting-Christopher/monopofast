@@ -66,5 +66,13 @@ public class Ingredients implements Serializable {
 
     public Ingredients() {
     }
+
+    public void setIngredientName(String cola) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setIngredientId(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -14,9 +14,6 @@ import cit260.lhcz.monopofast.model.Level;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.SubLevel;
 import cit260.lhcz.monopofast.model.World;
-import cit260.lhcz.monopofast.control.ChallengeControl;
-import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.control.ProductControl;
 import cit260.lhcz.monopofast.view.StartView;
 
 /**
@@ -25,6 +22,25 @@ import cit260.lhcz.monopofast.view.StartView;
  */
 public class Monopofast {
 
+    private static Game currentGame = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Monopofast.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Monopofast.player = player;
+    }
+    private static Player player = null;
+    
     /**
      * @param args the command line arguments
      */
@@ -33,16 +49,7 @@ public class Monopofast {
         //Create startView and start the program
         StartView startView = new StartView();
         startView.startProgram();
-        
-        // Player toString()
-        Player logan = new Player();
-        
-        logan.setPlayerName("Logan Hamson");
-        logan.setPlayerId(1);
-        
-        String playerInfo = logan.toString();
-        System.out.println(playerInfo);
-        
+        /*
         // Game toString()
         Game newGame = new Game();
         
@@ -75,17 +82,19 @@ public class Monopofast {
         // Level toString()
         Level lOne = new Level();
         
-        lOne.setId(1);
-        lOne.setName("Drink Station");
         
+        lOne.setLevelId(1);
+        lOne.setLevelName("Drink Station");
+        
+                
         String levelInfo = lOne.toString();
         System.out.println(levelInfo);
         
         // World toString()
         World venti = new World();
         
-        venti.setId(1);
-        venti.setName("Venti's");
+        venti.setWorldId(1);
+        venti.setWorldName("Venti's");
         
         String worldInfo = venti.toString();
         System.out.println(worldInfo);
@@ -94,8 +103,8 @@ public class Monopofast {
         // Map toString()
         Map mOne = new Map();
         
-        mOne.setId(1);
-        mOne.setName("Map");
+        mOne.setMapId(1);
+        mOne.setMapName("Map");
         
         String mapInfo = mOne.toString();
         System.out.println(mapInfo);
@@ -103,8 +112,8 @@ public class Monopofast {
         // Ingredients toString()
         Ingredients cola = new Ingredients();
         
-        cola.setId(1);
-        cola.setName("cola");
+        cola.setIngredientId(1);
+        cola.setIngredientName("cola");
         
         String ingrInfo = cola.toString();
         System.out.println(ingrInfo);
@@ -112,12 +121,12 @@ public class Monopofast {
         // Products toString()
         Products triple = new Products();
         
-        triple.setId(1);
-        triple.setName("triple");
+        triple.setProductId(1);
+        triple.setProductName("triple");
         
         String prodInfo = triple.toString();
         System.out.println(prodInfo);
-        
+        */
     }
    
     

@@ -7,6 +7,7 @@ package cit260.lhcz.monopofast.control;
 
 import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
+import monopofast.Monopofast;
 
 
 
@@ -16,6 +17,23 @@ import cit260.lhcz.monopofast.model.Player;
  */
 
 public class GameControl {
+    
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame stub function called ***");
+    }
+    
+    public static Player createPlayer (String playerName) {
+    if (playerName == null)
+    {
+    return null;
+    }
+    
+    Player player = new Player();
+    player.setPlayerName(playerName);
+    
+    Monopofast.setPlayer(player);
+    return player;
+    }
     private Game game;
     private Player player; 
     
@@ -37,18 +55,23 @@ public class GameControl {
 
     
     
-    public Player createPlayer(String PlayerName) {
+    /*public static Player createPlayer(String playerName) {
         
-        player = new Player();
-        player.setPlayerName(PlayerName);
+        System.out.println("\n**** createPlayer function called ****");
         
-        return player;
+        return null;
     
-    }
+    }*/
 
     public void saveGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    /*public static class createPlayer {
+
+        public createPlayer() {
+        }
+    }*/
 
 
     

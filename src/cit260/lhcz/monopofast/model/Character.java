@@ -12,24 +12,24 @@ import java.util.Objects;
  * @author Christopher
  */
 public class Character implements Serializable {
-    private String name;
-    private int id;
+    private String characterName;
+    private int characterId;
     private String attribute;
 
-    public String getName() {
-        return name;
+    public String getCharacterName() {
+        return characterName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
     }
 
-    public int getId() {
-        return id;
+    public int getCharacterId() {
+        return characterId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCharacterId(int characterId) {
+        this.characterId = characterId;
     }
 
     public String getAttribute() {
@@ -43,8 +43,8 @@ public class Character implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + this.id;
+        hash = 67 * hash + Objects.hashCode(this.characterName);
+        hash = 67 * hash + this.characterId;
         hash = 67 * hash + Objects.hashCode(this.attribute);
         return hash;
     }
@@ -58,10 +58,10 @@ public class Character implements Serializable {
             return false;
         }
         final Character other = (Character) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.characterName, other.characterName)) {
             return false;
         }
-        if (this.id != other.id) {
+        if (this.characterId != other.characterId) {
             return false;
         }
         if (!Objects.equals(this.attribute, other.attribute)) {
@@ -72,10 +72,11 @@ public class Character implements Serializable {
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", id=" + id + ", attribute=" + attribute + '}';
+        return "Character{" + "characterName=" + characterName + ", characterId=" + characterId + ", attribute=" + attribute + '}';
     }
 
     public Character() {
     }
+
     
 }

@@ -63,5 +63,13 @@ public class World implements Serializable {
 
     public World() {
     }
+
+    public void setWorldName(String ventis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setWorldId(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
