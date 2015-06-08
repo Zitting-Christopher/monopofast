@@ -6,7 +6,6 @@
 package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.view.GameMenuView;
 import monopofast.Monopofast;
 /**
  *
