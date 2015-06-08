@@ -23,6 +23,15 @@ import cit260.lhcz.monopofast.view.StartView;
 public class Monopofast {
 
     private static Game currentGame = null;
+    private static Player player = null;
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Monopofast.player = player;
+    }
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -32,14 +41,7 @@ public class Monopofast {
         Monopofast.currentGame = currentGame;
     }
 
-    public static Player getPlayer() {
-        return player;
-    }
-
-    public static void setPlayer(Player player) {
-        Monopofast.player = player;
-    }
-    private static Player player = null;
+    
     
     /**
      * @param args the command line arguments

@@ -7,6 +7,7 @@ package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.view.GameMenuView;
+import monopofast.Monopofast;
 
 /**
  *
@@ -84,6 +85,7 @@ public class MainMenuView {
     }
 
     private String getInput() {
+        String selection = " ";
         return selection;
     }
     
