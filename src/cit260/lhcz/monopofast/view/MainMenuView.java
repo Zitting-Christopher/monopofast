@@ -46,7 +46,11 @@ public class MainMenuView {
            } while (selection != "E"); //selection not Exit
     }
         
-        public void doAction(String choice) {
+    /**
+     *
+     * @param choice
+     */
+    public void doAction(String choice) {
             
             switch(choice){
                 case "N": //create and start a new game
