@@ -86,6 +86,7 @@ public class MainMenuView {
 
     private String getInput() {
         String selection = " ";
+
         return selection;
     }
     

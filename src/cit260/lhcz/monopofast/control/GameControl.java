@@ -19,7 +19,7 @@ import monopofast.Monopofast;
 public class GameControl {
     
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        System.out.println("\n*** createNewGame ***");
     }
     
     public static Player createPlayer (String playerName) {
