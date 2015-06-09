@@ -7,6 +7,7 @@ package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.view.GameMenuView;
+import java.util.Scanner;
 import monopofast.Monopofast;
 
 /**
@@ -26,34 +27,41 @@ public class MainMenuView {
                 + "\nE - Exit"
                 + "\n----------------------------------------";
    public void displayMenu() {
-        char selection = ' ';
+       String input = "E"; //get the user's selection
+        String selection = input;
+//        char selection = ' ';
         do{
-            System.out.println(MENU); //display the main menu
             
-            String input = this.getInput(); //get the user's selection
-            selection = input.charAt(selection); //get first char of string
+          System.out.println(MENU); //display the main menu
+             Scanner keyboard = new Scanner(System.in); //keyboard input
+             selection = keyboard.nextLine();
             
-            this.doAction(selection); //do action based on selection
-                   
-           } while (selection != 'E'); //selection not Exit
+           
+     
+        
+//            selection = input.charAt(selection); //get first char of string
+//            
+//            this.doAction(selection); //do action based on selection
+//                   
+           } while (selection != "E"); //selection not Exit
     }
         
-        public void doAction(char choice) {
+        public void doAction(String choice) {
             
             switch(choice){
-                case 'N': //create and start a new game
+                case "N": //create and start a new game
                     this.startNewGame();
                     break;
-                case 'L': //Load a saved game
+                case "L": //Load a saved game
                     this.loadGame();
                     break;
-                case 'H': //Help menu
+                case "H": //Help menu
                     this.displayHelpMenu();
                     break;
-                case 'S': //save game
+                case "S": //save game
                     this.saveGame();
                     break;
-                case 'E': //exit game
+                case "E": //exit game
                     return;
                 default:
                     System.out.println("\n*** Invalid Selection ***");
@@ -84,12 +92,7 @@ public class MainMenuView {
         System.out.println("**** saveGame() function called ****");
     }
 
-    private String getInput() {
-        String selection;
-        selection = "";
-
-        return selection;
-    }
+   
     
     }
     
