@@ -11,7 +11,7 @@ import java.util.Scanner;
 import monopofast.Monopofast;
 
 /**
- *
+ *@author Logan
  * @author Christopher
  */
 public class MainMenuView {
