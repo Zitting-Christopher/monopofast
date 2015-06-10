@@ -81,8 +81,9 @@ public class MainMenuView {
     }          
                     private void startNewGame(){
                         // create a new game
-                        int value = GameControl.createNewGame(Monopofast.getPlayer());
-                        if (value < 0){
+                         GameControl.createNewGame(Monopofast.getPlayer());
+                        int value = 0;
+                         if (value < 0){
                             System.out.println("ERROR- Failed to create new game");
                         }
                     }
@@ -97,7 +98,8 @@ public class MainMenuView {
                                  
                    private void loadGame(){
                         // create a new game
-                        int value = GameControl.createNewGame(Monopofast.getCurrentGame());
+                        int value = 0;
+                                GameControl.createNewGame(Monopofast.getCurrentGame());
                         if (value < 0){
                             System.out.println("ERROR- Failed to load new game");
                         }
@@ -105,7 +107,8 @@ public class MainMenuView {
                     }
                     private void saveGame(){
                         // create a new game
-                        int value = GameControl.createNewGame(Monopofast.getCurrentGame());
+                        int value = 0;
+                                GameControl.createNewGame(Monopofast.getCurrentGame());
                         if (value < 0){
                             System.out.println("ERROR- Failed to load new game");
                         }

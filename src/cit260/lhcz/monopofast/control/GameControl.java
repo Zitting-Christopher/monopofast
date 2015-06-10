@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 public class GameControl {
     
-    public  Player  createNewGame(Player player) {
+    public static  Player  createNewGame(Player player) {
         System.out.println("\n*** createNewGame ***");
         return player;
     }
@@ -35,15 +35,15 @@ public class GameControl {
     Monopofast.setPlayer(player);
     return player;
     }
-    private Game game;
+    private Player game;
     private Player player; 
     
- public Game getGame() {
-        return game;
+ public Player getGame() {
+        return player;
     }
 
-    public void setGame(Game game) {
-        this.game = game;
+    public void setGame(Player player) {
+        this.player = game;
     }
 
     public Player getPlayer() {
