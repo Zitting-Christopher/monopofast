@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 public class GameControl {
     
-    public static void createNewGame(Player player) {
+    public  void createNewGame(Player player) {
         System.out.println("\n*** createNewGame ***");
     }
     
