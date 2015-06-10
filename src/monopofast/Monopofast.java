@@ -22,7 +22,7 @@ import java.util.Scanner;
  */
 public class Monopofast {
 
-    private static Game currentGame = null;
+    private static Player currentGame = null;
     private static Player player = null;
 
     public static Player getPlayer() {
@@ -33,11 +33,11 @@ public class Monopofast {
         Monopofast.player = player;
     }
 
-    public static Game getCurrentGame() {
+    public static Player getCurrentGame() {
         return currentGame;
     }
 
-    public static void setCurrentGame(Game currentGame) {
+    public static void setCurrentGame(Player currentGame) {
         Monopofast.currentGame = currentGame;
     }
 

@@ -56,7 +56,8 @@ public class MainMenuView {
     }
     return selection;
     }
-        public void doAction(char choice) {
+
+    public void doAction(char choice) {
             
             switch(choice){
                 case 'N': //create and start a new game
@@ -64,9 +65,9 @@ public class MainMenuView {
                     break;
                 case 'L': //Load a saved game
                     this.loadGame();
-                    break;
-                case 'H': //Help menu
-                    this.displayHelpMenu();
+//                    break;
+//                case 'H': //Help menu
+//                    this.displayHelpMenu();
                     break;
                 case 'S': //save game
                     this.saveGame();
@@ -77,7 +78,7 @@ public class MainMenuView {
                     System.out.println("\n*** Invalid Selection ***");
                     break;
             }
-                               
+    }          
                     private void startNewGame(){
                         // create a new game
                         int value = GameControl.createNewGame(Monopofast.getPlayer());
@@ -86,13 +87,13 @@ public class MainMenuView {
                         }
                     }
                                  
-                    private void displayHelpMenu(){
-                        // create a new game
-                        int value = GameControl.createNewGame(Monopofast.getPlayer());
-                        if (value < 0){
-                            System.out.println("ERROR- Failed to create new game");
-                        }
-                    }
+//                   /* private void displayHelpMenu(){
+//                        // create a new game
+//                        int value = GameControl.createNewGame(Monopofast.getPlayer());
+//                        if (value < 0){
+//                            System.out.println("ERROR- Failed to create new game");
+//                        }
+//                    }*/
                                  
                    private void loadGame(){
                         // create a new game
