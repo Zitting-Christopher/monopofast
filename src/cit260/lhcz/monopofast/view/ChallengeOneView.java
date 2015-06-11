@@ -22,30 +22,34 @@ import monopofast.Monopofast;
             + "\nIf it takes you 8 seconds to make a Son of a Bacon Eater Sandwich,"
             + "\nand there are 15 people ordering one, and you must wash your hands."
             + "\n(which takes 20 seconds), how long will it take you complete all of the above? "
-            + "\nR - go back"
+            + "\n0 - go back"
             + "\n==================================";
     
   public void displayMenu() {
-        char selection;
+               char selection;
         
         do{
             System.out.println(MENU); //display the main menu
             String input = this.getInput();
             selection = input.charAt(0);
-            this.doAction(selection);
             
-            } while (selection != 'R');
-    }
+            
+            } while (selection != 'E');
     
-    public String getInput(){
+    
+}
+        
+     public String getInput(){
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
     String selection = null;
     while (!valid){
+        System.out.println("What is the answer?");
         selection = keyboard.nextLine();
         selection = selection.trim();
         if(selection.length()<1) {
             System.out.println("\n*** Invalid selection *** Try again");
+             continue; //and repeat again
         }
         
         break;
@@ -53,36 +57,22 @@ import monopofast.Monopofast;
     }
     return selection;
     }
-
-    public void doAction(char choice) {
-            
-            switch(choice){
-                case 'R': //exit game
-                case 'r':
-                    return;
-                default:
-                    System.out.println("\n*** Invalid Selection ***");
-                    break;
+    private final int handWash = 20;
+    private final double baconEaterSeconds = 8;
+    private final int numOrders1=15;
+    private double total = baconEaterSeconds * numOrders1 + handWash;
+   
+    public void doAction(int choice) {
+   
+      if (choice == total) {
+            System.out.println("That is right!");
             }
-    } 
-
-    
-    private int doAction(String answer) {
-        
-        double guess = Double.parseDouble(answer);
-        
-        double waterTank = 140;
-        
-        if (guess == waterTank) {
-            
-            System.out.println("You found Got the Challenge right.");
-            return 1;
-        }
-        else{
+    else{
             System.out.println("Your answer is incorrect. Try again.");
-            return -1;
-        }
+    }   
     }
  }
 
-   
+       
+        
+    
