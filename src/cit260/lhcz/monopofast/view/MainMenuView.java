@@ -6,7 +6,6 @@
 package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.view.GameMenuView;
 import java.util.Scanner;
 import monopofast.Monopofast;
 
@@ -82,10 +81,12 @@ public class MainMenuView {
                     private void startNewGame(){
                         // create a new game
                          GameControl.createNewGame(Monopofast.getPlayer());
-                        int value = 0;
+                        int value = 1;
                          if (value < 0){
                             System.out.println("ERROR- Failed to create new game");
                         }
+                         GameMenuView gameMenu = new GameMenuView();
+                         gameMenu.displayMenu();
                     }
                                  
 //                   /* private void displayHelpMenu(){
