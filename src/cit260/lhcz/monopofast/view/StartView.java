@@ -48,8 +48,7 @@ public class StartView {
                     + "After conquering one fast food joint, you will move on to the next, starting \n"
                     + "at the bottom each time. Restaurants included in the game are: McDumbledore’s,\n"
                     + "Venti’s, Ardy’s, Karl’s Sr., Jack and the Fox, and Queen Burger.\n");
-        System.out.println("S*******************************************************************************************************"
-                    + "\n\n Please press S to get started!");
+        System.out.println("*****************************************************************************************************");
             
             
             }
