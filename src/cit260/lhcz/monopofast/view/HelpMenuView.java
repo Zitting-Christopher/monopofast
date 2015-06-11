@@ -63,12 +63,15 @@ public class HelpMenuView {
                     break;
                                   
                 case 'I': //view Ingredients
+                case 'i':
                     this.ingredientsList();
                    break;
                 case 'P': //view Products
+                case 'p':
                     this.productsList();
                     break;
                 case 'R': //exit game
+                case 'r':
                     return;
                 default:
                     System.out.println("\n*** Invalid Selection ***");

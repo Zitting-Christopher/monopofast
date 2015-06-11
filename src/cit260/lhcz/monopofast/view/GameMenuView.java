@@ -57,16 +57,22 @@ public class GameMenuView {
     public void doAction(char choice) {
             
             switch(choice){
+                case 'c':
                 case 'C': //create and start a new game
                     this.ContinueGame();
                     break;
-                                  
+                    
+                case 'f':                  
                 case 'F': //Challange menu
                     this.challangeMenu();
                    break;
+                    
+                case 's':
                 case 'S': //save game
                     this.saveGame();
                     break;
+                    
+                case 'e':
                 case 'E': //exit game
                     return;
                 default:
