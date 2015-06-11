@@ -19,7 +19,7 @@ import monopofast.Monopofast;
             + "\n=================================="
             + "\n   Challenge One  "
             + "\n=================================="
-            + "\nYIf it takes you 8 seconds to make a Son of a Bacon Eater Sandwich,"
+            + "\nIf it takes you 8 seconds to make a Son of a Bacon Eater Sandwich,"
             + "\nand there are 15 people ordering one, and you must wash your hands."
             + "\n(which takes 20 seconds), how long will it take you complete all of the above? "
             + "\nR - go back"
