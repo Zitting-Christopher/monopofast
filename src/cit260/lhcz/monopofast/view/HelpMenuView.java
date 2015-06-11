@@ -66,13 +66,16 @@ public class HelpMenuView {
                 case 'i':
                     this.ingredientsList();
                    break;
+                    
                 case 'P': //view Products
                 case 'p':
                     this.productsList();
                     break;
+                
                 case 'R': //exit game
                 case 'r':
                     return;
+                
                 default:
                     System.out.println("\n*** Invalid Selection ***");
                     break;
@@ -80,9 +83,10 @@ public class HelpMenuView {
     } 
 
     private void commandsList() {
-        System.out.println("\n**********************************************************************");
-        System.out.println("To use a command, simply type the command followed by the ingredient.");
-        System.out.println("**********************************************************************");
+        String stars = "***************************************************************************************";
+        System.out.println("\n" + stars);
+        System.out.println("To use a command, while in gameplay, simply type the command followed by the ingredient.");
+        System.out.println(stars);
         System.out.println("add");
         System.out.println("bake");
         System.out.println("blend");
@@ -95,9 +99,10 @@ public class HelpMenuView {
     }
 
     private void ingredientsList() {
-        System.out.println("\n*************************************************************************");
-        System.out.println("To use an ingredient, simply type the command followed by the ingredient.");
-        System.out.println("*************************************************************************");
+        String stars = "********************************************************************************************";
+        System.out.println("\n" + stars);
+        System.out.println("To use an ingredient, while in gameplay, simply type the command followed by the ingredient.");
+        System.out.println(stars);
         System.out.println("bacon");
         System.out.println("bottom bun");
         System.out.println("bread");
