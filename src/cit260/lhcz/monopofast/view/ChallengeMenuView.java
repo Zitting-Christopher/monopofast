@@ -79,8 +79,8 @@ public class ChallengeMenuView{
                         private void calcChallenge1(){
                         // create a new game
                                int value = 1;
-                                ChallengeControl calcChallenge1 = new ChallengeControl();
-                                ChallengeControl.calcChallenge1();
+                                ChallengeOneView ChallengeOne = new ChallengeOneView();
+                                ChallengeOne.displayMenu();
         if (value < 0){
                             System.out.println("ERROR- Failed to load new game");
                         }
