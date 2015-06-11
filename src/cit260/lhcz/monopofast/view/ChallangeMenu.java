@@ -21,9 +21,9 @@ public class ChallangeMenu {
                 + "\n----------------------------------------"
                 + "\n| Challange Menu                            |"
                 + "\n----------------------------------------"
-                + "\n1 - Continue Game"
-                + "\n2 - Challange Menu"
-                + "\n3 - Save Game"
+                + "\n1 - Challange One"
+                + "\n2 - Challange Two"
+                + "\n3 - Challange Three"
                 + "\nE - Exit"
                 + "\n----------------------------------------";
    
