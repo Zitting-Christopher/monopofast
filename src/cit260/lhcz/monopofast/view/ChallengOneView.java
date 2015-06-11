@@ -35,7 +35,7 @@ public static void main(String[] args)
 
   Triangle t = new Triangle(a, b, c);
   if (t.isEqualateral())
-    System.out.println("The triangle is a equalateral triangle");
+    System.out.println("hhh");
 }
 
 }
