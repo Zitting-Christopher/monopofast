@@ -13,17 +13,17 @@ import monopofast.Monopofast;
  *@author Logan
  * 
  */
-public class ChallangeMenuView{
+public class ChallengeMenuView{
     
 
     
     private final String MENU = "\n"
                 + "\n----------------------------------------"
-                + "\n| Challange Menu                            |"
+                + "\n| Challenge Menu                            |"
                 + "\n----------------------------------------"
-                + "\n1 - Challange One"
-                + "\n2 - Challange Two"
-                + "\n3 - Challange Three"
+                + "\n1 - Challenge One"
+                + "\n2 - Challenge Two"
+                + "\n3 - Challenge Three"
                 + "\nE - Exit"
                 + "\n----------------------------------------";
    
@@ -79,8 +79,9 @@ public class ChallangeMenuView{
                         private void calcChallenge1(){
                         // create a new game
                                int value = 1;
+                                ChallengeControl calcChallenge1 = new ChallengeControl();
                                 ChallengeControl.calcChallenge1();
-                        if (value < 0){
+        if (value < 0){
                             System.out.println("ERROR- Failed to load new game");
                         }
                         }
