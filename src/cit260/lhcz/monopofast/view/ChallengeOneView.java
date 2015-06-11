@@ -61,7 +61,7 @@ import monopofast.Monopofast;
     public void doAction(char choice) {
        
       switch(choice){
-            case 'A': //World 2 Map
+            case 'A': //A
                     if (total < 140)
                     {
                         String output2 = "Too Low.";
@@ -72,7 +72,7 @@ import monopofast.Monopofast;
                         String output2 = "Wrong";
                         System.out.println(output2);
                     }
-             case 'B': //World 2 Map
+             case 'B': //B
                     if (total < 140)
                     {
                         String output2 = "Too Low.";
@@ -83,7 +83,7 @@ import monopofast.Monopofast;
                         String output2 = "Wrong";
                         System.out.println(output2);
                     }
-              case 'C': //World 2 Map
+              case 'C': //C
                     if (total < 140)
                     {
                         String output2 = "Too Low.";
@@ -94,7 +94,7 @@ import monopofast.Monopofast;
                         String output2 = "Correct";
                         System.out.println(output2);
                     }
-               case 'D': //World 2 Map
+               case 'D': //D
                     if (total > 140)
                     {
                         String output2 = "Too High.";
