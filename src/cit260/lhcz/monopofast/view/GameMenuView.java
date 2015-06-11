@@ -11,7 +11,7 @@ import monopofast.Monopofast;
 
 /**
  *@author Logan
- * @author Christopher
+ * 
  */
 public class GameMenuView {
     
@@ -20,7 +20,7 @@ public class GameMenuView {
                 + "\n| Game Menu                            |"
                 + "\n----------------------------------------"
                 + "\nC - Continue Game"
-                + "\nH - Get Help"
+                + "\nF - Challange Menu"
                 + "\nS - Save Game"
                 + "\nE - Exit"
                 + "\n----------------------------------------";
@@ -45,7 +45,7 @@ public class GameMenuView {
         selection = keyboard.nextLine();
         selection = selection.trim();
         if(selection.length()<1) {
-            System.out.println("\n*** Invalid selection *** Try again");
+            System.out.println("\n*** Invalid selection *** Attempt again");
         }
         
         break;
@@ -61,7 +61,7 @@ public class GameMenuView {
                     this.ContinueGame();
                     break;
                                   
-                case 'H': //Help menu
+                case 'F': //Challange menu
                     this.helpMenu();
                    break;
                 case 'S': //save game
@@ -76,15 +76,15 @@ public class GameMenuView {
     } 
                         private void ContinueGame(){
                         // create a new game
-                               System.out.println("ERROR- Failed to create new game");
+                               System.out.println("create new game stub");
                         }
                          private void saveGame(){
                         
-                            System.out.println("ERROR- Failed to Save game");
+                            System.out.println("Save game");
                         }
                           private void helpMenu(){
 {
-                         System.out.println("ERROR- Failed to load the help menu");
+                         System.out.println("help menu");
                         }
                          }
 }
