@@ -7,6 +7,7 @@ package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.view.GameMenuView;
+import cit260.lhcz.monopofast.view.HelpMenuView;
 import java.util.Scanner;
 import monopofast.Monopofast;
 
@@ -61,18 +62,24 @@ public class MainMenuView {
             
             switch(choice){
                 case 'G': //create and start a new game
+                case 'g':
                     this.startNewGame();
                     break;
                 case 'L': //Load a saved game
+                case 'l':
                     this.loadGame();
-//                    break;
-//                case 'H': //Help menu
-//                    this.displayHelpMenu();
+                    break;
+                case 'H': //Help menu
+                case 'h':
+                    HelpMenuView helpMenu = new HelpMenuView();
+                   helpMenu.displayMenu();
                     break;
                 case 'S': //save game
+                case 's':
                     this.saveGame();
                     break;
                 case 'E': //exit game
+                case 'e':
                     return;
                 default:
                     System.out.println("\n*** Invalid Selection ***");
