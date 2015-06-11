@@ -72,6 +72,7 @@ import monopofast.Monopofast;
                         String output2 = "Wrong";
                         System.out.println(output2);
                     }
+            break;
              case 'B': //B
                     if (total < 140)
                     {
@@ -83,6 +84,7 @@ import monopofast.Monopofast;
                         String output2 = "Wrong";
                         System.out.println(output2);
                     }
+             break;
               case 'C': //C
                     if (total < 140)
                     {
@@ -94,6 +96,7 @@ import monopofast.Monopofast;
                         String output2 = "Correct";
                         System.out.println(output2);
                     }
+              break;
                case 'D': //D
                     if (total > 140)
                     {
@@ -105,6 +108,12 @@ import monopofast.Monopofast;
                         String output2 = "Wrong";
                         System.out.println(output2);
                     }
+                case 'E': //exit Menu
+                case 'e':
+                    return;
+                default:
+                    System.out.println("\n*** Invalid Selection ***");
+                    break;
             }
     
  }

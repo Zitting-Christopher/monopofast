@@ -36,7 +36,7 @@ public class ChallengeMenuView{
             selection = input.charAt(0);
             this.doAction(selection);
             
-            } while (selection != 'E');
+            } while (selection != 'E' && selection != 'e');
     }
     
     public String getInput(){
@@ -70,6 +70,7 @@ public class ChallengeMenuView{
                     this.calcChallenge3();
                     break;
                 case 'E': //exit game
+                case 'e':  
                     return;
                 default:
                     System.out.println("\n*** Invalid Selection ***");
