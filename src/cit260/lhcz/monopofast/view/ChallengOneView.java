@@ -18,7 +18,7 @@ int c;
 
 public challengeOneView(double a, int c)
 {
-   this.a = a; this.c = c;
+   this.a; this.c = c;
 }
 
 
@@ -33,7 +33,7 @@ public static void main(String[] args)
   b = s.nextDouble();
   c = s.nextDouble();
 
-  Triangle t = new Triangle(a, b, c);
+  challengeOneView = new challengeOneView(a, c);
   if (t.isEqualateral())
     System.out.println("hhh");
 }
