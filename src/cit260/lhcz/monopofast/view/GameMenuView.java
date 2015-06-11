@@ -62,7 +62,7 @@ public class GameMenuView {
                     break;
                                   
                 case 'F': //Challange menu
-                    this.helpMenu();
+                    this.challangeMenu();
                    break;
                 case 'S': //save game
                     this.saveGame();
@@ -82,12 +82,16 @@ public class GameMenuView {
                         
                             System.out.println("Save game");
                         }
-                          private void helpMenu(){
+                          private void challangeMenu(){
 {
-                         System.out.println("help menu");
+                          }
+                         ChallangeMenuView challangeMenu = new ChallangeMenuView();
+                         challangeMenu.displayMenu();
+                    }
+                         
                         }
-                         }
-}
+                         
+
                          
 
 

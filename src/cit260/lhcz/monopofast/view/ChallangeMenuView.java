@@ -5,7 +5,7 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.control.ChallengeControl;
 import java.util.Scanner;
 import monopofast.Monopofast;
 
@@ -13,7 +13,7 @@ import monopofast.Monopofast;
  *@author Logan
  * 
  */
-public class ChallangeMenu {
+public class ChallangeMenuView{
     
 
     
@@ -78,7 +78,11 @@ public class ChallangeMenu {
     } 
                         private void calcChallenge1(){
                         // create a new game
-                               System.out.println("create new game stub");
+                               int value = 1;
+                                ChallengeControl.calcChallenge1();
+                        if (value < 0){
+                            System.out.println("ERROR- Failed to load new game");
+                        }
                         }
                          private void calcChallenge2(){
                         
