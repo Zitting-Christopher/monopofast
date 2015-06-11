@@ -28,7 +28,7 @@ public class MainMenuView {
                 + "\n----------------------------------------";
     
     public void displayMenu() {
-        char selection =' ';
+        char selection;
         
         do{
             System.out.println(MENU); //display the main menu
@@ -60,7 +60,7 @@ public class MainMenuView {
     public void doAction(char choice) {
             
             switch(choice){
-                case 'N': //create and start a new game
+                case 'G': //create and start a new game
                     this.startNewGame();
                     break;
                 case 'L': //Load a saved game
