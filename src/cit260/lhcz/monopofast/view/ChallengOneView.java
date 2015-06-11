@@ -21,19 +21,14 @@ public challengeOneView(double a, int c)
    this.a = a; this.c = c;
 }
 
-public boolean isEqualateral()
-{
-   if (this.a == this.b && this.b == this.c)
-      return true;
-   return false;
-}
+
 
 public static void main(String[] args) 
 {
   Scanner s = new Scanner(System.in);
 
   //1.User inputs the sides of a triangle
-  System.out.println("Please enter the sides of the triangle:");
+  System.out.println("Please enter the  number of seconds to make a Son of a Bacon Eater Sandwich:");
   a = s.nextDouble();
   b = s.nextDouble();
   c = s.nextDouble();
