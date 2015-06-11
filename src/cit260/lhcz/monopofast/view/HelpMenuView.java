@@ -34,7 +34,7 @@ public class HelpMenuView {
             selection = input.charAt(0);
             this.doAction(selection);
             
-            } while (selection != 'R');
+            } while (selection != 'R' && selection != 'r');
     }
     
     public String getInput(){

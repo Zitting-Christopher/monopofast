@@ -34,7 +34,7 @@ public class GameMenuView {
             selection = input.charAt(0);
             this.doAction(selection);
             
-            } while (selection != 'E');
+            } while (selection != 'E' AND selection != 'e');
     }
     
     public String getInput(){
