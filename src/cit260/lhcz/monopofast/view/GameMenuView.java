@@ -85,8 +85,8 @@ public class GameMenuView {
                           private void challangeMenu(){
 {
                           }
-                         ChallangeMenuView challangeMenu = new ChallangeMenuView();
-                         challangeMenu.displayMenu();
+                         ChallengeMenuView challengeMenu = new ChallengeMenuView();
+                         challengeMenu.displayMenu();
                     }
                          
                         }
