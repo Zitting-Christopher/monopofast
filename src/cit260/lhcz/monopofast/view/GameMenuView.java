@@ -21,6 +21,7 @@ public class GameMenuView {
                 + "\n----------------------------------------"
                 + "\nC - Continue Game"
                 + "\nF - Challange Menu"
+                + "\nM - View Map"
                 + "\nS - Save Game"
                 + "\nE - Exit"
                 + "\n----------------------------------------";
@@ -34,7 +35,7 @@ public class GameMenuView {
             selection = input.charAt(0);
             this.doAction(selection);
             
-            } while (selection != 'E');
+            } while (selection != 'E' && selection != 'e');
     }
     
     public String getInput(){
@@ -67,6 +68,10 @@ public class GameMenuView {
                     this.challangeMenu();
                    break;
                     
+                case 'm':
+                case 'M': //View Map
+                    this.viewMap();
+                    
                 case 's':
                 case 'S': //save game
                     this.saveGame();
@@ -94,6 +99,11 @@ public class GameMenuView {
                          ChallengeMenuView challengeMenu = new ChallengeMenuView();
                          challengeMenu.displayMenu();
                     }
+
+                        private void viewMap() {
+                        MapView map = new MapView();
+                        map.displayMenu();
+                        }
                          
                         }
                          

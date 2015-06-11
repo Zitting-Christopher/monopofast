@@ -37,7 +37,7 @@ public class MainMenuView {
             selection = input.charAt(0);
             this.doAction(selection);
             
-            } while (selection != 'E');
+            } while (selection != 'E' && selection != 'e');
     
     
 }
