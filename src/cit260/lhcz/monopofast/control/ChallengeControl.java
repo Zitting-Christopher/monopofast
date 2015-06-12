@@ -14,27 +14,27 @@ public class ChallengeControl {
 
     //Define the variables for this function
     private int handWash = 20;
-    private double baconEaterSeconds;
-    private int numOrders1;
+    private double baconEaterSeconds =  6;
+    private int numOrders1 = 15;
     private double challenge1TotalSeconds;
-    private double calcChallenge1(double baconEaterSeconds,int numOrders1)
-    {
+    public double calcChallengeOne(double baconEaterSeconds,int numOrders1){
         //Define the lower and upper limit for the seconds and number of orders for each product
     if(baconEaterSeconds < 5 || baconEaterSeconds > 15)
     {
         return -1;
     }
 
-    if (numOrders1 < 1 || numOrders1 > 19)
+    if (numOrders1 < 1 || numOrders1 > 20)
     {   
         return -1;
     }
+    else{
     
     //Function to figure the total seconds for Challenge 2
     challenge1TotalSeconds = baconEaterSeconds * numOrders1 + handWash;
     return challenge1TotalSeconds;
 
-    
+    }
 
 
     }
@@ -67,11 +67,11 @@ public class ChallengeControl {
     {
         return -1;
     }
-
+    else {
     //Function to figure the total seconds for Challenge 2
     challenge2TotalSeconds = turnOverSeconds + mozzaSeconds + rootBeerSeconds * numOrders2;
     return challenge2TotalSeconds;
-
+    }
     }
    
     //Define the variables for this function
@@ -84,7 +84,7 @@ public class ChallengeControl {
     private int numOrders3;
     private double challenge3TotalSeconds;
     
-    private double calcChallenge3(double turnOverSeconds,int numOrders2, double mozzaSeconds, double rootBeerSeconds)
+    private double calcChallenge3(double milkshakeSeconds,int milkshakeNumOrders, double mcBurgerSeconds,int mcBurgerNumOrders, double mcTripleSeconds,int mcTripleNumOrders)
     {
         //Define the lower and upper limit for the seconds and number of orders for each product
     if(milkshakeSeconds < 5 || milkshakeSeconds > 15)
