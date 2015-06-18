@@ -41,8 +41,8 @@ public class MainMenuView extends View{
                     break;
                 case "H": //Help menu
                
-                    HelpMenuView helpMenu = new HelpMenuView();
-                   helpMenu.displayMenu();
+                    this.HelpMenuView();
+                   
                     break;
                 case "S": //save game
                 
@@ -86,6 +86,10 @@ public class MainMenuView extends View{
                         if (value < 0){
                             System.out.println("ERROR- Failed to load new game");
                         }
-                        
                     }
-}
+                        private void HelpMenuView(){
+                       HelpMenuView helpMenu = new HelpMenuView();
+                   helpMenu.displayMenu(); 
+                        }
+                    }
+
