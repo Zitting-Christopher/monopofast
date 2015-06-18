@@ -15,9 +15,10 @@ import monopofast.Monopofast;
  *@author Logan
  * @author Christopher
  */
-public class MainMenuView {
+public class MainMenuView extends View{
 
-    private final String MENU = "\n"
+                   public MainMenuView(){
+                  super("\n"
                 + "\n----------------------------------------"
                 + "\n| Main Menu                            |"
                 + "\n----------------------------------------"
@@ -26,103 +27,12 @@ public class MainMenuView {
                 + "\nS - Save Game"
                 + "\nL - Load Game"
                 + "\nE - Exit"
-                + "\n----------------------------------------";
+                + "\n----------------------------------------");
+                       }
+                   public boolean doAction(Object obj){
+                       return false;
+                   }
     
-    public void displayMenu() {
-        char selection;
-        
-        do{
-            System.out.println(MENU); //display the main menu
-            String input = this.getInput();
-            selection = input.charAt(0);
-            this.doAction(selection);
-            
-            } while (selection != 'E' && selection != 'e');
-    
-    
-}
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-    String selection = null;
-    while (!valid){
-        selection = keyboard.nextLine();
-        selection = selection.trim();
-        if(selection.length()<1) {
-            System.out.println("\n*** Invalid selection *** Try again");
-        }
-        
-        break;
-        
-    }
-    return selection;
-    }
-
-    public void doAction(char choice) {
-            
-            switch(choice){
-                case 'G': //create and start a new game
-                case 'g':
-                    this.startNewGame();
-                    break;
-                case 'L': //Load a saved game
-                case 'l':
-                    this.loadGame();
-                    break;
-                case 'H': //Help menu
-                case 'h':
-                    HelpMenuView helpMenu = new HelpMenuView();
-                   helpMenu.displayMenu();
-                    break;
-                case 'S': //save game
-                case 's':
-                    this.saveGame();
-                    break;
-                case 'E': //exit game
-                case 'e':
-                    return;
-                default:
-                    System.out.println("\n*** Invalid Selection ***");
-                    break;
-            }
-    }          
-                    private void startNewGame(){
-                        // create a new game
-                         GameControl.createNewGame(Monopofast.getPlayer());
-                        int value = 1;
-                         if (value < 0){
-                            System.out.println("ERROR- Failed to create new game");
-                        }
-                         GameMenuView gameMenu = new GameMenuView();
-                         gameMenu.displayMenu();
-                    }
-                                 
-//                   /* private void displayHelpMenu(){
-//                        // create a new game
-//                        int value = GameControl.createNewGame(Monopofast.getPlayer());
-//                        if (value < 0){
-//                            System.out.println("ERROR- Failed to create new game");
-//                        }
-//                    }*/
-                                 
-                   private void loadGame(){
-                        // create a new game
-                        int value = 0;
-                                GameControl.createNewGame(Monopofast.getCurrentGame());
-                        if (value < 0){
-                            System.out.println("ERROR- Failed to load new game");
-                        }
-                        
-                    }
-                    private void saveGame(){
-                        // create a new game
-                        int value = 0;
-                                GameControl.createNewGame(Monopofast.getCurrentGame());
-                        if (value < 0){
-                            System.out.println("ERROR- Failed to load new game");
-                        }
-                        
-                    }
         }   
 
 

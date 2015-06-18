@@ -32,7 +32,7 @@ public class StartView {
         
         //Display the Main Menu
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+//        mainMenu.displayMenu();
     }
     
     
