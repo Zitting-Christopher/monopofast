@@ -5,17 +5,17 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.control.GameControl;
-import java.util.Scanner;
-import monopofast.Monopofast;
+
 
 /**
  *
  * @author Christopher
+ * @author Logan the I
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
-    private final String MENU = "\n"
+    public HelpMenuView(){
+                  super("\n"
                 + "\n----------------------------------------"
                 + "\n| Help Menu                            |"
                 + "\n----------------------------------------"
@@ -23,63 +23,35 @@ public class HelpMenuView {
                 + "\nI - View Ingredients"
                 + "\nP - View Products"
                 + "\nR - Return to Main Menu"
-                + "\n----------------------------------------";
+                + "\n----------------------------------------");
    
-    public void displayMenu() {
-        char selection;
-        
-        do{
-            System.out.println(MENU); //display the main menu
-            String input = this.getInput();
-            selection = input.charAt(0);
-            this.doAction(selection);
-            
-            } while (selection != 'R' && selection != 'r');
+    
     }
     
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-    String selection = null;
-    while (!valid){
-        selection = keyboard.nextLine();
-        selection = selection.trim();
-        if(selection.length()<1) {
-            System.out.println("\n*** Invalid selection *** Try again");
-        }
-        
-        break;
-        
-    }
-    return selection;
-    }
-
-    public void doAction(char choice) {
-            
-            switch(choice){
-                case 'C': //view Commands
-                case 'c':
-                    this.commandsList();
+           @Override
+                   public boolean doAction(Object obj){
+                       String value = (String) obj; 
+                       value = value.toUpperCase(); // convert to upper case
+                     switch(value){
+                case "C": //view Commands
+                 this.commandsList();
                     break;
                                   
-                case 'I': //view Ingredients
-                case 'i':
-                    this.ingredientsList();
+                case "I": //view Ingredients
+                                  this.ingredientsList();
                    break;
                     
-                case 'P': //view Products
-                case 'p':
-                    this.productsList();
+                case "P": //view Products
+                                  this.productsList();
                     break;
                 
-                case 'R': //exit game
-                case 'r':
-                    return;
-                
+                case "R": //exit game
+                   return true;
                 default:
                     System.out.println("\n*** Invalid Selection ***");
                     break;
-            }
+                     }
+    return false;
     } 
 
     private void commandsList() {
@@ -188,6 +160,8 @@ public class HelpMenuView {
         
         
     }
+
+    
 }
                          
 

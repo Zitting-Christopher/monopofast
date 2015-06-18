@@ -89,7 +89,7 @@ public class MainMenuView extends View{
                     }
                         private void HelpMenuView(){
                        HelpMenuView helpMenu = new HelpMenuView();
-                   helpMenu.displayMenu(); 
+                   helpMenu.display(); 
                         }
                     }
 
