@@ -24,7 +24,7 @@ public class MapViewTest {
     public void testDisplayMenu() {
         System.out.println("displayMenu");
         MapView instance = new MapView();
-        instance.displayMenu();
+        instance.display();
         // TODO review the generated test code and remove the default call to fail.
         fail("Your mom.");
     }

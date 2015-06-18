@@ -13,9 +13,11 @@ import monopofast.Monopofast;
  *@author Logan
  * 
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
-    private final String MENU = "\n"
+public GameMenuView(){
+    
+    super("\n"
                 + "\n----------------------------------------"
                 + "\n| Game Menu                            |"
                 + "\n----------------------------------------"
@@ -24,66 +26,35 @@ public class GameMenuView {
                 + "\nM - View Map"
                 + "\nS - Save Game"
                 + "\nE - Exit"
-                + "\n----------------------------------------";
-   
-    public void displayMenu() {
-        char selection;
-        
-        do{
-            System.out.println(MENU); //display the main menu
-            String input = this.getInput();
-            selection = input.charAt(0);
-            this.doAction(selection);
-            
-            } while (selection != 'E' && selection != 'e');
-    }
-    
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-    String selection = null;
-    while (!valid){
-        selection = keyboard.nextLine();
-        selection = selection.trim();
-        if(selection.length()<1) {
-            System.out.println("\n*** Invalid selection *** Attempt again");
-        }
-        
-        break;
-        
-    }
-    return selection;
-    }
-
-    public void doAction(char choice) {
-            
-            switch(choice){
-                case 'c':
-                case 'C': //create and start a new game
+                + "\n----------------------------------------");
+}
+    @Override
+                   public boolean doAction(Object obj){
+                       String value = (String) obj; 
+                       value = value.toUpperCase(); // convert to upper case
+                     switch(value){
+                case "C": //create and start a new game
                     this.ContinueGame();
                     break;
                     
-                case 'f':                  
-                case 'F': //Challange menu
+               case "F": //Challange menu
                     this.challangeMenu();
                    break;
                     
-                case 'm':
-                case 'M': //View Map
+                case "M": //View Map
                     this.viewMap();
                     
-                case 's':
-                case 'S': //save game
+                case "S": //save game
                     this.saveGame();
                     break;
                     
-                case 'e':
-                case 'E': //exit game
-                    return;
+                       case "E": //exit game
+                   return true;
                 default:
                     System.out.println("\n*** Invalid Selection ***");
                     break;
-            }
+                     }
+    return false;
     } 
                         private void ContinueGame(){
                         // create a new game
@@ -97,12 +68,12 @@ public class GameMenuView {
 {
                           }
                          ChallengeMenuView challengeMenu = new ChallengeMenuView();
-                         challengeMenu.displayMenu();
+                         challengeMenu.display();
                     }
 
                         private void viewMap() {
                         MapView map = new MapView();
-                        map.displayMenu();
+                        map.display();
                         }
                          
                         }

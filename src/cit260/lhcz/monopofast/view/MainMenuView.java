@@ -65,7 +65,7 @@ public class MainMenuView extends View{
                             System.out.println("ERROR- Failed to create new game");
                         }
                          GameMenuView gameMenu = new GameMenuView();
-                         gameMenu.displayMenu();
+                         gameMenu.display();
                     }
                                  
 
