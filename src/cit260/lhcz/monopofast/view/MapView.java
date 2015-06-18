@@ -98,7 +98,7 @@ public class MapView extends View{
                     System.out.println("Here are all the maps!");
                     break;
                     
-                 case "E": //exit game
+                 case "R": //exit game
                    return true;
                 default:
                     System.out.println("\n*** Invalid Selection ***");
