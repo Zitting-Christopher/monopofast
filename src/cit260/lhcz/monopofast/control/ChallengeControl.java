@@ -46,7 +46,7 @@ public class ChallengeControl {
     private int numOrders2;
     private double challenge2TotalSeconds;
     
-    private double calcChallenge2(double turnOverSeconds,int numOrders2, double mozzaSeconds, double rootBeerSeconds)
+   public double calcChallenge2(double turnOverSeconds,int numOrders2, double mozzaSeconds, double rootBeerSeconds)
     {
         //Define the lower and upper limit for the seconds and number of orders for each product
     if(turnOverSeconds < 5 || turnOverSeconds > 15)
@@ -54,7 +54,7 @@ public class ChallengeControl {
         return -1;
     }
 
-    if (numOrders2 < 1 || numOrders2 > 19)
+    if (numOrders2 < 1 || numOrders2 > 2)
     {   
         return -1;
     }
