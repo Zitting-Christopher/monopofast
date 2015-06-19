@@ -15,7 +15,7 @@ public ChallengeThreeView(){
     
     super("\n"
             + "\n=================================="
-            + "\n   Challenge One  "
+            + "\n   Challenge Three"
             + "\n=================================="
             + "\nIf it takes you 8 seconds to make a Son of a Bacon Eater Sandwich,"
             + "\nand there are 15 people ordering one, and you must wash your hands."
