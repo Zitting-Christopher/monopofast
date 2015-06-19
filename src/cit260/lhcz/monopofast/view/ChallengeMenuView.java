@@ -59,11 +59,21 @@ public ChallengeMenuView(){
                         }
                          private void calcChallenge2(){
                         
-                            System.out.println("Save game");
+                         int value = 1;
+                                ChallengeTwoView ChallengeTwo = new ChallengeTwoView();
+                                ChallengeTwo.display();
+        if (value < 0){
+                            System.out.println("ERROR- Failed to load new game");
+                        }
                         }
                           private void calcChallenge3(){
 {
-                         System.out.println("help menu");
+                         int value = 1;
+                                ChallengeThreeView ChallengeThree = new ChallengeThreeView();
+                                ChallengeThree.display();
+        if (value < 0){
+                            System.out.println("ERROR- Failed to load new game");
+                        }
                         }
                          }
 }
