@@ -9,7 +9,7 @@ import java.util.Scanner;
  *
  * @author Logan
  */
-public abstract class View implements viewInterface {
+public abstract class View implements ViewInterface {
     private String messagePrompt;
     public View(String messagePrompt){
         this.messagePrompt = messagePrompt;
