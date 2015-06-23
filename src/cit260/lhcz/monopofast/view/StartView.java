@@ -47,7 +47,10 @@ public class StartView {
                     + "work your way up to completing the most difficult sandwiches in record time. \n"
                     + "After conquering one fast food joint, you will move on to the next, starting \n"
                     + "at the bottom each time. Restaurants included in the game are: McDumbledore’s,\n"
-                    + "Venti’s, Ardy’s, Karl’s Sr., Jack and the Fox, and Queen Burger.\n");
+                    + "Venti’s, Ardy’s, Karl’s Sr., Jack and the Fox, and Queen Burger.\n"
+                    + "(\\__/)\n" 
+                    + "(='.'=)\n"
+                    + "('')_('')\n");
         System.out.println("*****************************************************************************************************");
             
             
