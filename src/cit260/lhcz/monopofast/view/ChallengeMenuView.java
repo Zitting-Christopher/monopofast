@@ -37,7 +37,7 @@ public ChallengeMenuView(){
                 case "2": //Challange 2
                     this.calcChallenge2();
                    break;
-                case "3": //Challange 3
+                case "4": //Challange 3
                     this.calcChallenge3();
                     break;
                  case "E": //exit game
