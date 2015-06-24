@@ -41,7 +41,7 @@ public class StartView {
            System.out.println("                                          MONOPOFAST                                            "
                 +           "\n***************************************************************************************************");
         System.out.println("         Hi! Welcome to Monopofast - the fast food game of corporate domination!\n"
-                    + " Monopofast is a quick-paced game and its objective is to monopolize the major fast food\n"
+                    + "Monopofast is a quick-paced game and its objective is to monopolize the major fast food\n"
                     + "joints in the US. To do this, you must work your way through the ranks ensuring that you are\n"
                     + "faster than the owner of each joint at making their food. You'll start as a lowly fry-dipper and\n"
                     + "work your way up to completing the most difficult sandwiches in record time. \n"
