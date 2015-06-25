@@ -5,71 +5,31 @@
  */
 package cit260.lhcz.monopofast.model;
 import java.io.Serializable;
-import java.util.Objects;
+
 /**
  *
  * @author Christopher
  */
-public class Map implements Serializable {
-    private String name;
-    private int id;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.name);
-        hash = 37 * hash + this.id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "name=" + name + ", id=" + id + '}';
-    }
-
-    public Map() {
-    }
-
-    public void setMapName(String map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setMapId(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public enum Map implements Serializable {
     
+    Venti(0,"The Bacon Empire"),
+    Ardy(1,"The Horse Kingdom"),
+    Jack(2,"The Fox Den"),
+    Queen(3,"The Cake Realm"),
+    McDumbledore(4,"The Wizard's Tower");
+    
+    private int mapId;
+    String description;
+    
+
+    public int getMadId() {
+        return mapId;
+    }
+
+   
+     Map(int mapId ,String description) {
+         this.mapId= mapId;
+        this.description= description;
+    }
+
 }

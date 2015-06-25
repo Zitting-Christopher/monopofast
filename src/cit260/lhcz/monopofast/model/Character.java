@@ -10,10 +10,11 @@ import java.io.Serializable;
 /**
  *
  * @author Christopher
+ * @author Logan
  */
 public enum Character implements Serializable {
     
-    Venti(0,"The Bacon Lady"),
+    Venny(0,"The Bacon Lady"),
     Hardy(1,"The Horse King"),
     Jackie(2,"The Vixen"),
     Maria(3,"The Cake Queen"),
