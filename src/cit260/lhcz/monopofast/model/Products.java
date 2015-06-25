@@ -5,88 +5,66 @@
  */
 package cit260.lhcz.monopofast.model;
 import java.io.Serializable;
-import java.util.Objects;
+
 /**
  *
  * @author Logan
  */
-public class Products implements Serializable {
-    private String name;
-    private int id;
-    private String type;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 83 * hash + Objects.hashCode(this.name);
-        hash = 83 * hash + this.id;
-        hash = 83 * hash + Objects.hashCode(this.type);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Products other = (Products) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (this.id != other.id) {
-            return false;
-        }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        return true;
-    }
-
-     @Override
-    public String toString() {
-        return "Products{" + "name=" + name + ", id=" + id + "type=" + type + '}';
-    }
+public enum Products implements Serializable {
     
-    public Products() {
-    }
-
-    public void setProductName(String triple) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setProductId(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    cola(0,"A Drink with bubbles in it"),
+    chickenNuggets(1,"The other white meat"),
+    frothy(2,"A cold choclate ice cream"),
+    SrBaconCheesburger(3,"a hamburger with bacon on it"),
+    BaconEaterSandwich(4,"this sandich has bacon"),
+    turnover(5,"it is a desert...any questions?"),
+    RootBeer(6,"The best drink on the planet...order one"),
+    RoastBeefSandwich(7,"Roast Beef on Bread"),
+    mozzarellaStick(8,"cheese sticks"),
+    RanchBaconSandwich(9,"bacon on bread"),
+    lemonade(10,"when life gives you a lemon..."),
+    strawberryBananaMilkshake(11,"it has fruit in it so it is healthy."),
+    jalapenoPoppers(12,"Spicy food."),
+    FlaminChickenSandwich(13,"Spicy food] with chicken"),
+    PackedBreakfastSandwich(14,"break your fast"),
+    fruitPunch(15,"fruity and punchy"),
+    onionRings(16,"ring around the onion"),
+    strawberryMilkshake(17,"a pinkish milkshake"),
+    DoubleDropperBurger(18,"don't drop it"),
+    BigQueenBurger(19,"a meal ment for a queen"),
+    lemonLimeSoda(20,"Soda with lime but no coconut"),
+    chocolateMilkshake(21,"it is chocolate ice cream."),
+    fries(23,"the proper way to eat a potato"),
+    McBurger(24,"no connection to a clown"),
+    McTriple(25,"it only has two pattie...just kidding");
     
     
-    
+    private final int productId;
+    private final String description;
+
+   
+
+      public int getProductId() {
+        return productId;
+    }
+
+  
+
+    public String getDescription () {
+        return description;
+    }
+
+   
+   
+
+     Products(int productId ,String description) {
+        this.productId= productId;
+        this.description= description;
+    }
+
     
 }
     
+    
+   
+      
