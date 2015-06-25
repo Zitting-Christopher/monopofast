@@ -5,77 +5,42 @@
  */
 package cit260.lhcz.monopofast.model;
 import java.io.Serializable;
-import java.util.Objects;
+
 
 /**
  *
  * @author Christopher
  */
-public class Character implements Serializable {
-    private String characterName;
-    private int characterId;
-    private String attribute;
+public enum Character implements Serializable {
+    
+    Venti(0,"The Bacon Lady"),
+    Hardy(1,"The Horse King"),
+    Jackie(2,"The Vixen"),
+    Maria(3,"The Cake Queen"),
+    Ron(4,"The Wizard");
+    
+    
+    private final int characterId;
+    private final String description;
 
-    public String getCharacterName() {
-        return characterName;
-    }
+   
 
-    public void setCharacterName(String characterName) {
-        this.characterName = characterName;
-    }
-
-    public int getCharacterId() {
+      public int getCharacterId() {
         return characterId;
     }
 
-    public void setCharacterId(int characterId) {
-        this.characterId = characterId;
+  
+
+    public String getDescription () {
+        return description;
     }
 
-    public String getAttribute() {
-        return attribute;
-    }
+   
+   
 
-    public void setAttribute(String attribute) {
-        this.attribute = attribute;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.characterName);
-        hash = 67 * hash + this.characterId;
-        hash = 67 * hash + Objects.hashCode(this.attribute);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Character other = (Character) obj;
-        if (!Objects.equals(this.characterName, other.characterName)) {
-            return false;
-        }
-        if (this.characterId != other.characterId) {
-            return false;
-        }
-        if (!Objects.equals(this.attribute, other.attribute)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Character{" + "characterName=" + characterName + ", characterId=" + characterId + ", attribute=" + attribute + '}';
-    }
-
-    public Character() {
+     Character(int characterId ,String description) {
+        this.characterId= characterId;
+        this.description= description;
     }
 
     
