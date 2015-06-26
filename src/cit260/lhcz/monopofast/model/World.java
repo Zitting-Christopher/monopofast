@@ -10,66 +10,33 @@ import java.util.Objects;
  *
  * @author Christopher
  */
-public class World implements Serializable {
-    private String name;
-    private int id;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + this.id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final World other = (World) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "World{" + "name=" + name + ", id=" + id + '}';
-    }
-
-    public World() {
-    }
-
-    public void setWorldName(String ventis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setWorldId(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public enum World implements Serializable {
     
+    //Define the worlds
+    V(0,"Venti's"),
+    A(1,"Ardy's"),
+    J(2,"Jack and the Fox"),
+    Q(3,"Queen Burger"),
+    M(4,"McDumbledore's");
+    
+    //Create variables
+    private final int worldId;
+    private final String worldDesc;
+
+    
+    public int getWorldId() {
+        return worldId;
+    }
+
+    public String getWorldDesc() {
+        return worldDesc;
+    }
+
+
+    World(int worldId,String worldDesc) {
+    
+        this.worldId = worldId;
+        this.worldDesc = worldDesc;
+    }
+
 }

@@ -21,26 +21,26 @@ public enum Products implements Serializable {
     RootBeer(6,"The best drink on the planet...order one"),
     RoastBeefSandwich(7,"Roast Beef on Bread"),
     mozzarellaStick(8,"cheese sticks"),
-    RanchBaconSandwich(9,"bacon on bread"),
+    TurkeyRanchBaconSandwich(9,"bacon on bread"),
     lemonade(10,"when life gives you a lemon..."),
     strawberryBananaMilkshake(11,"it has fruit in it so it is healthy."),
     jalapenoPoppers(12,"Spicy food."),
-    FlaminChickenSandwich(13,"Spicy food] with chicken"),
+    FlaminChickenSandwich(13,"Spicy food with chicken"),
     PackedBreakfastSandwich(14,"break your fast"),
     fruitPunch(15,"fruity and punchy"),
     onionRings(16,"ring around the onion"),
     strawberryMilkshake(17,"a pinkish milkshake"),
     DoubleDropperBurger(18,"don't drop it"),
-    BigQueenBurger(19,"a meal ment for a queen"),
+    BigQueenBurger(19,"a meal meant for a queen"),
     lemonLimeSoda(20,"Soda with lime but no coconut"),
     chocolateMilkshake(21,"it is chocolate ice cream."),
     fries(23,"the proper way to eat a potato"),
     McBurger(24,"no connection to a clown"),
-    McTriple(25,"it only has two pattie...just kidding");
+    McTriple(25,"it only has two patties...just kidding");
     
     
     private final int productId;
-    private final String description;
+    private final String prodDesc;
 
    
 
@@ -50,16 +50,16 @@ public enum Products implements Serializable {
 
   
 
-    public String getDescription () {
-        return description;
+    public String getProdDesc () {
+        return prodDesc;
     }
 
    
    
 
-     Products(int productId ,String description) {
+     Products(int productId ,String prodDesc) {
         this.productId= productId;
-        this.description= description;
+        this.prodDesc= prodDesc;
     }
 
     

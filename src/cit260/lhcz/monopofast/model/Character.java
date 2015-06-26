@@ -21,27 +21,27 @@ public enum Character implements Serializable {
     Ron(4,"The Wizard");
     
     
-    private final int characterId;
-    private final String description;
+    private final int charId;
+    private final String charDesc;
 
    
 
-      public int getCharacterId() {
-        return characterId;
+      public int getCharId() {
+        return charId;
     }
 
   
 
-    public String getDescription () {
-        return description;
+    public String getCharDesc () {
+        return charDesc;
     }
 
    
    
 
-     Character(int characterId ,String description) {
-        this.characterId= characterId;
-        this.description= description;
+     Character(int charId ,String charDesc) {
+        this.charId= charId;
+        this.charDesc= charDesc;
     }
 
     
