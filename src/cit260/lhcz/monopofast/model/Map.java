@@ -18,18 +18,22 @@ public enum Map implements Serializable {
     Queen(3,"The Cake Realm"),
     McDumbledore(4,"The Wizard's Tower");
     
-    private int mapId;
-    String description;
+    private final int mapId;
+    private final String mapDesc;
     
 
-    public int getMadId() {
+    public int getMapId() {
         return mapId;
+    }
+    
+    public String getMapDesc() {
+        return mapDesc;
     }
 
    
-     Map(int mapId ,String description) {
-         this.mapId= mapId;
-        this.description= description;
+     Map(int mapId ,String mapDesc) {
+        this.mapId= mapId;
+        this.mapDesc= mapDesc;
     }
 
 }

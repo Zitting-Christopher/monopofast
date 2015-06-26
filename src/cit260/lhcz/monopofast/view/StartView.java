@@ -38,7 +38,7 @@ public class StartView {
     
     public void displayBanner(){
         Scanner sc = new Scanner(System.in);
-           System.out.println("                                          MONOPOFAST                                            "
+           System.out.println("                                                 MONOPOFAST                                            "
                 +           "\n***************************************************************************************************");
         System.out.println("         Hi! Welcome to Monopofast - the fast food game of corporate domination!\n"
                     + "Monopofast is a quick-paced game and its objective is to monopolize the major fast food\n"
@@ -48,9 +48,9 @@ public class StartView {
                     + "After conquering one fast food joint, you will move on to the next, starting \n"
                     + " at the bottom each time. Restaurants included in the game are: McDumbledore’s,\n"
                     + "Venti’s, Ardy’s, Karl’s Sr., Jack and the Fox, and Queen Burger.\n"
-                    + "                                                (\\__/)\n" 
-                    + "                                                (='.'=)\n"
-                    + "                                               ('')_('')\n");
+                    + "                                                   (\\__/)\n" 
+                    + "                                                   (='.'=)\n"
+                    + "                                                  ('')_('')\n");
         System.out.println("***************************************************************************************************");
             
             
