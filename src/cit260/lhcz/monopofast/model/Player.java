@@ -13,6 +13,12 @@ import java.util.Objects;
 public class Player implements Serializable{
     private String playerName;
     private int playerId;
+    
+    private Game game;
+    private Character[] character;
+    private World[] world;
+    private Level[] level;
+    private SubLevel[] sublevel[];
 
     public String getPlayerName() {
         return playerName;
@@ -30,6 +36,46 @@ public class Player implements Serializable{
         this.playerId = playerId;
     }
 
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Character[] getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character[] character) {
+        this.character = character;
+    }
+
+    public World[] getWorld() {
+        return world;
+    }
+
+    public void setWorld(World[] world) {
+        this.world = world;
+    }
+
+    public Level[] getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level[] level) {
+        this.level = level;
+    }
+
+    public SubLevel[][] getSublevel() {
+        return sublevel;
+    }
+
+    public void setSublevel(SubLevel[][] sublevel) {
+        this.sublevel = sublevel;
+    }
+    
     @Override
     public String toString() {
         return "Player{" + "playerName=" + playerName + ", playerId=" + playerId + '}';

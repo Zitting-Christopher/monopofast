@@ -48,6 +48,21 @@ public enum Level implements Serializable {
     //Let's define the variables we'll be using with the enum
     private final int levelId;
     private final String lDesc;
+    
+    private World world;
+    private Products products;
+    private Ingredients[] ingredients;
+    private SubLevel[] subLevel;
+    private Commands[] commands;
+    private Map map;
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
 
     public int getLevelId() {
         return levelId;
@@ -55,6 +70,46 @@ public enum Level implements Serializable {
     
     public String getLDesc() {
         return lDesc;
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
+
+    public Products getProducts() {
+        return products;
+    }
+
+    public void setProducts(Products products) {
+        this.products = products;
+    }
+
+    public Ingredients[] getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Ingredients[] ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public SubLevel[] getSubLevel() {
+        return subLevel;
+    }
+
+    public void setSubLevel(SubLevel[] subLevel) {
+        this.subLevel = subLevel;
+    }
+
+    public Commands[] getCommands() {
+        return commands;
+    }
+
+    public void setCommands(Commands[] commands) {
+        this.commands = commands;
     }
 
     Level(int levelId,String lDesc) {

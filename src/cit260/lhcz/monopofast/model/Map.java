@@ -21,6 +21,10 @@ public enum Map implements Serializable {
     private final int mapId;
     private final String mapDesc;
     
+    private Level[] level;
+    private SubLevel[] subLevel;
+    private World[] world;
+    
 
     public int getMapId() {
         return mapId;
@@ -30,7 +34,30 @@ public enum Map implements Serializable {
         return mapDesc;
     }
 
-   
+    public Level[] getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level[] level) {
+        this.level = level;
+    }
+
+    public SubLevel[] getSubLevel() {
+        return subLevel;
+    }
+
+    public void setSubLevel(SubLevel[] subLevel) {
+        this.subLevel = subLevel;
+    }
+
+    public World[] getWorld() {
+        return world;
+    }
+
+    public void setWorld(World[] world) {
+        this.world = world;
+    }
+
      Map(int mapId ,String mapDesc) {
         this.mapId= mapId;
         this.mapDesc= mapDesc;

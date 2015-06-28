@@ -54,6 +54,16 @@ public enum Ingredients implements Serializable {
     
     private final int ingrId;
     private final String ingrKeyword;
+    
+    private Products[] products;
+
+    public Products[] getProducts() {
+        return products;
+    }
+
+    public void setProducts(Products[] products) {
+        this.products = products;
+    }
 
     public int getIngrId() {
         return ingrId;

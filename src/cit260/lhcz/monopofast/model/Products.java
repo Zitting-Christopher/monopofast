@@ -41,22 +41,34 @@ public enum Products implements Serializable {
     
     private final int productId;
     private final String prodDesc;
-
+    
+    private Ingredients[] ingredients;
+    private Level level;
    
-
       public int getProductId() {
         return productId;
     }
-
-  
 
     public String getProdDesc () {
         return prodDesc;
     }
 
-   
-   
+    public Ingredients[] getIngredients() {
+        return ingredients;
+    }
 
+    public void setIngredients(Ingredients[] ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+   
      Products(int productId ,String prodDesc) {
         this.productId= productId;
         this.prodDesc= prodDesc;

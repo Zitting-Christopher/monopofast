@@ -23,6 +23,8 @@ public enum Character implements Serializable {
     
     private final int charId;
     private final String charDesc;
+    
+    private World world;
 
    
 
@@ -36,8 +38,13 @@ public enum Character implements Serializable {
         return charDesc;
     }
 
-   
-   
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
 
      Character(int charId ,String charDesc) {
         this.charId= charId;

@@ -17,6 +17,10 @@ public class Game implements Serializable {
     private int score;
     private int lastSublevel;
     
+    private Player[] player;
+    private Map map;
+    
+    
     public String getGameName() {
         return gameName;
     }
@@ -57,6 +61,24 @@ public class Game implements Serializable {
         this.lastSublevel = lastSublevel;
     }
 
+    public Player[] getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player[] player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+     
+    
     @Override
     public String toString() {
         return "Game{" + "gameName=" + gameName + ", gameId=" + gameId + ", lastSaveDateTime=" + lastSaveDateTime + ", score=" + score + ", lastSublevel=" + lastSublevel + '}';

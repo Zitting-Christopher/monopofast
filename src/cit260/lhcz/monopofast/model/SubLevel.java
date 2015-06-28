@@ -75,6 +75,17 @@ public enum SubLevel implements Serializable {
     private final String sLDesc;
     private final double maxTime;
     private final double recordTime;
+    private Map map;
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    private Level level;
 
     public int getSubLevelId() {
         return subLevelId;
@@ -92,6 +103,16 @@ public enum SubLevel implements Serializable {
     public double getMaxTime() {
         return maxTime;
     }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+    
+    
 
     SubLevel(int subLevelId,String sLDesc,double maxTime,double recordTime) {
         this.subLevelId = subLevelId;
