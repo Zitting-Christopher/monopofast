@@ -25,6 +25,7 @@ public GameMenuView(){
                 + "\nF - Challange Menu"
                 + "\nM - View Map"
                 + "\nS - Save Game"
+                + "\nH - View High Score"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
 }
@@ -43,7 +44,10 @@ public GameMenuView(){
                     
                 case "M": //View Map
                     this.viewMap();
-                    
+                 break;
+                    case "H": //View Map
+                    this.highScoreView();
+                        
                 case "S": //save game
                     this.saveGame();
                     break;
@@ -74,6 +78,10 @@ public GameMenuView(){
                         private void viewMap() {
                         MapView map = new MapView();
                         map.display();
+                        }
+                        private void highScoreView(){
+                        
+                            
                         }
                          
                         }

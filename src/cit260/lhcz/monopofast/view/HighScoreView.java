@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cit260.lhcz.monopofast.view;
+
+/**
+ *
+ * @author Logan
+ */
+public class HighScoreView extends View {
+    
+public HighScoreView(){
+    
+    super("___________________________________________________________"
+            +"/n               High Score"
+            
+           );
+
+}
+@Override
+                   public boolean doAction(Object obj){
+                       String value = (String) obj; 
+                       value = value.toUpperCase(); // convert to upper case
+                     switch(value){
+      
+         
+               case "E": //exit game
+                   return true;
+                default:
+                    System.out.println("\n*** Invalid Selection ***");
+                    break;
+                     }
+    return false;
+    } 
+}
