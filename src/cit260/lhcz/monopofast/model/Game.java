@@ -17,7 +17,7 @@ public class Game implements Serializable {
     private int score;
     private int lastSublevel;
     
-    private Player[] player;
+    private Player player;
     private Map map;
     
     
@@ -61,11 +61,11 @@ public class Game implements Serializable {
         this.lastSublevel = lastSublevel;
     }
 
-    public Player[] getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Player[] player) {
+    public void setPlayer(Player player) {
         this.player = player;
     }
 

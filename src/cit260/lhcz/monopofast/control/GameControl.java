@@ -6,6 +6,7 @@
 package cit260.lhcz.monopofast.control;
 
 import cit260.lhcz.monopofast.model.Game;
+import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
 import monopofast.Monopofast;
 import java.util.Scanner;
@@ -18,9 +19,14 @@ import java.util.Scanner;
 
 public class GameControl {
     
-    public static  Player  createNewGame(Player player) {
-        System.out.println("\n*** createNewGame in GameControl Called***");
-        return player;
+    public static  void  createNewGame(Player player) {
+        
+        Game game = new Game(); // create new game
+        Monopofast.setCurrentGame(game); // save player in game
+        game.setPlayer(player); // save player in game
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        MapControl.moveActorsToStartingLocation(map);
     }
     
     public static Player createPlayer (String playerName) {
