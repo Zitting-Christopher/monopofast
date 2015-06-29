@@ -41,6 +41,9 @@ public class GameControl {
     Monopofast.setPlayer(player);
     return player;
     }
+
+    
+    
     private Player game;
     private Player player; 
     

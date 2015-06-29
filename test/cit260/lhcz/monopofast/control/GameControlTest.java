@@ -21,16 +21,16 @@ public class GameControlTest {
     /**
      * Test of createNewGame method, of class GameControl.
      */
-    @Test
-    public void testCreateNewGame() {
-        System.out.println("createNewGame");
-        Player player = null;
-        Player expResult = null;
-        Player result = GameControl.createNewGame(player);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testCreateNewGame() {
+//        System.out.println("createNewGame");
+//        Player player = null;
+//        Player expResult = null;
+//        Player result = GameControl.createNewGame();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of createPlayer method, of class GameControl.
