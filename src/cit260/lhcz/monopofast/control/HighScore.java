@@ -34,12 +34,7 @@ public class HighScore {
         int pivot = highScore[lowerScore+(higherScore-lowerScore)/2];
         // Divide into two arrays
         while (l <= h) {
-            /**
-             * In each iteration, we will identify a number from left side which
-             * is greater then the pivot value, and also we will identify a number
-             * from right side which is less then the pivot value. Once the search
-             * is done, then we exchange both numbers.
-             */
+            
             while (highScore[l] < pivot) {
                 l++;
             }
