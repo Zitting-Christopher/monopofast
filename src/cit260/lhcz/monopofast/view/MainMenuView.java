@@ -60,10 +60,7 @@ public class MainMenuView extends View{
                    private void startNewGame(){
                         // create a new game
                          GameControl.createNewGame(Monopofast.getPlayer());
-                        int value = 1;
-                         if (value < 0){
-                            System.out.println("ERROR- Failed to create new game");
-                        }
+                        
                          GameMenuView gameMenu = new GameMenuView();
                          gameMenu.display();
                     }
