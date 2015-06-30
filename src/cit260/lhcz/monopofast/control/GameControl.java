@@ -22,11 +22,11 @@ public class GameControl {
     public static  void  createNewGame(Player player) {
         
         Game game = new Game(); // create new game
-        Monopofast.setCurrentGame(game); // save player in game
+        Monopofast.setCurrentGame(player); // save player in game
         game.setPlayer(player); // save player in game
         Map map = MapControl.createMap();
         game.setMap(map);
-        MapControl.moveActorsToStartingLocation(map);
+//        MapControl.moveActorsToStartingLocation(map);
     }
     
     public static Player createPlayer (String playerName) {

@@ -17,27 +17,27 @@ public class MapControl {
     public static Map createMap() {
         
        Map map = new Map(20,20);
-       Scene[] scenes = createScenes();
-       assignScenesToLocations(map, scenes);
+//       Scene[] scenes = createScenes();
+//       assignScenesToLocations(map, scenes);
        return map;
     }
 
-    private static Scene[] createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    private static Scene[] createScenes() {
+   
+    
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static void moveActorsToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private static class Scene {
-
-        public Scene() {
-        }
-    }
+//    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    static void moveActorsToStartingLocation(Map map) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    private static class Scene {
+//
+//        public Scene() {
+//        }
+//    }
     
 }

@@ -23,7 +23,7 @@ public class Map implements Serializable {
     private World[] world;
 
     public Map(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 //Venti(0,"The Bacon Empire"),
