@@ -25,8 +25,31 @@ public class HighScore {
                            System.out.print( names[ctr]+ " " +  scores[ctr]);
                                    
                    }
-        
+         }
+        public static void BubbleSort( double [ ] scores )
+{
+     int j;
+     boolean flag = true;   // set flag to true to begin first pass
+     int temp;   //holding variable
+
+     while ( flag )
+     {
+            flag= false;    //set flag to false awaiting a possible swap
+            for( j=0;  j < scores.length -1;  j++ )
+            {
+                   if ( scores[ j ] < scores[j+1] )   // change to > for ascending sort
+                   {
+                           temp = (int) scores[ j ];                //swap elements
+                           scores[ j ] = scores[ j+1 ];
+                           scores[ j+1 ] = temp;
+                          flag = true;              //shows a swap occurred  
+                  } 
+            } 
+      } 
+} 
+
+   
                    }
-}
+
 
    

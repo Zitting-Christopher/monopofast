@@ -22,6 +22,7 @@ public class MainMenuView extends View{
                 + "\nG - Start Game"
                 + "\nH - Get Help"
                 + "\nS - Save Game"
+                + "\nT - View Top Scores"
                 + "\nL - Load Game"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
@@ -47,6 +48,10 @@ public class MainMenuView extends View{
                 case "S": //save game
                 
                     this.saveGame();
+                    break;
+                    case "T": //save game
+                
+                    this.highScore();
                     break;
                 case "E": //exit game
              
@@ -88,5 +93,11 @@ public class MainMenuView extends View{
                        HelpMenuView helpMenu = new HelpMenuView();
                    helpMenu.display(); 
                         }
+                           private void highScore(){
+                        
+                            HighScoreView highScore = new HighScoreView();
+                         highScore.display();
+                        }
+                         
                     }
 
