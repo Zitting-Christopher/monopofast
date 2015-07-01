@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public enum Character implements Serializable {
     
-    Venny(0,"The Bacon Lady"),
+    Vivian(0,"The Bacon Lady"),
     Hardy(1,"The Horse King"),
     Jackie(2,"The Vixen"),
     Maria(3,"The Cake Queen"),
