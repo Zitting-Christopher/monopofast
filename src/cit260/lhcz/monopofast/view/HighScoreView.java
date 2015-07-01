@@ -30,7 +30,7 @@ public HighScoreView(){
                        value = value.toUpperCase(); // convert to upper case
                      switch(value){
                 case "D": //Challange 1
-                    this.highScoreArray();
+                    HighScoreView.highScoreArray();
                     break;
                                   
                 case "E": //exit game
@@ -41,8 +41,9 @@ public HighScoreView(){
                      }
     return false;
     } 
-                   private static void highScoreArray(){
-                   
+                   public static void highScoreArray(){
+                   HighScore highScore = new HighScore();
+                         highScore.highScoreArray();
                    }
                     
 }
