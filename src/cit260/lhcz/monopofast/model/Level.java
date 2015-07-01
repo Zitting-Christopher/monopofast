@@ -11,11 +11,11 @@ import java.io.Serializable;
  */
 public enum Level implements Serializable {
     //Venti's Level Description
-    Level1(0,"Venti's Drink Station"),
-    Level2(1,"Venti's Fried Food Station"),
-    Level3(2,"Venti's Milkshake Station"),
-    Level4(3,"Venti's Sr. Bacon Cheeseburger Station"),
-    Level5(4,"Venti's Son of a Bacon Eater Station"),
+    Level1(0,"Vendy's Drink Station"),
+    Level2(1,"Vendy's Fried Food Station"),
+    Level3(2,"Vendy's Milkshake Station"),
+    Level4(3,"Vendy's Sr. Bacon Cheeseburger Station"),
+    Level5(4,"Vendy's Son of a Bacon Eater Station"),
     
     //Ardy's Level Description
     Level6(5,"Ardy's Drink Station"),
@@ -32,11 +32,11 @@ public enum Level implements Serializable {
     Level15(14,"Jack and the Fox Loaded Breakfast Station"),
     
     //Queen Burger Level Description
-    Level16(15,"Queen Burger Drink Station"),
-    Level17(16,"Queen Burger Fried Food Station"),
-    Level18(17,"Queen Burger Milkshake Station"),
-    Level19(18,"Queen Burger Double Dropper Station"),
-    Level20(19,"Queen Burger Big Queen Station"),
+    Level16(15,"Queen's Kitchen Drink Station"),
+    Level17(16,"Queen's Kitchen Fried Food Station"),
+    Level18(17,"Queen's Kitchen Milkshake Station"),
+    Level19(18,"Queen's Kitchen Double Dropper Station"),
+    Level20(19,"Queen's Kitchen Big Queen Station"),
     
     //McDumbledore's Level Description
     Level21(20,"McDumbledore's Drink Station"),
