@@ -46,7 +46,7 @@ public GameMenuView(){
                     this.viewMap();
                  break;
                     case "H": //View Map
-                    this.highScoreView();
+                    this.highScore();
                         
                 case "S": //save game
                     this.saveGame();
@@ -79,9 +79,10 @@ public GameMenuView(){
                         MapView map = new MapView();
                         map.display();
                         }
-                        private void highScoreView(){
+                        private void highScore(){
                         
-                            
+                            HighScoreView highScore = new HighScoreView();
+                         highScore.display();
                         }
                          
                         }

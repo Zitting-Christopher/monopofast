@@ -12,13 +12,22 @@ package cit260.lhcz.monopofast.control;
  *
  */
 public class HighScore {
+    
+         private static void highScoreArray(){
+                   final int MAX = 5;
+                   double[] scores = {12345, 12344, 12343, 12342, 12341};
+                   String[] names = {"1.","2.","3.","4.","5."};
+                  
+                   for(int ctr=0;ctr<scores.length;ctr++)
+                   {
+                       
+                   }
+                       for(int ctr=0;ctr<scores.length;ctr++)
+                       {
+                           System.out.print(names[ctr] + " scores: " + scores[ctr]);
+                                   
+                   }
+         }
+                   }
 
-   public static void main(String[] args) {
-      double[] highScore = {191, 195, 194, 192};
-
-      // Print all the array elements
-      for (double element: highScore) {
-         System.out.println(element);
-      }
-   }
-}
+   
