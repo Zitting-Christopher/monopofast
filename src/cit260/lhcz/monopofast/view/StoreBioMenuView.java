@@ -58,8 +58,8 @@ public StoreBioMenuView(){
                         // create a new game
                                System.out.println("Venny's"
                                        + "\n********************"
-                                       + "\nVenny's was founded on one idea, and that idea was bacon and more"
-                                       + "\nbacon. it was founed in China. it serves american style food"
+                                       + "\nVenny's was founnded on one idea, and that idea was bacon and more"
+                                       + "\nbacon. it was founned in China. it serves american style food"
                                        + "\nwith a Asian twist. It has become popular worldwide"
                                        + "\nand has made it way to America, where it is rocking the boat"
                                        + "\nwith it's strange Asian style decore yet it serves no Asian food.");

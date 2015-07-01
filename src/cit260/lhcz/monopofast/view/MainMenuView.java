@@ -24,6 +24,7 @@ public class MainMenuView extends View{
                 + "\nS - Save Game"
                 + "\nT - View Top Scores"
                 + "\nL - Load Game"
+                + "\nB - Bio page"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
                        }
@@ -43,6 +44,11 @@ public class MainMenuView extends View{
                 case "H": //Help menu
                
                     this.HelpMenuView();
+                   
+                    break;
+                     case "B": //Help menu
+               
+                    this.StoreBioMenuView();
                    
                     break;
                 case "S": //save game
@@ -98,6 +104,11 @@ public class MainMenuView extends View{
                             HighScoreView highScore = new HighScoreView();
                          highScore.display();
                         }
+                       private void StoreBioMenuView(){
+                        
+                            StoreBioMenuView StoreBioMenu = new StoreBioMenuView();
+                         StoreBioMenu.display();
+                        }     
                          
                     }
 
