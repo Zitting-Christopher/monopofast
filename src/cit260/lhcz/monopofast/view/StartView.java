@@ -49,8 +49,8 @@ public class StartView {
                     + " at the bottom each time. Restaurants included in the game are: McDumbledore’s,\n"
                     + "Venti’s, Ardy’s, Karl’s Sr., Jack and the Fox, and Queen Burger.\n"
                     + "                                                   (\\__/)\n" 
-                    + "                                                   (='.'=)\n"
-                    + "                                                  ('')_('')\n");
+                    + "                                                   (>'.'<)\n"
+                    + "                                                   (\")_(\")\n");
         System.out.println("***************************************************************************************************");
             
             
