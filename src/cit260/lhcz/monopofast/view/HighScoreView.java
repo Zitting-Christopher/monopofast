@@ -25,7 +25,6 @@ public HighScoreView(){
                 + "\n| High Score                           |"
                 + "\n----------------------------------------"
                 + "\nD - Display High Score"
-                + "\nS - Sort High Score"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
 }
@@ -37,11 +36,7 @@ public HighScoreView(){
                 case "D": //Challange 1
                     HighScoreView.highScoreArray();
                     break;
-                        case "S": {
-                           double[] scores = null;
-                           this.sort(scores);
-                       }
-                    break;                    
+                                                         
                 case "E": //exit game
                    return true;
                 default:
@@ -52,11 +47,10 @@ public HighScoreView(){
     } 
                    public static void highScoreArray(){
                    HighScore highScore = new HighScore();
-                         highScore.highScoreArray();
-                   }
-                     public static void sort(double[] scores) {
-                    HighScore sort = new HighScore();
-                         sort.BubbleSort(scores);
+                         HighScore.highScoreArray();
+                  
+
+       
     }                
 }
 
