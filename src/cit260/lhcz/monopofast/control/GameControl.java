@@ -19,12 +19,12 @@ import java.util.Scanner;
 
 public class GameControl {
     
-    public static  void  createNewGame(Player player) {
+    public static  void  createNewGame(Player player, Map map) {
         
-        Game game = new Game(); // create new game
+        Game game = new Game(player,map); // create new game
         Monopofast.setCurrentGame(player); // save player in game
         game.setPlayer(player); // save player in game
-        Map map = MapControl.createMap();
+         MapControl.createMap();
         game.setMap(map);
 //        MapControl.moveActorsToStartingLocation(map);
     }
@@ -40,6 +40,10 @@ public class GameControl {
     
     Monopofast.setPlayer(player);
     return player;
+    }
+
+    public static void createNewGame(Player player) {
+        
     }
 
     

@@ -17,16 +17,11 @@ public class Game implements Serializable {
     private int score;
     private int lastSublevel;
     
-    //Create all objects
     private Player player;
     private Map map;
 
-    public Game() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
+   
+
     
     public String getGameName() {
         return gameName;
@@ -86,8 +81,6 @@ public class Game implements Serializable {
 
     
 
-     
-    
     @Override
     public String toString() {
         return "Game{" + "gameName=" + gameName + ", gameId=" + gameId + ", lastSaveDateTime=" + lastSaveDateTime + ", score=" + score + ", lastSublevel=" + lastSublevel + '}';
@@ -95,7 +88,7 @@ public class Game implements Serializable {
     
 
     
-    public Game(Player player, Map map, Ingredients[] ingredients, Character[] character, Products[] products, Level[] level, SubLevel[] subLevel) {
+    public Game(Player player, Map map) {
         this.player = player;
         this.map = map;
     }
