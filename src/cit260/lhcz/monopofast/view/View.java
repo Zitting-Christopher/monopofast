@@ -7,6 +7,7 @@ package cit260.lhcz.monopofast.view;
 import cit260.lhcz.monopofast.control.MapControl;
 import cit260.lhcz.monopofast.model.Player;
 import exception.MapControlException;
+import java.awt.Point;
 import java.util.Scanner;
 /**
  *
@@ -14,6 +15,7 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
     private String messagePrompt;
+    private Point coordinates;
     public View(String messagePrompt){
         this.messagePrompt = messagePrompt;
     }
