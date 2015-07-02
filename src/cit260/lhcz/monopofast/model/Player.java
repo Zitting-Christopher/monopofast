@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -11,6 +12,10 @@ import java.util.Objects;
  * @author Christopher
  */
 public class Player implements Serializable{
+
+    public static Player[] values() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private String playerName;
     private int playerId;
     
@@ -110,6 +115,14 @@ public class Player implements Serializable{
     
 
     public Player() {
+    }
+
+    public Map getMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Point getCoordinates() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

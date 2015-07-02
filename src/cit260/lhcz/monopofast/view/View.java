@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.view;
+import cit260.lhcz.monopofast.control.MapControl;
+import cit260.lhcz.monopofast.model.Player;
+import exception.MapControlException;
+import java.awt.Point;
 import java.util.Scanner;
 /**
  *
@@ -11,6 +15,7 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
     private String messagePrompt;
+    private Point coordinates;
     public View(String messagePrompt){
         this.messagePrompt = messagePrompt;
     }
@@ -42,7 +47,16 @@ public abstract class View implements ViewInterface {
             }
         return value; //return the name
         }
-
+ @Override
+    public boolean doAction(){
+        Player player = null;
+       try{
+        MapControl.moveActorsToLocation(player,coordinates);
+       } catch (MapControlException me){
+           System.out.println(me.getMessage());
+       }
+        return false;
+    }
     public String getMessagePrompt() {
         return messagePrompt;
     }

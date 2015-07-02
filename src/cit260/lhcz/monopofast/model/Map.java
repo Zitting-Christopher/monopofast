@@ -63,6 +63,14 @@ public class Map implements Serializable {
         this.world = world;
     }
 
+    public boolean getNoOfColumns() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getNoOfRows() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
     private static class Location {

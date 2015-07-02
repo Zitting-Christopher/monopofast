@@ -13,9 +13,17 @@ import java.util.Scanner;
  * @author Christopher
  */
 public class StartView {
-    public StartView(){
+    public main(String[]args)){
+        StartProgramView startProgramView = StartProgramView();
+        try{
+            startProgramView.display();
+        }catch(Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startView.display();
+        }
+        }
     
-    }
     
     public void startProgram() {
         //Display the banner screen

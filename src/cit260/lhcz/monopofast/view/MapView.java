@@ -7,6 +7,9 @@ package cit260.lhcz.monopofast.view;
 
 
 import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.model.Map;
+import cit260.lhcz.monopofast.model.Player;
+import exception.MapControlException;
 import java.util.Scanner;
 import monopofast.Monopofast;
 
@@ -15,6 +18,7 @@ import monopofast.Monopofast;
  * @author Christopher
  */
 public class MapView extends View{
+    private static boolean newcolumn;
 
                    public MapView(){
                   super("\n"
@@ -105,7 +109,23 @@ public class MapView extends View{
                     break;
                      }
     return false;
+       
     
+        
+        }
+           public static void movePlayerToLocation(Player player, point coordinates)
+        throws MapControlException{
+    Map map = Monopofast.getCurrentGame().getMap();
+    int newRow = coordinates.x-1;
+    int newColumn = coordinates.y-1;
+    if(newRow < 0 || newRow >= map.getNoOfRows() ||
+            newColumn < 0 || newcolumn >= map.getNoOfColumns()) {
+      throw new MapControlException("Can not move to that location "
+      + coordinates.x + ", " + coordinates.y
+      + " because that Location is not "
+      + " somewhere we will let you go. ");
+    }    
+         
     }          
-                    
-        }   
+}              
+      

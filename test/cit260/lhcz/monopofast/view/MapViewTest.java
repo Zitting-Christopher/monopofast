@@ -5,6 +5,7 @@
  */
 package cit260.lhcz.monopofast.view;
 
+import cit260.lhcz.monopofast.model.Player;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -52,6 +53,22 @@ public class MapViewTest {
         char choice = '3';
         MapView instance = new MapView();
         instance.doAction(choice);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of movePlayerToLocation method, of class MapView.
+     */
+    @Test
+    public void testMovePlayerToLocation() {
+        System.out.println("movePlayerToLocation");
+        Player player = null;
+        point coordinates = null;
+        int expResult = 0;
+        Object result = null;
+        
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
