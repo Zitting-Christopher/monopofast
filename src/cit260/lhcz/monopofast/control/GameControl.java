@@ -46,6 +46,10 @@ public class GameControl {
         
     }
 
+    public static void assignScenesToLocations(Map map, MapControl.Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
     private Player game;

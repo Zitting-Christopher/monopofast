@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.control.MapControl.Scene;
 import java.io.Serializable;
 
 /**
@@ -11,6 +13,10 @@ import java.io.Serializable;
  * @author Christopher
  */
 public class Map implements Serializable {
+
+    private static Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
@@ -22,15 +28,24 @@ public class Map implements Serializable {
     private SubLevel[] subLevel;
     private World[] world;
 
-    public Map(int i, int i0) {
-        
+    public Map(int noOfRows, int noOfColumns) {
+       if (noOfRows < 1 || noOfColumns < 1) {
+    System.out.println("The number of rows and columns must be > zero");
+    return;
+} 
     }
-    
-//Venti(0,"The Bacon Empire"),
-//    Ardy(1,"The Horse Kingdom"),
-//    Jack(2,"The Fox Den"),
-//    Queen(3,"The Cake Realm"),
-//    McDumbledore(4,"The Wizard's Tower");
+    this.noOfRows = noOfRows;
+    this.noOfColumns = noOfColumns;
+    this.locations = new Location[noOfRows][noOfColumns];
+for (int row = 0; row < noOfRows; row++) {
+    for(int column = 0; column < noOfColumns; column++) {
+        Location location = new Location();
+        location.setColumn(column);
+        location.setRow(row);
+        location.setVisited(false);
+        locations[row] [column] = location;
+    }
+}
     public int  getMapId() {
         return noOfRows;
     }
@@ -64,19 +79,63 @@ public class Map implements Serializable {
     }
 
     public boolean getNoOfColumns() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
+        
     }
 
     public int getNoOfRows() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0;
+        
     }
 
-    
+    private static Map createMap() {
+        Map map = new Map(20, 20);
+        Scene[] scenes = createScenes();
+        GameControl.assignScenesToLocations(map, scenes);
+        return map;
+    }
 
     private static class Location {
 
         public Location() {
         }
+
+        private void setVisited(boolean b) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setRow(int row) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setColumn(int column) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     }
 
-}
+    private static class noOfColumns {
+
+        public noOfColumns() {
+        }
+    }
+
+    private static class row<T0, T1> {
+
+        public row() {
+        }
+    }
+
+    private static class noOfRows {
+
+        public noOfRows() {
+        }
+    }
+
+    private static class locations {
+
+        public locations() {
+        }
+    }
+
+  
+    }
