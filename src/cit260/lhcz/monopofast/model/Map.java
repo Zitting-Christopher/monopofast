@@ -15,7 +15,8 @@ import java.io.Serializable;
 public class Map implements Serializable {
 
     private static Scene[] createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
+      
     }
     
     
