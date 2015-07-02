@@ -13,7 +13,9 @@ import java.util.Scanner;
  * @author Christopher
  */
 public class StartView {
-    public main(String[]args)){
+    private static Game currentGame = null;
+    private static Player player = null;
+    public main(String[] args){
         StartProgramView startProgramView = StartProgramView();
         try{
             startProgramView.display();
@@ -22,6 +24,7 @@ public class StartView {
             te.printStackTrace();
             startView.display();
         }
+        return;
         }
     
     
@@ -45,7 +48,7 @@ public class StartView {
     
     
     public void displayBanner(){
-        Scanner sc = new Scanner(System.in);
+        
            System.out.println("                                                 MONOPOFAST                                            "
                 +           "\n***************************************************************************************************");
         System.out.println("         Hi! Welcome to Monopofast - the fast food game of corporate domination!\n"
@@ -95,4 +98,5 @@ public class StartView {
     
     
     }
+
 }
