@@ -10,21 +10,25 @@ package exception;
  * @author Logan
  */
 public class ChallangeControlException extends Exception {
-
-    /**
-     * Creates a new instance of <code>ChallangeControlException</code> without
-     * detail message.
-     */
+    
     public ChallangeControlException() {
+        
+    }
+    
+    public ChallangeControlException(String message) {
+        super(message);
     }
 
-    /**
-     * Constructs an instance of <code>ChallangeControlException</code> with the
-     * specified detail message.
-     *
-     * @param msg the detail message.
-     */
-    public ChallangeControlException(String msg) {
-        super(msg);
+    public ChallangeControlException(String message, Throwable cause) {
+        super(message, cause);
     }
+
+    public ChallangeControlException(Throwable cause) {
+        super(cause);
+    }
+
+    public ChallangeControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+    
 }
