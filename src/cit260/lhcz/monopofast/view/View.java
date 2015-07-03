@@ -48,7 +48,7 @@ public abstract class View implements ViewInterface {
         return value; //return the name
         }
  @Override
-    public boolean doAction(){
+    public boolean mapControlException(){
         Player player = null;
        try{
         MapControl.moveActorsToLocation(player,coordinates);

@@ -24,7 +24,7 @@ public class MapViewTest {
     @Test
     public void testDisplayMenu() {
         System.out.println("displayMenu");
-        MapView instance = new MapView();
+        MapMenuView instance = new MapMenuView();
         instance.display();
         // TODO review the generated test code and remove the default call to fail.
         fail("Your mom.");
@@ -36,7 +36,7 @@ public class MapViewTest {
     @Test
     public void testGetInput() {
         System.out.println("getInput");
-        MapView instance = new MapView();
+        MapMenuView instance = new MapMenuView();
         String expResult = null;
         String result = instance.getInput();
         assertEquals(expResult, result);
@@ -51,7 +51,7 @@ public class MapViewTest {
     public void testDoAction() {
         System.out.println("doAction");
         char choice = '3';
-        MapView instance = new MapView();
+        MapMenuView instance = new MapMenuView();
         instance.doAction(choice);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
