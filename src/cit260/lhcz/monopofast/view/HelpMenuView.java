@@ -118,7 +118,7 @@ public class HelpMenuView extends View {
 
     private void productsList() {
         System.out.println("\n*************************************************************************");
-        System.out.println("World 1: Venti's");
+        System.out.println("World 1: Vendy's");
         System.out.println("*************************************************************************\n");
         System.out.println("\tLevel 1 - cola");
         System.out.println("\tLevel 2 - chicken nuggets");
@@ -142,7 +142,7 @@ public class HelpMenuView extends View {
         System.out.println("\tLevel 4 - Jack's Flamin Chicken Sandwich");
         System.out.println("\tLevel 5 - Packed Breakfast Sandwich");
         System.out.println("\n*************************************************************************");
-        System.out.println("World 4: Queen Burger");
+        System.out.println("World 4: Queen's Kitchen");
         System.out.println("*************************************************************************\n");
         System.out.println("\tLevel 1 - fruit punch");
         System.out.println("\tLevel 2 - onion rings");
