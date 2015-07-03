@@ -26,7 +26,7 @@ public class GameControl {
         game.setPlayer(player); // save player in game
          MapControl.createMap();
         game.setMap(map);
-//        MapControl.moveActorsToStartingLocation(map);
+        MapControl.moveActorsToStartingLocation(map);
     }
     
     public static Player createPlayer (String playerName) {
@@ -47,7 +47,7 @@ public class GameControl {
     }
 
     public static void assignScenesToLocations(Map map, MapControl.Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     
@@ -82,7 +82,7 @@ public class GameControl {
     }*/
 
     public void saveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     /*public static class createPlayer {

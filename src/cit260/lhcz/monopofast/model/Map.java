@@ -39,7 +39,7 @@ public Map(){
     this.noOfRows = noOfRows;
     this.noOfColumns = noOfColumns;
     this.locations = new Location[noOfRows][noOfColumns];
-for (int row = 0; row < noOfRows; row++) {
+for (int row = 0; row < noOfRows; row++){
     for(int column = 0; column < noOfColumns; column++) {
         Location location = new Location();
         location.setColumn(column);
