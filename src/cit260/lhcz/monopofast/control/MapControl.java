@@ -2,7 +2,10 @@ package cit260.lhcz.monopofast.control;
 
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
+
+import exception.MapControlException;
 import java.awt.Point;
+import monopofast.Monopofast;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -47,15 +50,36 @@ public class MapControl {
        return 0;
        }
 
-    public static int moveActorsToLocation(Player player, Point coordinates) {
+       public static void movePlayerToLocation(Player player, point coordinates)
+        throws MapControlException{
+    Map map = Monopofast.getCurrentGame().getMap();
+    int newRow = coordinates.x-1;
+    int newColumn = coordinates.y-1;
+     if(newRow < 0 || newRow >= map.getNoOfRows() || newColumn < 0 || newColumn >= map.getNoOfColumns()) {
+      throw new MapControlException("Can not move to that location "
+      + coordinates.x + ", " + coordinates.y
+      + " because that Location is not "
+      + " somewhere we will let you go. ");
+    }    
+         
+    } 
+
+    private static int moveActorsToLocation(Player player, Point coordinates) {
         return 0;
         
     }
-    
 
-    public static class Scene {
+    private static class Scene {
 
         public Scene() {
+        }
+    }
+
+    private static class point {
+        private int x;
+        private int y;
+
+        public point() {
         }
     }
     
