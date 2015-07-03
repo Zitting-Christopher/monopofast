@@ -28,7 +28,8 @@ public class Map implements Serializable {
     private Level[] level;
     private SubLevel[] subLevel;
     private World[] world;
-
+public Map(){
+}
     public Map(int noOfRows, int noOfColumns) {
        if (noOfRows < 1 || noOfColumns < 1) {
     System.out.println("The number of rows and columns must be > zero");
