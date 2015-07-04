@@ -31,6 +31,10 @@ public class StartView {
         }
         return;
         }
+
+    public StartView() {
+        
+    }
     
     
     public void startProgram() {

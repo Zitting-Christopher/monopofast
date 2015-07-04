@@ -49,11 +49,11 @@ public abstract class View implements ViewInterface {
         }
     public boolean mapControlException(){
         Player player = null;
-       try{
+//       try{
         MapControl.moveActorsToLocation(player,coordinates);
-       } catch (MapControlException me){
-           System.out.println(me.getMessage());
-       }
+//       } catch (MapControlException me){
+//           System.out.println(me.getMessage());
+//       }
         return false;
     }
     public String getMessagePrompt() {
