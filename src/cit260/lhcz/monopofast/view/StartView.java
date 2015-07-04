@@ -5,6 +5,7 @@
  */
 package cit260.lhcz.monopofast.view;
 import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
 import java.util.Scanner;
 
@@ -15,14 +16,18 @@ import java.util.Scanner;
 public class StartView {
     private static Game currentGame = null;
     private static Player player = null;
-    public main(String[] args){
+
+    private static void display() {
+        
+    }
+    public StartView(String[] args){
         StartProgramView startProgramView = StartProgramView();
         try{
             startProgramView.display();
         }catch(Throwable te){
             System.out.println(te.getMessage());
             te.printStackTrace();
-            startView.display();
+            StartView.display();
         }
         return;
         }
@@ -97,6 +102,21 @@ public class StartView {
                 + "\n=================================================") ;
     
     
+    }
+
+    private StartProgramView StartProgramView() {
+        return null;
+        
+    }
+
+    private static class StartProgramView {
+
+        public StartProgramView() {
+        }
+
+        private void display() {
+            
+        }
     }
 
 }

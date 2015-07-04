@@ -18,7 +18,7 @@ import monopofast.Monopofast;
  * @author Logan
  */
 public class MapControl {
-
+    private static Object monopofast;
     public static Map createMap() {
         
        Map map = new Map(20,20);
@@ -27,30 +27,26 @@ public class MapControl {
        return map;
     }
 
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         
         return null;
 }
    
     
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
         
     }
 
-    public static int moveActorsToStartingLocation(Map map) {
+    public static void moveActorsToStartingLocation(Map map) {
        Player[] players = Player.values();
        for(Player player: players){
-           Point coordinates = player.getCoordinates();
-           int returnValue = MapControl.moveActorsToLocation(player, coordinates);
-           if(returnValue < 0){
-               return returnValue;
-           }
-           }
-       return 0;
+            Point coordinates = player.getCoordinates();
+            MapControl.moveActorsToLocation(player, coordinates);
+       
        }
-
-       public static void movePlayerToLocation(Player player, point coordinates)
+    }
+    public static void movePlayerToLocation(Player player, point coordinates)
         throws MapControlException{
     Map map = Monopofast.getCurrentGame().getMap();
     int newRow = coordinates.x-1;
@@ -63,19 +59,19 @@ public class MapControl {
     }    
          
     } 
-
-    private static int moveActorsToLocation(Player player, Point coordinates) {
+       
+    public static int moveActorsToLocation(Player player, Point coordinates) {
         return 0;
         
     }
 
-    private static class Scene {
+    public static class Scene {
 
         public Scene() {
         }
     }
 
-    private static class point {
+    public static class point {
         private int x;
         private int y;
 

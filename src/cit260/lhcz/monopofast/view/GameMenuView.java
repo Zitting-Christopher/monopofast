@@ -76,7 +76,7 @@ public GameMenuView(){
                     }
 
                         private void viewMap() {
-                        MapView map = new MapView();
+                        MapMenuView map = new MapMenuView();
                         map.display();
                         }
                         private void highScore(){

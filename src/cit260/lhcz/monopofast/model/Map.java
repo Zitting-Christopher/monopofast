@@ -7,137 +7,94 @@ package cit260.lhcz.monopofast.model;
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.control.MapControl.Scene;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
  * @author Christopher
  */
-public class Map implements Serializable {
-
-    private static Scene[] createScenes() {
-        return null;
-      
-    }
-    
-    
-    
-    private  int noOfRows;
-    private int noOfColumns;
+public class Map implements Serializable{
+    private String name;
+    private String description;
+    private final ArrayList<Game> games = new ArrayList<>();
     private Location[][] locations;
+    private int noOfRows;
+    private int noOfColumns;
     
-    private Level[] level;
-    private SubLevel[] subLevel;
-    private World[] world;
-public Map(){
-}
-    public Map(int noOfRows, int noOfColumns) {
-       if (noOfRows < 1 || noOfColumns < 1) {
-    System.out.println("The number of rows and columns must be > zero");
-    return;
-} 
-    }
-    this.noOfRows = noOfRows;
-    this.noOfColumns = noOfColumns;
-    this.locations = new Location[noOfRows][noOfColumns];
-for (int row = 0; row < noOfRows; row++){
-    for(int column = 0; column < noOfColumns; column++) {
-        Location location = new Location();
-        location.setColumn(column);
-        location.setRow(row);
-        location.setVisited(false);
-        locations[row] [column] = location;
-    }
-}
-    public int  getMapId() {
-        return noOfRows;
-    }
-    
-    public int getMapDesc() {
-        return noOfColumns;
+
+    public Map() {
     }
 
-    public Level[] getLevel() {
-        return level;
-    }
-
-    public void setLevel(Level[] level) {
-        this.level = level;
-    }
-
-    public SubLevel[] getSubLevel() {
-        return subLevel;
-    }
-
-    public void setSubLevel(SubLevel[] subLevel) {
-        this.subLevel = subLevel;
-    }
-
-    public World[] getWorld() {
-        return world;
-    }
-
-    public void setWorld(World[] world) {
-        this.world = world;
-    }
-
-    public boolean getNoOfColumns() {
-        return false;
+    public Map(int i, int i0) {
         
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" + "name=" + name + ", description=" + description + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.description);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        return true;
+    }
+
+       
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getNoOfRows() {
-        return 0;
-        
+        return noOfRows;
     }
 
-    private static Map createMap() {
-        Map map = new Map(20, 20);
-        Scene[] scenes = createScenes();
-        GameControl.assignScenesToLocations(map, scenes);
-        return map;
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
     }
 
-    private static class Location {
-
-        public Location() {
-        }
-
-        private void setVisited(boolean b) {
-//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private void setRow(int row) {
-//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private void setColumn(int column) {
-//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
+    public int getNoOfColumns() {
+        return noOfColumns;
     }
 
-    private static class noOfColumns {
-
-        public noOfColumns() {
-        }
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
     }
-
-    private static class row<T0, T1> {
-
-        public row() {
-        }
-    }
-
-    private static class noOfRows {
-
-        public noOfRows() {
-        }
-    }
-
-    private static class locations {
-
-        public locations() {
-        }
-    }
-
-  
-    }
+    
+    
+    
+}
