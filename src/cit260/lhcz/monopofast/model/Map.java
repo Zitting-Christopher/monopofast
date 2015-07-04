@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
-import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.control.MapControl.Scene;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
