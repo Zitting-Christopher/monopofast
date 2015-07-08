@@ -81,7 +81,7 @@ public class MainMenuView extends View{
                    private void loadGame(){
                         // create a new game
                         int value = 0;
-                                GameControl.createNewGame(Monopofast.getCurrentGame());
+                                GameControl.loadGame(Monopofast.getCurrentGame());
                         if (value < 0){
                             ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
                         }
@@ -90,7 +90,7 @@ public class MainMenuView extends View{
                     private void saveGame(){
                         // create a new game
                         int value = 0;
-                                GameControl.createNewGame(Monopofast.getCurrentGame());
+                                GameControl.saveGame(Monopofast.getCurrentGame());
                         if (value < 0){
                             ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
                         }

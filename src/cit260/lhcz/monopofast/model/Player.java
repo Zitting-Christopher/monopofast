@@ -21,6 +21,7 @@ public class Player implements Serializable{
     
     private Game game;
     private Character[] character;
+    private int score;
     private World[] world;
     private Level[] level;
     private SubLevel[] sublevel[];
@@ -79,6 +80,14 @@ public class Player implements Serializable{
 
     public void setSublevel(SubLevel[][] sublevel) {
         this.sublevel = sublevel;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
     
     @Override

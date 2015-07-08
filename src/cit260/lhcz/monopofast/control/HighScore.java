@@ -5,6 +5,7 @@
  */
 package cit260.lhcz.monopofast.control;
 
+import cit260.lhcz.monopofast.model.Player;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import monopofast.Monopofast;
@@ -20,31 +21,24 @@ public class HighScore {
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
     
-         public static void highScoreArray(){
-                   final int MAX = 5;
-                   int[] scores = {12346, 12344, 12343, 12342, 12341};
-                   String[] names = {"\nPlayer 1.","\nPlayer 2.","\nPlayer 3.","\nPlayer 4.","\nPlayer 5."};
-      for(int i=0; i<scores.length; i++)
-        {
-            for(int j=i + 1; j<scores.length; j++)
-            {
-                if(scores[i] < scores[j])
-                {
-                    int temp = scores[i];
-                    scores[i] = scores[j];
-                    scores[j] = temp;
-                }
-            }
-
-        }
-                   this.console.println("                  High Scores"
-                   +"\n**************************************************");
-                   for(int ctr=0;ctr<scores.length;ctr++)
-                       {
-                           this.console.println( names[ctr]+ " " +  scores[ctr]);
-                                   
-                   }
-         }
+//         public static int highScoreArray(Player[] players){
+                   
+             
+//      for(int i=0; i<players.length; i++)
+//        {
+//            for(int j=i + 1; j<players.length; j++)
+//            {
+//                if(players[i] < players[j])
+//                {
+//                    int temp = players[i];
+//                    players[i] = players[j];
+//                    players[j] = temp;
+//                }
+//            }
+//
+//        }
+                     
+//         }
 
    
         

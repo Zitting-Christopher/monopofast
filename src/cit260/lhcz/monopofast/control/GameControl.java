@@ -8,8 +8,10 @@ package cit260.lhcz.monopofast.control;
 import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
+import cit260.lhcz.monopofast.view.ErrorView;
 import monopofast.Monopofast;
-import java.util.Scanner;
+import cit260.lhcz.monopofast.view.View;
+
 
 
 /**
@@ -42,12 +44,32 @@ public class GameControl {
     return player;
     }
 
-    public static void createNewGame(Player player) {
-        
-    }
+    
 
     public static void assignScenesToLocations(Map map, MapControl.Scene[] scenes) {
         
+    }
+    
+    public void createNewGame(Player player) {
+        
+    }
+    public void saveGame(Player currentGame) {
+      
+        System.out.println("\n\n Where do you want to save the game?");
+        
+        
+        try {
+            //save the game to specified file
+            String filePath = this.getInput();
+            GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
+        }
+        catch(Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    }
+
+    public static void loadGame(Player currentGame) {
+       
     }
 
     

@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import cit260.lhcz.monopofast.view.View;
 /**
  *
  * @author Christopher
@@ -92,9 +93,9 @@ public class Monopofast {
         return;
         }
         catch(Throwable e) {
-                ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()+
-                        "\nCause: " + e.getCause() +
-                        "\nMessage: " + e.getMessage());
+//                ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()+
+//                        "\nCause: " + e.getCause() +
+//                        "\nMessage: " + e.getMessage());
                 e.printStackTrace();;
         }
         
@@ -110,7 +111,7 @@ public class Monopofast {
                     Monopofast.logFile.close();
                 
             } catch (IOException ex) {
-                ErrorView.display(this.getClass().getName(),"Error closing files.");
+//                ErrorView.display(this.getClass().getName(),"Error closing files.");
                 return;
             }
         }
