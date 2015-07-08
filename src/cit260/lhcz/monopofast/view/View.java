@@ -8,13 +8,22 @@ import cit260.lhcz.monopofast.control.MapControl;
 import cit260.lhcz.monopofast.model.Player;
 import exception.MapControlException;
 import java.awt.Point;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import monopofast.Monopofast;
 /**
  *
  * @author Logan
  */
 public abstract class View implements ViewInterface {
     private String messagePrompt;
+    
+    protected final BufferedReader keyboard = Monopofast.getInFile();
+    protected final PrintWriter console = Monopofast.getOutFile();
+    
     private Point coordinates;
     public View(String messagePrompt){
         this.messagePrompt = messagePrompt;
@@ -24,22 +33,25 @@ public abstract class View implements ViewInterface {
         String value = "";
         boolean done = false;
         do {
-            System.out.println(this.messagePrompt);// view prompt
+            this.console.println(this.messagePrompt);// view prompt
             value = this.getInput(); // get value that player
             done = this.doAction(value); // do Action
         } while(!done);
         }
     @Override
     public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
         // while a valid name not retrived 
         while (!valid){
-            value = keyboard.nextLine();
+            try {
+                value = this.keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim();
             if (value.length() < 1){// blank value entered
-                System.out.println("You must enter a value.");
+                ErrorView.display(this.getClass().getName(),"You must enter a value.");
                 continue;
             }
             break;
@@ -52,7 +64,7 @@ public abstract class View implements ViewInterface {
 //       try{
         MapControl.moveActorsToLocation(player,coordinates);
 //       } catch (MapControlException me){
-//           System.out.println(me.getMessage());
+//           ErrorView.display(this.getClass().getName(),me.getMessage());
 //       }
         return false;
     }

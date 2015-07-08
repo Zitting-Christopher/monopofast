@@ -21,7 +21,7 @@ public class MapControl {
     private static Object monopofast;
     public static Map createMap() {
         
-       Map map = new Map(20,20);
+       Map map = Map(20,20);
        Scene[] scenes = createScenes();
        assignScenesToLocations(map, scenes);
        return map;
@@ -63,6 +63,10 @@ public class MapControl {
     public static int moveActorsToLocation(Player player, Point coordinates) {
         return 0;
         
+    }
+
+    private static Map Map(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public static class Scene {

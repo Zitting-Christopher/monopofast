@@ -49,14 +49,14 @@ public StoreBioMenuView(){
                        case "E": //exit game
                    return true;
                 default:
-                    System.out.println("\n*** Invalid Selection ***");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
                     break;
                      }
     return false;
     } 
                private void  Venny(){
                         // create a new game
-                               System.out.println("Venny's"
+                               this.console.println("Venny's"
                                        + "\n********************"
                                        + "\nVenny's was founnded on one idea, and that idea was bacon and more"
                                        + "\nbacon. it was founned in China. it serves american style food"
@@ -66,7 +66,7 @@ public StoreBioMenuView(){
                         }
                private void  Ardy(){
                         // create a new game
-                               System.out.println("Ardy's"
+                               this.console.println("Ardy's"
                                        + "\n********************"
                                        + "\nThe founder of Ardy's Mr. Hardy is a spend thrift and many"
                                        + "\npeople say that he uses horse meat instead of beef on his "
@@ -74,7 +74,7 @@ public StoreBioMenuView(){
                         }
                private void  QueenKitchen(){
                         // create a new game
-                               System.out.println("Queen's Kitchen"
+                               this.console.println("Queen's Kitchen"
                                        + "\n********************"
                                        + "\n This is your one place to go when your on a budget and want "
                                        + "\nto be treated like royalty."
@@ -83,7 +83,7 @@ public StoreBioMenuView(){
                         }
                    private void McDumbledore(){
                         // create a new game
-                               System.out.println("McDumbledore" 
+                               this.console.println("McDumbledore" 
                                        + "\n********************"
                                        + "\nThis wizard theme restruant make you feel as though you have"
                                        + "\nstepped through the padges of your favorite book seris.");

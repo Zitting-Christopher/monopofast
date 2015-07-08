@@ -55,18 +55,18 @@ public GameMenuView(){
                        case "E": //exit game
                    return true;
                 default:
-                    System.out.println("\n*** Invalid Selection ***");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
                     break;
                      }
     return false;
     } 
                         private void ContinueGame(){
                         // create a new game
-                               System.out.println("create new game stub");
+                               this.console.println("create new game stub");
                         }
                          private void saveGame(){
                         
-                            System.out.println("Save game");
+                            this.console.println("Save game");
                         }
                           private void challangeMenu(){
 {

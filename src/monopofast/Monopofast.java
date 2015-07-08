@@ -5,17 +5,13 @@
  */
 package monopofast;
 
-import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
-import cit260.lhcz.monopofast.model.Character;
-import cit260.lhcz.monopofast.model.Ingredients;
-import cit260.lhcz.monopofast.model.Products;
-import cit260.lhcz.monopofast.model.Level;
-import cit260.lhcz.monopofast.model.Map;
-import cit260.lhcz.monopofast.model.SubLevel;
-import cit260.lhcz.monopofast.model.World;
+import cit260.lhcz.monopofast.view.ErrorView;
 import cit260.lhcz.monopofast.view.StartView;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 /**
  *
  * @author Christopher
@@ -24,6 +20,11 @@ public class Monopofast {
 
     private static Player currentGame = null;
     private static Player player = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
 
     public static Player getPlayer() {
         return player;
@@ -41,6 +42,30 @@ public class Monopofast {
         Monopofast.currentGame = currentGame;
     }
 
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        Monopofast.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        Monopofast.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        Monopofast.logFile = logFile;
+    }
+
     
     
     /**
@@ -48,9 +73,47 @@ public class Monopofast {
      */
     public static void main(String[] args) {
         
+        
+        try {
+            //open Character stream files for end user input/output
+            
+            Monopofast.inFile = new BufferedReader(new InputStreamReader(System.in));
+            
+            Monopofast.outFile = new PrintWriter(System.out, true);
+            
+            //open log file
+            String filePath = "log.txt";
+            Monopofast.logFile = new PrintWriter(filePath);
+            
+        
         //Create startView and start the program
         StartView startView = new StartView();
         startView.startProgram();
+        return;
+        }
+        catch(Throwable e) {
+                ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()+
+                        "\nCause: " + e.getCause() +
+                        "\nMessage: " + e.getMessage());
+                e.printStackTrace();;
+        }
+        
+        finally{
+            try {
+                if(Monopofast.inFile != null)
+                    Monopofast.inFile.close();
+                
+                if(Monopofast.outFile != null)
+                    Monopofast.outFile.close();
+                
+                if(Monopofast.logFile != null)
+                    Monopofast.logFile.close();
+                
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),"Error closing files.");
+                return;
+            }
+        }
         /*
         // Game toString()
         Game newGame = new Game();
@@ -60,7 +123,7 @@ public class Monopofast {
         newGame.setLastSublevel(1);
         
         String gameInfo = newGame.toString();
-        System.out.println(gameInfo);
+        this.console.println(gameInfo);
         
         // Character toString()
         Character frank = new Character();
@@ -69,7 +132,7 @@ public class Monopofast {
         frank.setCharacterId(1);
         
         String charInfo = frank.toString();
-        System.out.println(charInfo);
+        this.console.println(charInfo);
         
         // SubLevel toString()
         SubLevel sOne = new SubLevel();
@@ -79,7 +142,7 @@ public class Monopofast {
         sOne.setRecordTime(10.0);
         
         String subLevelInfo = sOne.toString();
-        System.out.println(subLevelInfo);
+        this.console.println(subLevelInfo);
         
         // Level toString()
         Level lOne = new Level();
@@ -90,7 +153,7 @@ public class Monopofast {
         
                 
         String levelInfo = lOne.toString();
-        System.out.println(levelInfo);
+        this.console.println(levelInfo);
         
         // World toString()
         World venti = new World();
@@ -99,7 +162,7 @@ public class Monopofast {
         venti.setWorldName("Venti's");
         
         String worldInfo = venti.toString();
-        System.out.println(worldInfo);
+        this.console.println(worldInfo);
         
         
         // Map toString()
@@ -109,7 +172,7 @@ public class Monopofast {
         mOne.setMapName("Map");
         
         String mapInfo = mOne.toString();
-        System.out.println(mapInfo);
+        this.console.println(mapInfo);
         
         // Ingredients toString()
         Ingredients cola = new Ingredients();
@@ -118,7 +181,7 @@ public class Monopofast {
         cola.setIngredientName("cola");
         
         String ingrInfo = cola.toString();
-        System.out.println(ingrInfo);
+        this.console.println(ingrInfo);
         
         // Products toString()
         Products triple = new Products();
@@ -127,7 +190,7 @@ public class Monopofast {
         triple.setProductName("triple");
         
         String prodInfo = triple.toString();
-        System.out.println(prodInfo);
+        this.console.println(prodInfo);
         */
     }
 

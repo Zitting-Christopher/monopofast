@@ -42,19 +42,19 @@ public class MapMenuView extends View{
                      switch(value){
                 case "1": //World 1 Map 
                    String output1 = "You chose level 1!";
-                   System.out.println(output1);
+                   this.console.println(output1);
                     break;
                     
                 case "2": //World 2 Map
                     if (playerLevel < 2)
                     {
                         String output2 = "ACCESS DENIED.";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
                     else
                     {
                         String output2 = "You chose level 2!";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
                    
                     break;
@@ -63,12 +63,12 @@ public class MapMenuView extends View{
                     if (playerLevel < 3)
                     {
                         String output3 = "ACCESS DENIED.";
-                        System.out.println(output3);
+                        this.console.println(output3);
                     }
                     else
                     {
                         String output3 = "You chose level 3!";
-                        System.out.println(output3);
+                        this.console.println(output3);
                     }
                     break;
                     
@@ -76,12 +76,12 @@ public class MapMenuView extends View{
                     if (playerLevel < 4)
                     {
                         String output4 = "ACCESS DENIED.";
-                        System.out.println(output4);
+                        this.console.println(output4);
                     }
                     else
                     {
                         String output4 = "You chose level 4!";
-                        System.out.println(output4);
+                        this.console.println(output4);
                     }
                     break;
                     
@@ -89,23 +89,23 @@ public class MapMenuView extends View{
                     if (playerLevel < 5)
                     {
                         String output5 = "ACCESS DENIED.";
-                        System.out.println(output5);
+                        this.console.println(output5);
                     }
                     else
                     {
                         String output5 = "You chose level 5!";
-                        System.out.println(output5);
+                        this.console.println(output5);
                     }
                     break;
                     
                 case "A":
-                    System.out.println("Here are all the maps!");
+                    this.console.println("Here are all the maps!");
                     break;
                     
                  case "R": //exit game
                    return true;
                 default:
-                    System.out.println("\n*** Invalid Selection ***");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
                     break;
                      }
     return false;

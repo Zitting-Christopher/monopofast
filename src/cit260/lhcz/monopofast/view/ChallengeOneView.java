@@ -44,53 +44,53 @@ public ChallengeOneView(){
                     if (total < 140)
                     {
                         String output2 = "Too Low.";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
                     else
                     {
                         String output2 = "Wrong";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
             break;
              case "B": //B
                     if (total < 140)
                     {
                         String output2 = "Too Low.";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
                     else
                     {
                         String output2 = "Wrong";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
              break;
               case "C": //C
                     if (total < 140)
                     {
                         String output2 = "Too Low.";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
                     else
                     {
                         String output2 = "Correct";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
               break;
                case "D": //D
                     if (total > 140)
                     {
                         String output2 = "Too High.";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
                     else
                     {
                         String output2 = "Wrong";
-                        System.out.println(output2);
+                        this.console.println(output2);
                     }
                case "E": //exit game
                    return true;
                 default:
-                    System.out.println("\n*** Invalid Selection ***");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
                     break;
                      }
     return false;

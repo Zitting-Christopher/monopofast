@@ -5,6 +5,10 @@
  */
 package cit260.lhcz.monopofast.control;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import monopofast.Monopofast;
+
  
 /**
  *
@@ -12,6 +16,9 @@ package cit260.lhcz.monopofast.control;
  *
  */
 public class HighScore {
+    
+    protected final BufferedReader keyboard = Monopofast.getInFile();
+    protected final PrintWriter console = Monopofast.getOutFile();
     
          public static void highScoreArray(){
                    final int MAX = 5;
@@ -30,11 +37,11 @@ public class HighScore {
             }
 
         }
-                   System.out.print("                  High Scores"
+                   this.console.println("                  High Scores"
                    +"\n**************************************************");
                    for(int ctr=0;ctr<scores.length;ctr++)
                        {
-                           System.out.print( names[ctr]+ " " +  scores[ctr]);
+                           this.console.println( names[ctr]+ " " +  scores[ctr]);
                                    
                    }
          }

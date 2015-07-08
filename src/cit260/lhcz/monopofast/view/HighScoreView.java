@@ -40,7 +40,7 @@ public HighScoreView(){
                 case "E": //exit game
                    return true;
                 default:
-                    System.out.println("\n*** Invalid Selection ***");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
                     break;
                      }
     return false;

@@ -7,7 +7,10 @@ package cit260.lhcz.monopofast.view;
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import monopofast.Monopofast;
 
 /**
  *
@@ -16,6 +19,9 @@ import java.util.Scanner;
 public class StartView {
     private static Game currentGame = null;
     private static Player player = null;
+    
+    protected final BufferedReader keyboard = Monopofast.getInFile();
+    protected final PrintWriter console = Monopofast.getOutFile();
 
     private static void display() {
         
@@ -25,7 +31,7 @@ public class StartView {
         try{
             startProgramView.display();
         }catch(Throwable te){
-            System.out.println(te.getMessage());
+            this.console.println(te.getMessage());
             te.printStackTrace();
             StartView.display();
         }
@@ -37,7 +43,7 @@ public class StartView {
     }
     
     
-    public void startProgram() {
+    public void startProgram() throws IOException {
         //Display the banner screen
         this.displayBanner();
         
@@ -58,9 +64,9 @@ public class StartView {
     
     public void displayBanner(){
         
-           System.out.println("                                                 MONOPOFAST                                            "
+           this.console.println("                                                 MONOPOFAST                                            "
                 +           "\n***************************************************************************************************");
-        System.out.println("         Hi! Welcome to Monopofast - the fast food game of corporate domination!\n"
+        this.console.println("         Hi! Welcome to Monopofast - the fast food game of corporate domination!\n"
                     + "Monopofast is a quick-paced game and its objective is to monopolize the major fast food\n"
                     + "joints in the US. To do this, you must work your way through the ranks ensuring that you are\n"
                     + "faster than the owner of each joint at making their food. You'll start as a lowly fry-dipper and\n"
@@ -71,27 +77,26 @@ public class StartView {
                     + "                                                   (\\__/)\n" 
                     + "                                                   (>'.'<)\n"
                     + "                                                   (\")_(\")\n");
-        System.out.println("***************************************************************************************************");
+        this.console.println("***************************************************************************************************");
             
             
             }
 
-    private String getPlayerName() {
+    private String getPlayerName() throws IOException {
         boolean valid = false; //indicates if the name has been retrieved
         String playerName = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input
         
         while(!valid) {
             //prompt player for name
-            System.out.println("Enter the player's name below:");
+            this.console.println("Enter the player's name below:");
             
             //get the name from the keyboard and trim the blanks
-            playerName = keyboard.nextLine();
+            playerName = this.keyboard.readLine();
             playerName = playerName.trim();
             
             //if name is invalid (less than two character in length)
             if (playerName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
+                ErrorView.display(this.getClass().getName(),"Invalid name - the name must not be blank");
                 continue; // and repeat again
             }            
             break; // out of the (exit) the repition
@@ -100,9 +105,9 @@ public class StartView {
     }
 
     public void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n================================================="
+        this.console.println("\n\n================================================="
                          + "\n\tWelcome to Monopofast, " + player.getPlayerName() + "!");
-        System.out.println("\tWe hope you enjoy our game!"
+        this.console.println("\tWe hope you enjoy our game!"
                 + "\n=================================================") ;
     
     

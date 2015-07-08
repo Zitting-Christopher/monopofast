@@ -63,7 +63,7 @@ public class MainMenuView extends View{
              
                     return true;
                 default:
-                    System.out.println("\n*** Invalid Selection ***");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
                     break;
                      }
     return false;
@@ -83,7 +83,7 @@ public class MainMenuView extends View{
                         int value = 0;
                                 GameControl.createNewGame(Monopofast.getCurrentGame());
                         if (value < 0){
-                            System.out.println("ERROR- Failed to load new game");
+                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
                         }
                         
                     }
@@ -92,7 +92,7 @@ public class MainMenuView extends View{
                         int value = 0;
                                 GameControl.createNewGame(Monopofast.getCurrentGame());
                         if (value < 0){
-                            System.out.println("ERROR- Failed to load new game");
+                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
                         }
                     }
                         private void HelpMenuView(){

@@ -43,7 +43,7 @@ public ChallengeMenuView(){
                  case "E": //exit game
                    return true;
                 default:
-                    System.out.println("\n*** Invalid Selection ***");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
                     break;
                      }
     return false;
@@ -54,7 +54,7 @@ public ChallengeMenuView(){
                                 ChallengeOneView ChallengeOne = new ChallengeOneView();
                                 ChallengeOne.display();
         if (value < 0){
-                            System.out.println("ERROR- Failed to load new game");
+                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
                         }
                         }
                          private void calcChallenge2(){
@@ -63,7 +63,7 @@ public ChallengeMenuView(){
                                 ChallengeTwoView ChallengeTwo = new ChallengeTwoView();
                                 ChallengeTwo.display();
         if (value < 0){
-                            System.out.println("ERROR- Failed to load new game");
+                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
                         }
                         }
                           private void calcChallenge3(){
@@ -72,7 +72,7 @@ public ChallengeMenuView(){
                                 ChallengeThreeView ChallengeThree = new ChallengeThreeView();
                                 ChallengeThree.display();
         if (value < 0){
-                            System.out.println("ERROR- Failed to load new game");
+                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
                         }
                         }
                          }
