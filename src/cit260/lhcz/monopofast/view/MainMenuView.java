@@ -87,7 +87,7 @@ public class MainMenuView extends View{
                         }
                         
                     }
-                    private void saveGame(){
+                    private static void saveGame(){
                         // create a new game
                         int value = 0;
                                 GameControl.saveGame(Monopofast.getCurrentGame());

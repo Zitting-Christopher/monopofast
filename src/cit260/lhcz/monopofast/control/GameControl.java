@@ -49,6 +49,10 @@ public class GameControl {
     public static void assignScenesToLocations(Map map, MapControl.Scene[] scenes) {
         
     }
+
+    private static void saveGame(Player currentGame, String filePath) {
+        
+    }
     
     public void createNewGame(Player player) {
         
@@ -103,10 +107,7 @@ public class GameControl {
     
     }*/
 
-    public void saveGame() {
-        
-    }
-
+    
     /*public static class createPlayer {
 
         public createPlayer() {
@@ -114,7 +115,8 @@ public class GameControl {
     }*/
 
     private String getInput() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
+        
     }
 
 
