@@ -113,6 +113,10 @@ public class GameControl {
         }
     }*/
 
+    private String getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     
     

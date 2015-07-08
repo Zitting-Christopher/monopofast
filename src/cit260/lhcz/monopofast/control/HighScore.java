@@ -9,7 +9,7 @@ import cit260.lhcz.monopofast.model.Player;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import monopofast.Monopofast;
-
+import cit260.lhcz.monopofast.control.GameControl;
  
 /**
  *
@@ -21,24 +21,25 @@ public class HighScore {
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
     
-//         public static int highScoreArray(Player[] players){
+         public static int[] highScoreArray(int[] scores){
                    
              
-//      for(int i=0; i<players.length; i++)
-//        {
-//            for(int j=i + 1; j<players.length; j++)
-//            {
-//                if(players[i] < players[j])
-//                {
-//                    int temp = players[i];
-//                    players[i] = players[j];
-//                    players[j] = temp;
-//                }
-//            }
-//
-//        }
+      for(int i=0; i<scores.length; i++)
+        {
+            for(int j=i + 1; j<scores.length; j++)
+            {
+                if(scores[i] < scores[j])
+                {
+                    int temp = scores[i];
+                    scores[i] = scores[j];
+                    scores[j] = temp;
+                }
+            }
+
+        }
+        return scores;
                      
-//         }
+         }
 
    
         
