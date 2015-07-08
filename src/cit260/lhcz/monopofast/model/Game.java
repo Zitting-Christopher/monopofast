@@ -21,7 +21,10 @@ public class Game implements Serializable {
     private Map map;
 
    
-
+public int[] HighScore(){
+   int[] highScore = {12346, 12344, 12343, 12342, 12341};
+        return null;
+}
     
     public String getGameName() {
         return gameName;

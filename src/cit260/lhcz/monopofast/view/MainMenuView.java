@@ -70,8 +70,8 @@ public class MainMenuView extends View{
         }   
                    private void startNewGame(){
                         // create a new game
-                         GameControl.createNewGame(Monopofast.getPlayer());
-                        
+//                         GameControl.createNewGame(Monopofast.getPlayer());
+//                        
                          GameMenuView gameMenu = new GameMenuView();
                          gameMenu.display();
                     }
@@ -90,10 +90,10 @@ public class MainMenuView extends View{
                     private static void saveGame(){
                         // create a new game
                         int value = 0;
-                                GameControl.saveGame(Monopofast.getCurrentGame());
-                        if (value < 0){
-                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
-                        }
+//                                GameControl.saveGame(Monopofast.getCurrentGame());
+//                        if (value < 0){
+//                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
+//                        }
                     }
                         private void HelpMenuView(){
                        HelpMenuView helpMenu = new HelpMenuView();

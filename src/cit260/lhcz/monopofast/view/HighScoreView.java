@@ -34,7 +34,7 @@ public HighScoreView(){
                        value = value.toUpperCase(); // convert to upper case
                      switch(value){
                 case "D": //Challange 1
-//                    HighScoreView.highScoreArray();
+                    highScoreArray();
                     break;
                                                          
                 case "E": //exit game
@@ -45,15 +45,28 @@ public HighScoreView(){
                      }
     return false;
     } 
-//                   public static void highScoreArray(){
-//                   HighScore highScore = new HighScore();
-//                         HighScore.highScoreArray();
-                  
-
-//       
-//    }                
+                    public static void highScoreArray(){
+                   int[] scores = {12346, 12344, 12343, 12342, 12341};
+                         
+     for(int i=0; i<scores.length; i++)
+        {
+            for(int j=i + 1; j<scores.length; j++)
+            {
+                if(scores[i] < scores[j])
+                {
+                    int temp = scores[i];
+                    scores[i] = scores[j];
+                    scores[j] = temp;
+                }
+            }
+        }
+     System.out.print("                  High Scores"
+                   +"\n**************************************************");
+                   for(int ctr=0;ctr<scores.length;ctr++)
+                       {
+                           System.out.print(scores[ctr]);
+}
+  
+}   
 }
 
-
-  
-                   

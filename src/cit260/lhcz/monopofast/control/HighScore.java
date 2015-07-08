@@ -10,20 +10,20 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import monopofast.Monopofast;
 import cit260.lhcz.monopofast.control.GameControl;
- 
+import cit260.lhcz.monopofast.model.Game;
 /**
  *
  * @author Logan
  *
  */
 public class HighScore {
-    
+
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
     
          public static int[] highScoreArray(int[] scores){
-                   
-             
+
+    
       for(int i=0; i<scores.length; i++)
         {
             for(int j=i + 1; j<scores.length; j++)
@@ -42,8 +42,8 @@ public class HighScore {
          }
 
    
-        
-    
+
+   
     }
 
 
