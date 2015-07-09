@@ -46,9 +46,10 @@ public HighScoreView(){
     return false;
     } 
                     public static void highScoreArray(){
+                   final int MAX = 5;
                    int[] scores = {12346, 12344, 12343, 12342, 12341};
-                         
-     for(int i=0; i<scores.length; i++)
+                   String[] names = {"\nPlayer 1.","\nPlayer 2.","\nPlayer 3.","\nPlayer 4.","\nPlayer 5."};
+      for(int i=0; i<scores.length; i++)
         {
             for(int j=i + 1; j<scores.length; j++)
             {
@@ -59,13 +60,15 @@ public HighScoreView(){
                     scores[j] = temp;
                 }
             }
+
         }
-     System.out.print("                  High Scores"
+                   System.out.print("                  High Scores"
                    +"\n**************************************************");
                    for(int ctr=0;ctr<scores.length;ctr++)
                        {
-                           System.out.print(scores[ctr]);
-}
+                           System.out.print( names[ctr]+ " " +  scores[ctr]);
+                                   
+                   }
   
 }   
 }
