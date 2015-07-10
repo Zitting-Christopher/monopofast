@@ -5,6 +5,7 @@
  */
 package monopofast;
 
+import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
 import cit260.lhcz.monopofast.view.ErrorView;
 import cit260.lhcz.monopofast.view.StartView;
@@ -19,7 +20,7 @@ import cit260.lhcz.monopofast.view.View;
  */
 public class Monopofast {
 
-    private static Player currentGame = null;
+    private static Game currentGame = null;
     private static Player player = null;
     
     private static PrintWriter outFile = null;
@@ -35,11 +36,11 @@ public class Monopofast {
         Monopofast.player = player;
     }
 
-    public static Player getCurrentGame() {
+    public static Game getCurrentGame() {
         return currentGame;
     }
 
-    public static void setCurrentGame(Player currentGame) {
+    public static void setCurrentGame(Game currentGame) {
         Monopofast.currentGame = currentGame;
     }
 

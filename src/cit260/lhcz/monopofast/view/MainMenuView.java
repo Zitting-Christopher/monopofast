@@ -40,7 +40,7 @@ public class MainMenuView extends View{
                     break;
                 case "L": //Load a saved game
                 
-                    this.loadGame();
+                    this.StartSavedGame();
                     break;
                 case "H": //Help menu
                
@@ -71,29 +71,35 @@ public class MainMenuView extends View{
         }   
                    private void startNewGame(){
                         // create a new game
-//                         GameControl.createNewGame(Monopofast.getPlayer());
-//                        
-                         GameMenuView gameMenu = new GameMenuView();
-                         gameMenu.display();
-                    }
+                                          
+                         this.StartSavedGame();                    }
                                  
 
                                  
-                   private void loadGame(){
+                   private void StartSavedGame(){
                         // create a new game
-                        int value = 0;
-                                GameControl.loadGame(Monopofast.getCurrentGame());
-                        if (value < 0){
-                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
+                        System.out.println("\n\nEnter the file path for file where the game "
+                        + "is to be saved.");
+                        String filePath = this.getInput();
+                         try {
+                            // save the game to the speciried file                        }
+                                GameControl.getSaveGame(filePath);
+                        }catch (Exception ex) {
+                            ErrorView.display("MainMenuView", ex.getMessage());
                         }
                         
                     }
-                    private void saveGame(Player currentGame, String filePath){
+                    private void saveGame(){
                         // create a new game
-                        int value = 0;
-                                GameControl.saveGame(Monopofast.getCurrentGame());
-                        if (value < 0){
-                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
+                        //prompt for and get the name of the file to save the game in
+                        System.out.println("\n\nEnter the file path for file where the game "
+                        + "is to be saved.");
+                        String filePath = this.getInput();
+                        try {
+                            // save the game to the speciried file                        }
+                                GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
+                        }catch (Exception ex) {
+                            ErrorView.display("MainMenuView", ex.getMessage());
                         }
                     }
                         private void HelpMenuView(){
