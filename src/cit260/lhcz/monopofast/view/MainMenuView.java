@@ -6,6 +6,7 @@
 package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.model.Player;
 import monopofast.Monopofast;
 
 /**
@@ -87,13 +88,13 @@ public class MainMenuView extends View{
                         }
                         
                     }
-                    private static void saveGame(){
+                    private void saveGame(Player currentGame, String filePath){
                         // create a new game
                         int value = 0;
-//                                GameControl.saveGame(Monopofast.getCurrentGame());
-//                        if (value < 0){
-//                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
-//                        }
+                                GameControl.saveGame(Monopofast.getCurrentGame());
+                        if (value < 0){
+                            ErrorView.display(this.getClass().getName(),"ERROR- Failed to load new game");
+                        }
                     }
                         private void HelpMenuView(){
                        HelpMenuView helpMenu = new HelpMenuView();

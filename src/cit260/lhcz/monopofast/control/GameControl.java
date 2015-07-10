@@ -11,6 +11,8 @@ import cit260.lhcz.monopofast.model.Player;
 import cit260.lhcz.monopofast.view.ErrorView;
 import monopofast.Monopofast;
 import cit260.lhcz.monopofast.view.View;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 
 
@@ -20,6 +22,9 @@ import cit260.lhcz.monopofast.view.View;
  */
 
 public class GameControl {
+    
+    protected final BufferedReader keyboard = Monopofast.getInFile();
+    protected final PrintWriter console = Monopofast.getOutFile();
     
     public static  void  createNewGame(Player player, Map map) {
         
@@ -50,7 +55,7 @@ public class GameControl {
         
     }
 
-    private static void saveGame(Player currentGame, String filePath) {
+    private void saveGame(Player currentGame, String filePath) {
         
     }
     
@@ -59,7 +64,7 @@ public class GameControl {
     }
     public void saveGame(Player currentGame) {
       
-        System.out.println("\n\n Where do you want to save the game?");
+        this.console.println("\n\n Where do you want to save the game?");
         
         
         try {
@@ -98,21 +103,11 @@ public class GameControl {
     }
 
     
-    
-    /*public static Player createPlayer(String playerName) {
-        
-        this.console.println("\n**** createPlayer function called ****");
-        
-        return null;
-    
-    }*/
-
-    
-    /*public static class createPlayer {
+    public static class createPlayer {
 
         public createPlayer() {
         }
-    }*/
+    }
 
     private String getInput() {
         return null;
