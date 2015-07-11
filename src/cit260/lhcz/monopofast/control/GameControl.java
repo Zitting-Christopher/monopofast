@@ -65,12 +65,16 @@ public class GameControl {
         ReportMenuView.saveIngrReport();
     }
     
+     public void saveLocReport(List<Map> asList, String string) {
+        ReportMenuView.LoctionReport();
+    }
+    
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
     protected final PrintWriter charRptFile = Monopofast.getCharRptFile();
     protected final PrintWriter prodRptFile = Monopofast.getProdRptFile();
     protected final PrintWriter IngrRptFile = Monopofast.getIngrRptFile();
-    
+     protected final PrintWriter LocRptFile = Monopofast.getLocRptFile();
     public static  void  createNewGame(Player player, Map map) {
         
         Game game = new Game(player,map); // create new game

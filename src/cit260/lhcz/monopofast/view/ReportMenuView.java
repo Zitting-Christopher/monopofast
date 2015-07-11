@@ -9,6 +9,8 @@ import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
+import cit260.lhcz.monopofast.model.Map;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -17,6 +19,12 @@ import java.text.SimpleDateFormat;
  * @author Christopher
  */
 public class ReportMenuView extends View  {
+
+    
+        
+        
+         
+    
     
      public ReportMenuView(){
                   super("\n"
@@ -70,7 +78,7 @@ public class ReportMenuView extends View  {
                         }
     }
 
-    private void saveProductReport() {
+    public void saveProductReport() {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");    
             String filePath = "ProductReport - ";
             String extension = ".txt";
@@ -82,13 +90,24 @@ public class ReportMenuView extends View  {
                         }
     }
 
-    private void saveIngrReport() {
+    public void saveIngrReport() {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
             String filePath = "IngrReport - ";
             String extension = ".txt";
                         try {
                             // save the game to the specified file                        }
                                 GameControl.saveIngrReport(java.util.Arrays.asList(Ingredients.values()), filePath + dateFormat + extension);
+                        }catch (Exception ex) {
+                            ErrorView.display("ReportMenuView", ex.getMessage());
+                        }
+    }
+     public static void saveLocReport() {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+            String filePath = "IngrReport - ";
+            String extension = ".txt";
+                        try {
+                            // save the game to the specified file                        }
+                                GameControl.saveLocReport(java.util.Arrays.asList(Map.values()), filePath + dateFormat + extension);
                         }catch (Exception ex) {
                             ErrorView.display("ReportMenuView", ex.getMessage());
                         }
