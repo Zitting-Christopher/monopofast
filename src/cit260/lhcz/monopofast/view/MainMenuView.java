@@ -25,6 +25,7 @@ public class MainMenuView extends View{
                 + "\nS - Save Game"
                 + "\nT - View Top Scores"
                 + "\nL - Load Game"
+                + "\nR - Reports"
                 + "\nB - Bio page"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
@@ -52,6 +53,13 @@ public class MainMenuView extends View{
                     this.StoreBioMenuView();
                    
                     break;
+                         
+                    case "R": //Help menu
+               
+                    this.ReportMenuView();
+                   
+                    break;
+                         
                 case "S": //save game
                 
                     this.saveGame();
@@ -96,7 +104,7 @@ public class MainMenuView extends View{
                         + "is to be saved.");
                         String filePath = this.getInput();
                         try {
-                            // save the game to the speciried file                        }
+                            // save the game to the specified file                        }
                                 GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
                         }catch (Exception ex) {
                             ErrorView.display("MainMenuView", ex.getMessage());
@@ -116,6 +124,11 @@ public class MainMenuView extends View{
                             StoreBioMenuView StoreBioMenu = new StoreBioMenuView();
                          StoreBioMenu.display();
                         }     
+
+                        private void ReportMenuView() {
+                            ReportMenuView ReportMenu = new ReportMenuView();
+                         ReportMenu.display();
+                        }
                          
                     }
 

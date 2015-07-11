@@ -7,7 +7,9 @@ package monopofast;
 
 import cit260.lhcz.monopofast.model.Game;
 import cit260.lhcz.monopofast.model.Player;
+import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.view.ErrorView;
+import cit260.lhcz.monopofast.view.ReportMenuView;
 import cit260.lhcz.monopofast.view.StartView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,6 +29,9 @@ public class Monopofast {
     private static BufferedReader inFile = null;
     
     private static PrintWriter logFile = null;
+    private static PrintWriter charRptFile = null;
+    private static PrintWriter prodRptFile = null;
+    private static PrintWriter ingrRptFile = null;
 
     public static Player getPlayer() {
         return player;
@@ -39,7 +44,7 @@ public class Monopofast {
     public static Game getCurrentGame() {
         return currentGame;
     }
-
+    
     public static void setCurrentGame(Game currentGame) {
         Monopofast.currentGame = currentGame;
     }
@@ -68,6 +73,30 @@ public class Monopofast {
         Monopofast.logFile = logFile;
     }
 
+    public static PrintWriter getCharRptFile() {
+        return charRptFile;
+    }
+
+    public static void setCharRptFile(PrintWriter charRptFile) {
+        Monopofast.charRptFile = charRptFile;
+    }
+
+    public static PrintWriter getProdRptFile() {
+        return prodRptFile;
+    }
+
+    public static void setProdRptFile(PrintWriter prodRptFile) {
+        Monopofast.prodRptFile = prodRptFile;
+    }
+
+    public static PrintWriter getIngrRptFile() {
+        return ingrRptFile;
+    }
+
+    public static void setIngrRptFile(PrintWriter ingrRptFile) {
+        Monopofast.ingrRptFile = ingrRptFile;
+    }
+
     
     
     /**
@@ -87,6 +116,9 @@ public class Monopofast {
             String filePath = "log.txt";
             Monopofast.logFile = new PrintWriter(filePath);
             
+            Monopofast.charRptFile = ReportMenuView.saveCharacterReport();
+            Monopofast.prodRptFile = ReportMenuView.saveProductReport();
+            Monopofast.ingrRptFile = ReportMenuView.saveIngrReport();
         
         //Create startView and start the program
         StartView startView = new StartView();

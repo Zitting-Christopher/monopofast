@@ -5,12 +5,14 @@
  */
 package cit260.lhcz.monopofast.control;
 
+import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Game;
+import cit260.lhcz.monopofast.model.Ingredients;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
-import cit260.lhcz.monopofast.view.ErrorView;
+import cit260.lhcz.monopofast.model.Products;
+import cit260.lhcz.monopofast.view.ReportMenuView;
 import monopofast.Monopofast;
-import cit260.lhcz.monopofast.view.View;
 import exception.GameControlException;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -20,6 +22,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.util.List;
 
 
 
@@ -29,14 +32,13 @@ import java.io.PrintWriter;
  */
 
 public class GameControl {
-    private static String filepath;
 
   
 
     public static void getSaveGame(String filePath) throws GameControlException {
         Game game = null;
         
-        try( FileInputStream fips = new FileInputStream(filepath)) {
+        try( FileInputStream fips = new FileInputStream(filePath)) {
              ObjectInputStream output = new ObjectInputStream(fips);
              
              game = (Game) output.readObject();
@@ -50,9 +52,24 @@ public class GameControl {
         }
         Monopofast.setCurrentGame(game);
     }
+
+    public void saveCharacterReport(List<Character> asList, String string) {
+        ReportMenuView.saveCharacterReport();
+    }
+
+    public void saveProductReport(List<Products> asList, String string) {
+        ReportMenuView.saveProductReport();
+    }
+
+    public void saveIngrReport(List<Ingredients> asList, String string) {
+        ReportMenuView.saveIngrReport();
+    }
     
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
+    protected final PrintWriter charRptFile = Monopofast.getCharRptFile();
+    protected final PrintWriter prodRptFile = Monopofast.getProdRptFile();
+    protected final PrintWriter IngrRptFile = Monopofast.getIngrRptFile();
     
     public static  void  createNewGame(Player player, Map map) {
         
@@ -86,7 +103,7 @@ public class GameControl {
     public static void saveGame(Game game, String filePath) 
         throws GameControlException {
         
-        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+        try( FileOutputStream fops = new FileOutputStream(filePath)) {
              ObjectOutputStream output = new ObjectOutputStream(fops);
              
              output.writeObject(game);
@@ -116,11 +133,11 @@ public class GameControl {
 //        }
 //    }
 
-    public static void StartSavedGame(String filepath) 
+    public static void StartSavedGame(String filePath) 
        throws GameControlException {
         Game game = null;
         
-        try( FileInputStream fips = new FileInputStream(filepath)) {
+        try( FileInputStream fips = new FileInputStream(filePath)) {
              ObjectInputStream output = new ObjectInputStream(fips);
              
 //             game = (Game) output.readObject();
