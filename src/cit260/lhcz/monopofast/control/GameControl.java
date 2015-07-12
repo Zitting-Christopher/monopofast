@@ -11,6 +11,7 @@ import cit260.lhcz.monopofast.model.Ingredients;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
 import cit260.lhcz.monopofast.model.Products;
+import cit260.lhcz.monopofast.model.SubLevel;
 import cit260.lhcz.monopofast.view.ReportMenuView;
 import monopofast.Monopofast;
 import exception.GameControlException;
@@ -53,6 +54,9 @@ public class GameControl {
         Monopofast.setCurrentGame(game);
     }
 
+    
+    
+
     public void saveCharacterReport(List<Character> asList, String string) {
         ReportMenuView.saveCharacterReport();
     }
@@ -66,15 +70,18 @@ public class GameControl {
     }
     
      public void saveLocReport(List<Map> asList, String string) {
-        ReportMenuView.LoctionReport();
+        ReportMenuView.saveLocReport();
     }
-    
+     public static void saveSubleReport(List<SubLevel> asList, String string) {
+        ReportMenuView.saveLocReport();
+    }
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
     protected final PrintWriter charRptFile = Monopofast.getCharRptFile();
     protected final PrintWriter prodRptFile = Monopofast.getProdRptFile();
     protected final PrintWriter IngrRptFile = Monopofast.getIngrRptFile();
-     protected final PrintWriter LocRptFile = Monopofast.getLocRptFile();
+    protected final PrintWriter LocRptFile = Monopofast.getLocRptFile();
+    protected final PrintWriter sublevptFile = Monopofast.getSubleRptFile();
     public static  void  createNewGame(Player player, Map map) {
         
         Game game = new Game(player,map); // create new game

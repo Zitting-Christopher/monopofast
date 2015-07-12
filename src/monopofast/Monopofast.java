@@ -33,6 +33,7 @@ public class Monopofast {
     private static PrintWriter prodRptFile = null;
     private static PrintWriter ingrRptFile = null;
     private static PrintWriter locRptFile = null;
+    private static PrintWriter subleRptFile = null;
     public static Player getPlayer() {
         return player;
     }
@@ -94,13 +95,18 @@ public class Monopofast {
     public static void setIngrRptFile(PrintWriter ingrRptFile) {
         Monopofast.ingrRptFile = ingrRptFile;
     }
-    public static void setLogFile() {
+    public static void setLocFile(PrintWriter locRptFile) {
         Monopofast.locRptFile = locRptFile;
     }
     public static PrintWriter getLocRptFile() {
         return locRptFile;
     }
-    
+     public static void setSubleFile(PrintWriter subleRptFile) {
+        Monopofast.subleRptFile = subleRptFile;
+    }
+    public static PrintWriter getSubleRptFile() {
+        return subleRptFile;
+    }
     /**
      * @param args the command line arguments
      */
@@ -122,6 +128,7 @@ public class Monopofast {
             Monopofast.prodRptFile = ReportMenuView.saveProductReport();
             Monopofast.ingrRptFile = ReportMenuView.saveIngrReport();
             Monopofast.locRptFile = ReportMenuView.saveLocReport();
+            Monopofast.subleRptFile = ReportMenuView.saveSubleReport();
         //Create startView and start the program
         StartView startView = new StartView();
         startView.startProgram();
@@ -230,7 +237,12 @@ public class Monopofast {
         */
     }
 
-   
+    public static PrintWriter getLogFile() {
+        return null;
+        
+    }
+
+    
    
     
 }

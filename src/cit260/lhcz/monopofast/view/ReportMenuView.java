@@ -10,6 +10,7 @@ import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
 import cit260.lhcz.monopofast.model.Map;
+import cit260.lhcz.monopofast.model.SubLevel;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -103,11 +104,22 @@ public class ReportMenuView extends View  {
     }
      public static void saveLocReport() {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-            String filePath = "IngrReport - ";
+            String filePath = "LocReport - ";
             String extension = ".txt";
                         try {
                             // save the game to the specified file                        }
                                 GameControl.saveLocReport(java.util.Arrays.asList(Map.values()), filePath + dateFormat + extension);
+                        }catch (Exception ex) {
+                            ErrorView.display("ReportMenuView", ex.getMessage());
+                        }
+     }
+                        public static void saveSubleReport() {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+            String filePath = "SubleReport - ";
+            String extension = ".txt";
+                        try {
+                            // save the game to the specified file                        }
+                                GameControl.saveSubleReport(java.util.Arrays.asList(SubLevel.values()), filePath + dateFormat + extension);
                         }catch (Exception ex) {
                             ErrorView.display("ReportMenuView", ex.getMessage());
                         }
