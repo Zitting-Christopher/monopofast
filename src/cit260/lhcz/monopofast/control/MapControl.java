@@ -5,12 +5,12 @@ package cit260.lhcz.monopofast.control;
 import cit260.lhcz.monopofast.model.Location;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
+import cit260.lhcz.monopofast.model.Scene;
 import exception.GameControlException;
 
 import exception.MapControlException;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
-import javafx.scene.Scene;
 import monopofast.Monopofast;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -39,7 +39,7 @@ public class MapControl {
 
         //start point
         locations[0][0].setScene(Scene.start);
-        locations[0][1].setScene(Scene.Vendy);
+        locations[0][2].setScene(Scene.Vendy);
         locations[0][2].setScene(Scene.Vendy);
         locations[0][3].setScene(Scene.Vendy);
         locations[0][4].setScene(Scene.Vendy);
@@ -117,7 +117,7 @@ public class MapControl {
     }
      public static void printMap() 
             throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\mapReport.txt")){
+        try(FileOutputStream fops = new FileOutputStream("C:\\Users\\Logan\\Documents\\mapReport.txt")){
             ObjectOutputStream output = new ObjectOutputStream(fops);
             output.writeObject(Monopofast.getCurrentGame().getMap());
         }catch(Exception ex){

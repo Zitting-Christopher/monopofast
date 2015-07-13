@@ -79,7 +79,7 @@ public enum Products implements Serializable {
     }
  public static void saveProductReport()
             throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\mapReport.txt")){
+        try(FileOutputStream fops = new FileOutputStream("C:\\ProReport.txt")){
             ObjectOutputStream output = new ObjectOutputStream(fops);
             output.writeObject(Monopofast.getCurrentGame().getMap());
         }catch(Exception ex){
