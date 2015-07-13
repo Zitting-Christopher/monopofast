@@ -101,14 +101,16 @@ public class Monopofast {
     public static PrintWriter getLocRptFile() {
         return locRptFile;
     }
-     public static void setSubleFile(PrintWriter subleRptFile) {
+     public static PrintWriter setSubleFile(PrintWriter subleRptFile) {
         Monopofast.subleRptFile = subleRptFile;
+        return null;
     }
     public static PrintWriter getSubleRptFile() {
         return subleRptFile;
     }
     /**
      * @param args the command line arguments
+     * @return 
      */
     public static void main(String[] args) {
         
@@ -124,15 +126,15 @@ public class Monopofast {
             String filePath = "log.txt";
             Monopofast.logFile = new PrintWriter(filePath);
             
-            Monopofast.charRptFile = ReportMenuView.saveCharacterReport();
-            Monopofast.prodRptFile = ReportMenuView.saveProductReport();
-            Monopofast.ingrRptFile = ReportMenuView.saveIngrReport();
-            Monopofast.locRptFile = ReportMenuView.saveLocReport();
-            Monopofast.subleRptFile = ReportMenuView.saveSubleReport();
+//            Monopofast.charRptFile = ReportMenuView.saveCharacterReport();
+//            Monopofast.prodRptFile = ReportMenuView.saveProductReport();
+//            Monopofast.ingrRptFile = ReportMenuView.saveIngrReport();
+//            Monopofast.locRptFile = ReportMenuView.saveLocReport();
+//            Monopofast.subleRptFile = ReportMenuView.saveSubleReport();
         //Create startView and start the program
         StartView startView = new StartView();
         startView.startProgram();
-        return;
+        /* return null;*/
         }
         catch(Throwable e) {
 //                ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()+
@@ -154,7 +156,7 @@ public class Monopofast {
                 
             } catch (IOException ex) {
 //                ErrorView.display(this.getClass().getName(),"Error closing files.");
-                return;
+//                return null;
             }
         }
         /*
@@ -235,6 +237,7 @@ public class Monopofast {
         String prodInfo = triple.toString();
         this.console.println(prodInfo);
         */
+//        return null;
     }
 
     public static PrintWriter getLogFile() {

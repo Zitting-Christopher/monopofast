@@ -1,12 +1,17 @@
 package cit260.lhcz.monopofast.control;
 
+import cit260.lhcz.monopofast.model.Location;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
+import exception.GameControlException;
 
 import exception.MapControlException;
-import java.awt.Point;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import javafx.scene.Scene;
 import monopofast.Monopofast;
-
+import cit260.lhcz.monopofast.model.*;
+import java.awt.Point;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,70 +22,107 @@ import monopofast.Monopofast;
  *
  * @author Logan
  */
+
+
 public class MapControl {
-    private static Object monopofast;
+
     public static Map createMap() {
+        Map map = new Map(6, 6);
+        assignScenesToLocations(map);
+
+        return map;
+    }
+
+    private static void assignScenesToLocations(Map map) {
+        Location[][] locations = map.getLocations();
+
+        //start point
+        locations[0][0].setScene(Scene.start);
+        locations[0][1].setScene(Scene.Vendy);
+        locations[0][2].setScene(Scene.Vendy);
+        locations[0][3].setScene(Scene.Vendy);
+        locations[0][4].setScene(Scene.Vendy);
+        locations[0][5].setScene(Scene.Vendy);
+        locations[0][6].setScene(Scene.Ardy);
+        locations[0][7].setScene(Scene.Ardy);
+        locations[0][8].setScene(Scene.Ardy);
+        locations[0][9].setScene(Scene.Ardy);
+        locations[1][0].setScene(Scene.Ardy);
+        locations[1][1].setScene(Scene.Jack);
+        locations[1][2].setScene(Scene.Jack);
+        locations[1][3].setScene(Scene.Jack);
+        locations[1][4].setScene(Scene.Jack);
+        locations[1][5].setScene(Scene.Jack);
+        locations[1][6].setScene(Scene.Queen);
+        locations[1][7].setScene(Scene.Queen);
+        locations[1][8].setScene(Scene.Queen);
+        locations[1][9].setScene(Scene.Queen);
+        locations[2][0].setScene(Scene.Queen);
+        locations[2][1].setScene(Scene.McDumbledore);
+        locations[2][2].setScene(Scene.McDumbledore);
+        locations[2][3].setScene(Scene.McDumbledore);
+        locations[2][4].setScene(Scene.McDumbledore);
+        locations[2][5].setScene(Scene.McDumbledore);
+        locations[2][6].setScene(Scene.Vendy);
+        locations[2][7].setScene(Scene.Vendy);
+        locations[2][8].setScene(Scene.Vendy);
+        locations[2][9].setScene(Scene.Vendy);
+        locations[3][0].setScene(Scene.Vendy);
+        locations[3][1].setScene(Scene.Vendy);
+        locations[3][2].setScene(Scene.Vendy);
+        locations[3][3].setScene(Scene.Vendy);
+        locations[3][4].setScene(Scene.Vendy);
+        locations[3][5].setScene(Scene.Vendy);
+        locations[3][6].setScene(Scene.Vendy);
+        locations[3][7].setScene(Scene.Vendy);
+        locations[3][8].setScene(Scene.Vendy);
+        locations[3][9].setScene(Scene.Vendy);
+        locations[4][0].setScene(Scene.Vendy);
+        locations[4][1].setScene(Scene.Vendy);
+        locations[4][2].setScene(Scene.Vendy);
+        locations[4][3].setScene(Scene.Vendy);
+        locations[4][4].setScene(Scene.Vendy);
+        locations[4][5].setScene(Scene.Vendy);
+        locations[4][6].setScene(Scene.Vendy);
+        locations[4][7].setScene(Scene.Vendy);
+        locations[4][8].setScene(Scene.Vendy);
+        locations[4][9].setScene(Scene.Vendy);
+        locations[5][0].setScene(Scene.Vendy);
+        locations[5][1].setScene(Scene.Vendy);
+        locations[5][2].setScene(Scene.Vendy);
+        locations[5][3].setScene(Scene.Vendy);
+        locations[5][4].setScene(Scene.Vendy);
+        locations[5][5].setScene(Scene.Vendy);
+        locations[5][6].setScene(Scene.Vendy);
+        locations[5][7].setScene(Scene.Vendy);
+        locations[5][8].setScene(Scene.Vendy);
+        locations[5][9].setScene(Scene.Vendy);
+        locations[6][0].setScene(Scene.Vendy);
+        locations[6][1].setScene(Scene.Vendy);
+        locations[6][2].setScene(Scene.Vendy);
+        locations[6][3].setScene(Scene.Vendy);
+        locations[6][4].setScene(Scene.Vendy);
+        locations[6][5].setScene(Scene.Vendy);
+        locations[6][6].setScene(Scene.ending);
         
-       Map map = Map(20,20);
-       Scene[] scenes = createScenes();
-       assignScenesToLocations(map, scenes);
-       return map;
-    }
-
-    public static Scene[] createScenes() {
-        
-        return null;
-}
-   
-    
-
-    public static void assignScenesToLocations(Map map, Scene[] scenes) {
         
     }
 
-    public static void moveActorsToStartingLocation(Map map) {
-       Player[] players = Player.values();
-       for(Player player: players){
-            Point coordinates = player.getCoordinates();
-            MapControl.moveActorsToLocation(player, coordinates);
-       
-       }
+    public static void startAtLocation(Map map) throws MapControlException {
+        Player player1 = Monopofast.getPlayer();
+        int row = map.getRowCount();
+        int column = map.getColumnCount();
+        GameControl.moveCharacterToLocation(player1, row, column);
     }
-    public static void movePlayerToLocation(Player player, point coordinates)
-        throws MapControlException{
-    Map map = Monopofast.getCurrentGame().getMap();
-    int newRow = coordinates.x-1;
-    int newColumn = coordinates.y-1;
-     if(newRow < 0 || newRow >= map.getRow() || newColumn < 0 || newColumn >= map.getColumn()) {
-      throw new MapControlException("Can not move to that location "
-      + coordinates.x + ", " + coordinates.y
-      + " because that Location is not "
-      + " somewhere we will let you go. ");
-    }    
-         
-    } 
-       
-    public static int moveActorsToLocation(Player player, Point coordinates) {
-        return 0;
-        
-    }
-
-    private static Map Map(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static class Scene {
-
-        public Scene() {
+     public static void printMap() 
+            throws GameControlException{
+        try(FileOutputStream fops = new FileOutputStream("C:\\mapReport.txt")){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(Monopofast.getCurrentGame().getMap());
+        }catch(Exception ex){
+            throw new GameControlException(ex.getMessage());
         }
     }
 
-    public static class point {
-        private int x;
-        private int y;
-
-        public point() {
-        }
-    }
     
 }

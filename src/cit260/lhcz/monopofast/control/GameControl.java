@@ -12,9 +12,11 @@ import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
 import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.SubLevel;
+import cit260.lhcz.monopofast.view.ErrorView;
 import cit260.lhcz.monopofast.view.ReportMenuView;
 import monopofast.Monopofast;
 import exception.GameControlException;
+import exception.MapControlException;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -57,24 +59,24 @@ public class GameControl {
     
     
 
-    public void saveCharacterReport(List<Character> asList, String string) {
-        ReportMenuView.saveCharacterReport();
-    }
-
-    public void saveProductReport(List<Products> asList, String string) {
-        ReportMenuView.saveProductReport();
-    }
-
-    public void saveIngrReport(List<Ingredients> asList, String string) {
-        ReportMenuView.saveIngrReport();
-    }
-    
-     public void saveLocReport(List<Map> asList, String string) {
-        ReportMenuView.saveLocReport();
-    }
-     public static void saveSubleReport(List<SubLevel> asList, String string) {
-        ReportMenuView.saveLocReport();
-    }
+//    public void saveCharacterReport(List<Character> asList, String string) {
+//        ReportMenuView.saveCharacterReport();
+//    }
+//
+//    public void saveProductReport(List<Products> asList, String string) {
+//        ReportMenuView.saveProductReport();
+//    }
+//
+//    public void saveIngrReport(List<Ingredients> asList, String string) {
+//        ReportMenuView.saveIngrReport();
+//    }
+//    
+//     public void saveLocReport(List<Map> asList, String string) {
+//        ReportMenuView.saveLocReport();
+//    }
+//     public static void saveSubleReport(List<SubLevel> asList, String string) {
+////        ReportMenuView.saveSubleReport();
+//    }
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
     protected final PrintWriter charRptFile = Monopofast.getCharRptFile();
@@ -89,7 +91,7 @@ public class GameControl {
         game.setPlayer(player); // save player in game
          MapControl.createMap();
         game.setMap(map);
-        MapControl.moveActorsToStartingLocation(map);
+//        MapControl.moveActorsToStartingLocation(map);
     }
     
     public static Player createPlayer (String playerName) {
@@ -107,7 +109,7 @@ public class GameControl {
 
     
 
-    public static void assignScenesToLocations(Map map, MapControl.Scene[] scenes) {
+    public static void assignScenesToLocations(Map map) {
         
     }
 
@@ -129,20 +131,20 @@ public class GameControl {
     public void createNewGame(Player player) {
         
     }
-//    public void saveGame(Player currentGame) {
-//      
-//        this.console.println("\n\n Where do you want to save the game?");
-//        
-//        
-//        try {
-//            //save the game to specified file
-//            String filePath = this.getInput();
-//            GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
-//        }
-//        catch(Exception ex) {
-//            ErrorView.display("MainMenuView", ex.getMessage());
-//        }
-//    }
+    public void saveGame(Player currentGame) {
+      
+        this.console.println("\n\n Where do you want to save the game?");
+        
+        
+        try {
+            //save the game to specified file
+            String filePath = this.getInput();
+            GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
+        }
+        catch(Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    }
 
     public static void StartSavedGame(String filePath) 
        throws GameControlException {
@@ -193,7 +195,17 @@ public class GameControl {
         
     }
 
-
+ public static void moveCharacterToLocation(Player player, int row, int column)
+        throws MapControlException{
+        Map map = Monopofast.getCurrentGame().getMap();
+        int newRow = row - 1;
+        int newColumn = column - 1;
+        
+        if (newRow < 0 || newRow >= map.getRowCount() || newColumn < 0 || newColumn >= map.getColumnCount()){
+            throw new MapControlException("Cannot move to " + row + "," + column +
+                                          "because that location is out of the map boundaries.");
+        }
     
     
+}
 }

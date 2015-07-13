@@ -6,6 +6,7 @@
 package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.control.MapControl;
 import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
@@ -44,18 +45,23 @@ public class ReportMenuView extends View  {
                        value = value.toUpperCase(); // convert to upper case
                      switch(value){
                 
-                case "C": //Character Report
-                    this.saveCharacterReport();
+//                case "C": //Character Report
+//                    this.saveCharacterReport();
+//                    break;
+//                    
+//                case "P": //Product Report
+//                    this.saveProductReport();
+//                    break;
+//                    
+//                case "I": //Ingredient Report
+//                    this.saveIngrReport();
+//                    break;
+//                 case "S": //SubLevel Report
+//                    this.saveSubleReport();
+//                    break;
+                     case "P": //Location Report
+                    this.printMap();
                     break;
-                    
-                case "P": //Product Report
-                    this.saveProductReport();
-                    break;
-                    
-                case "I": //Ingredient Report
-                    this.saveIngrReport();
-                    break;
-                
                 case "E": //exit game
                     return true;
                     
@@ -67,61 +73,59 @@ public class ReportMenuView extends View  {
     
 }
 
-    public void saveCharacterReport() {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-            String filePath = "CharacterReport - ";
-            String extension = ".txt";
-                        try {
-                            // save the game to the specified file                        }
-                                GameControl.saveCharacterReport(java.util.Arrays.asList(Character.values()), filePath + dateFormat + extension);
-                        }catch (Exception ex) {
-                            ErrorView.display("ReportMenuView", ex.getMessage());
-                        }
-    }
-
-    public void saveProductReport() {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");    
-            String filePath = "ProductReport - ";
-            String extension = ".txt";
-                        try {
-                            // save the game to the specified file                        }
-                                GameControl.saveProductReport(java.util.Arrays.asList(Products.values()), filePath + dateFormat + extension);
-                        }catch (Exception ex) {
-                            ErrorView.display("ReportMenuView", ex.getMessage());
-                        }
-    }
-
-    public void saveIngrReport() {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-            String filePath = "IngrReport - ";
-            String extension = ".txt";
-                        try {
-                            // save the game to the specified file                        }
-                                GameControl.saveIngrReport(java.util.Arrays.asList(Ingredients.values()), filePath + dateFormat + extension);
-                        }catch (Exception ex) {
-                            ErrorView.display("ReportMenuView", ex.getMessage());
-                        }
-    }
-     public static void saveLocReport() {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-            String filePath = "LocReport - ";
-            String extension = ".txt";
-                        try {
-                            // save the game to the specified file                        }
-                                GameControl.saveLocReport(java.util.Arrays.asList(Map.values()), filePath + dateFormat + extension);
-                        }catch (Exception ex) {
-                            ErrorView.display("ReportMenuView", ex.getMessage());
-                        }
-     }
-                        public static void saveSubleReport() {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-            String filePath = "SubleReport - ";
-            String extension = ".txt";
-                        try {
-                            // save the game to the specified file                        }
-                                GameControl.saveSubleReport(java.util.Arrays.asList(SubLevel.values()), filePath + dateFormat + extension);
-                        }catch (Exception ex) {
-                            ErrorView.display("ReportMenuView", ex.getMessage());
-                        }
+//    public void saveCharacterReport() {
+//            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+//            String filePath = "CharacterReport - ";
+//            String extension = ".txt";
+//                        try {
+//                            // save the game to the specified file                        }
+//                                GameControl.saveCharacterReport(java.util.Arrays.asList(Character.values()), filePath + dateFormat + extension);
+//                        }catch (Exception ex) {
+//                            ErrorView.display("ReportMenuView", ex.getMessage());
+//                        }
+//    }
+//
+//    public void saveProductReport() {
+//            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");    
+//            String filePath = "ProductReport - ";
+//            String extension = ".txt";
+//                        try {
+//                            // save the game to the specified file                        }
+//                                GameControl.saveProductReport(java.util.Arrays.asList(Products.values()), filePath + dateFormat + extension);
+//                        }catch (Exception ex) {
+//                            ErrorView.display("ReportMenuView", ex.getMessage());
+//                        }
+//    }
+//
+//    public void saveIngrReport() {
+//            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+//            String filePath = "IngrReport - ";
+//            String extension = ".txt";
+//                        try {
+//                            // save the game to the specified file                        }
+//                                GameControl.saveIngrReport(java.util.Arrays.asList(Ingredients.values()), filePath + dateFormat + extension);
+//                        }catch (Exception ex) {
+//                            ErrorView.display("ReportMenuView", ex.getMessage());
+//                        }
+//    }
+//     public static PrintWriter saveLocReport() {
+//            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+//            String filePath = "C:\\LocReport.txt";
+//            String extension = ".txt";
+//                        try {
+//                            // save the game to the specified file                        }
+//                                GameControl.saveLocReport(java.util.Arrays.asList(Map.values()), filePath);
+//                        }catch (Exception ex) {
+//                            ErrorView.display("ReportMenuView", ex.getMessage());
+//                        }
+//         return null;
+//     }
+    private void printMap() {
+        try{
+        MapControl.printMap();
+        }catch(Exception ex){
+            ErrorView.display("ReportMenuView", ex.getMessage());
+        }
+      
     }
 }

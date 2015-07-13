@@ -61,7 +61,7 @@ public abstract class View implements ViewInterface {
         }
     public boolean mapControlException(){
         Player player = null;
-        MapControl.moveActorsToLocation(player,coordinates);
+       
         return false;
     }
     public String getMessagePrompt() {
