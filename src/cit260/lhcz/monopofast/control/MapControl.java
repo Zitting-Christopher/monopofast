@@ -4,6 +4,7 @@ package cit260.lhcz.monopofast.control;
 
 import cit260.lhcz.monopofast.model.Location;
 import cit260.lhcz.monopofast.model.Map;
+import cit260.lhcz.monopofast.model.Player;
 import exception.GameControlException;
 
 import exception.MapControlException;
@@ -24,6 +25,7 @@ import monopofast.Monopofast;
 
 
 public class MapControl {
+   
 
     public static Map createMap() {
         Map map = new Map(7, 7);
