@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+import exception.GameControlException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import monopofast.Monopofast;
 /**
  *
  * @author Christopher
@@ -121,5 +125,13 @@ public enum SubLevel implements Serializable {
         this.recordTime = recordTime;
     }
     
-    
+     public static void saveSubleReport()
+            throws GameControlException{
+        try(FileOutputStream fops = new FileOutputStream("C:\\mapReport.txt")){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(Monopofast.getCurrentGame().getMap());
+        }catch(Exception ex){
+            throw new GameControlException(ex.getMessage());
+        }
+    }
 }

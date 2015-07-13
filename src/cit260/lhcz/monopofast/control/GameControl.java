@@ -79,11 +79,11 @@ public class GameControl {
 //    }
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
-    protected final PrintWriter charRptFile = Monopofast.getCharRptFile();
-    protected final PrintWriter prodRptFile = Monopofast.getProdRptFile();
-    protected final PrintWriter IngrRptFile = Monopofast.getIngrRptFile();
-    protected final PrintWriter LocRptFile = Monopofast.getLocRptFile();
-    protected final PrintWriter sublevptFile = Monopofast.getSubleRptFile();
+//    protected final PrintWriter charRptFile = Monopofast.getCharRptFile();
+//    protected final PrintWriter prodRptFile = Monopofast.getProdRptFile();
+//    protected final PrintWriter IngrRptFile = Monopofast.getIngrRptFile();
+//    protected final PrintWriter LocRptFile = Monopofast.getLocRptFile();
+//    protected final PrintWriter sublevptFile = Monopofast.getSubleRptFile();
     public static  void  createNewGame(Player player, Map map) {
         
         Game game = new Game(player,map); // create new game

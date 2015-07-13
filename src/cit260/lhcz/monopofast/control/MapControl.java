@@ -3,6 +3,7 @@ package cit260.lhcz.monopofast.control;
 import cit260.lhcz.monopofast.model.Location;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
+
 import exception.GameControlException;
 
 import exception.MapControlException;
@@ -10,8 +11,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import javafx.scene.Scene;
 import monopofast.Monopofast;
-import cit260.lhcz.monopofast.model.*;
-import java.awt.Point;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -38,7 +37,7 @@ public class MapControl {
 
         //start point
         locations[0][0].setScene(Scene.start);
-        locations[0][1].setScene(Scene.Vendy);
+        locations[0][1].setScene(Scene.vendy);
         locations[0][2].setScene(Scene.Vendy);
         locations[0][3].setScene(Scene.Vendy);
         locations[0][4].setScene(Scene.Vendy);

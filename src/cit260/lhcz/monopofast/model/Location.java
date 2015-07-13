@@ -4,11 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
-
-
 import java.io.Serializable;
-import javafx.scene.Scene;
-
 /**
  *
  * @author Logan

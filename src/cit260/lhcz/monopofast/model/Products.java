@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+import exception.GameControlException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import monopofast.Monopofast;
 
 /**
  *
@@ -73,7 +77,15 @@ public enum Products implements Serializable {
         this.productId= productId;
         this.prodDesc= prodDesc;
     }
-
+ public static void saveProductReport()
+            throws GameControlException{
+        try(FileOutputStream fops = new FileOutputStream("C:\\mapReport.txt")){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(Monopofast.getCurrentGame().getMap());
+        }catch(Exception ex){
+            throw new GameControlException(ex.getMessage());
+        }
+    }
     
 }
     
