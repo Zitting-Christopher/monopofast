@@ -1,9 +1,9 @@
 package cit260.lhcz.monopofast.control;
 
+
+
 import cit260.lhcz.monopofast.model.Location;
 import cit260.lhcz.monopofast.model.Map;
-import cit260.lhcz.monopofast.model.Player;
-
 import exception.GameControlException;
 
 import exception.MapControlException;
@@ -32,7 +32,7 @@ public class MapControl {
         return map;
     }
 
-    private static void assignScenesToLocations(Map map, cit260.lhcz.monopofast.model.Scene Scene) {
+    private static void assignScenesToLocations(Map map) {
         Location[][] locations = map.getLocations();
 
         //start point
@@ -123,9 +123,7 @@ public class MapControl {
         }
     }
 
-    private static void assignScenesToLocations(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 }
