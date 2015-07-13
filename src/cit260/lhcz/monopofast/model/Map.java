@@ -103,15 +103,8 @@ public class Map implements Serializable{
         }
         return true;
     }
-    public static void printMap() 
-            throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\mapReport.txt")){
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-            output.writeObject(Monopofast.getCurrentGame().getMap());
-        }catch(Exception ex){
-            throw new GameControlException(ex.getMessage());
-        }
-    }
+   
+    
     
 }
 //        Ve1(0,0,"Level 1 - Vendy's Drink Station"),
