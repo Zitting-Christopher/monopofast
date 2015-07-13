@@ -13,11 +13,11 @@ import java.io.Serializable;
  */
 public enum Scene implements Serializable{
         start("Hi! Welcome to Monopofast - the fast food game of corporate domination!","ST"),
-        vendy("Venny's was founnded on one idea, and that idea was bacon and more","VD"),
-        ardy("The founder of Ardy's Mr. Hardy is a spend thrift and many","RD"),
-        jack("A Food shop. The smell of stale bread and Strange spices fills your nose.","JK"),
-        queen("This is your one place to go when your on a budget and want","QU"),
-        mcDumbledore("This wizard theme restruant make you feel as though you have.","MC"),
+        Vendy("Venny's was founnded on one idea, and that idea was bacon and more","VD"),
+       Ardy("The founder of Ardy's Mr. Hardy is a spend thrift and many","RD"),
+        Jack("A Food shop. The smell of stale bread and Strange spices fills your nose.","JK"),
+        Queen("This is your one place to go when your on a budget and want","QU"),
+        McDumbledore("This wizard theme restruant make you feel as though you have.","MC"),
         ending("You Win","EN");
         private String symbol;
         private String description;

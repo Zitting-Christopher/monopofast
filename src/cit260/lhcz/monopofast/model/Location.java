@@ -46,9 +46,7 @@ public class Location implements Serializable{
         return scene;
     }
 
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
+   
     
     
     @Override
@@ -81,4 +79,8 @@ public class Location implements Serializable{
         }
         return true;
     }   
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
 }

@@ -55,9 +55,9 @@ public enum Character implements Serializable {
         this.charDesc= charDesc;
     }
 
-    public static void saveProductReport() 
+    public static void saveCharacterReport() 
             throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\ProReport.txt")){
+        try(FileOutputStream fops = new FileOutputStream("C:\\CharReport.txt")){
             ObjectOutputStream output = new ObjectOutputStream(fops);
             output.writeObject(Monopofast.getCurrentGame().getMap());
         }catch(Exception ex){

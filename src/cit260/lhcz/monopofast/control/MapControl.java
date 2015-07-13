@@ -26,18 +26,18 @@ import monopofast.Monopofast;
 public class MapControl {
 
     public static Map createMap() {
-        Map map = new Map(6, 6);
+        Map map = new Map(7, 7);
         assignScenesToLocations(map);
 
         return map;
     }
 
-    private static void assignScenesToLocations(Map map) {
+    private static void assignScenesToLocations(Map map, cit260.lhcz.monopofast.model.Scene Scene) {
         Location[][] locations = map.getLocations();
 
         //start point
         locations[0][0].setScene(Scene.start);
-        locations[0][1].setScene(Scene.vendy);
+        locations[0][1].setScene(Scene.Vendy);
         locations[0][2].setScene(Scene.Vendy);
         locations[0][3].setScene(Scene.Vendy);
         locations[0][4].setScene(Scene.Vendy);
@@ -103,7 +103,7 @@ public class MapControl {
         locations[6][4].setScene(Scene.Vendy);
         locations[6][5].setScene(Scene.Vendy);
         locations[6][6].setScene(Scene.ending);
-        
+//        
         
     }
 
@@ -121,6 +121,10 @@ public class MapControl {
         }catch(Exception ex){
             throw new GameControlException(ex.getMessage());
         }
+    }
+
+    private static void assignScenesToLocations(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
