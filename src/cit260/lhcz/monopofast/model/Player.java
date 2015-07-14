@@ -26,7 +26,6 @@ public class Player implements Serializable{
     private SubLevel[] sublevel[];
     private String name;
    
-     
     public Player() {
     }
 
@@ -122,9 +121,13 @@ public class Player implements Serializable{
         }
         return true;
     }
-    
+
+    public void setName(String playerName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     
+
     
 }
 

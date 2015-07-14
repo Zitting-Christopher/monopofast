@@ -39,7 +39,7 @@ public class MapMenuView extends View{
                      switch(value){
                                  
                  case "A":
-                    this.viewMap();
+                    this.printMap();
                     break;
                     
                  case "R": //exit game
