@@ -5,6 +5,7 @@ package cit260.lhcz.monopofast.control;
 import cit260.lhcz.monopofast.model.*;
 import exception.*;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import monopofast.Monopofast;
 /*
@@ -20,7 +21,6 @@ import monopofast.Monopofast;
 
 
 public class MapControl {
-   
 
     public static Map createMap() {
         Map map = new Map(7, 7);
@@ -108,19 +108,17 @@ public class MapControl {
         Player player1 = Monopofast.getPlayer();
         int row = map.getRowCount();
         int column = map.getColumnCount();
-        GameControl.moveCharacterToLocation(player1, row, column);
+        CharacterControl.moveCharacterToLocation(player1, row, column);
     }
-     public static void printMap() 
+    
+    public static void printMap() 
             throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\Users\\Logan\\Documents\\mapReport.txt")){
+        try(FileOutputStream fops = new FileOutputStream("C:\\map.txt")){
             ObjectOutputStream output = new ObjectOutputStream(fops);
             output.writeObject(Monopofast.getCurrentGame().getMap());
-        }catch(Exception ex){
-            throw new GameControlException(ex.getMessage());
+        }catch(IOException e){
+            throw new GameControlException(e.getMessage());
         }
     }
-
-    
-
-    
 }
+

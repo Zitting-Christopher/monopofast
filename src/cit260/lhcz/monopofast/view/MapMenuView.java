@@ -7,6 +7,8 @@ package cit260.lhcz.monopofast.view;
 
 
 import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.control.MapControl;
+import cit260.lhcz.monopofast.model.Location;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
 import exception.MapControlException;
@@ -25,81 +27,19 @@ public class MapMenuView extends View{
                 + "\n---------------------------------------"
                 + "\n| Map Menu                            |"
                 + "\n---------------------------------------"
-                + "\n1 - World 1"
-                + "\n2 - World 2"
-                + "\n3 - World 3"
-                + "\n4 - World 4"
-                + "\n5 - World 5"
                 + "\nA - View All Worlds"
                 + "\nR - Return to Previous Menu"
                 + "\n---------------------------------------");
                    }
-    int playerLevel = 1;
+    
      @Override
                    public boolean doAction(Object obj){
                        String value = (String) obj; 
                        value = value.toUpperCase(); // convert to upper case
                      switch(value){
-                case "1": //World 1 Map 
-                   String output1 = "You chose level 1!";
-                   this.console.println(output1);
-                    break;
-                    
-                case "2": //World 2 Map
-                    if (playerLevel < 2)
-                    {
-                        String output2 = "ACCESS DENIED.";
-                        this.console.println(output2);
-                    }
-                    else
-                    {
-                        String output2 = "You chose level 2!";
-                        this.console.println(output2);
-                    }
-                   
-                    break;
-                    
-                case "3": //World 3 Map
-                    if (playerLevel < 3)
-                    {
-                        String output3 = "ACCESS DENIED.";
-                        this.console.println(output3);
-                    }
-                    else
-                    {
-                        String output3 = "You chose level 3!";
-                        this.console.println(output3);
-                    }
-                    break;
-                    
-                case "4": //World 4 Map
-                    if (playerLevel < 4)
-                    {
-                        String output4 = "ACCESS DENIED.";
-                        this.console.println(output4);
-                    }
-                    else
-                    {
-                        String output4 = "You chose level 4!";
-                        this.console.println(output4);
-                    }
-                    break;
-                    
-                case "5": //World 5 Map
-                    if (playerLevel < 5)
-                    {
-                        String output5 = "ACCESS DENIED.";
-                        this.console.println(output5);
-                    }
-                    else
-                    {
-                        String output5 = "You chose level 5!";
-                        this.console.println(output5);
-                    }
-                    break;
-                    
-                case "A":
-                    this.console.println("Here are all the maps!");
+                                 
+                 case "A":
+                    this.viewMap();
                     break;
                     
                  case "R": //exit game
@@ -113,6 +53,32 @@ public class MapMenuView extends View{
     
         
         }
-                
-}              
+         private void viewMap() {
+        Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
+
+        System.out.println("\n              ***** Rabit Hole City ******");
+        System.out.println("   | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | ");
+
+        for (int i = 0; i < locations[0].length; i++) {
+            System.out.println("\n************************************************************");
+            System.out.format("%2d", i);
+            for (int j = 0; j < locations[0].length; j++) {
+                System.out.print(" | ");
+                System.out.print(locations[i][j].getScene().getSymbol());
+
+            }
+            System.out.print(" | ");
+        }
+        System.out.println("\n**************************************************************");
+    
+    }   
+         private void printMap() {
+        try{
+        MapControl.printMap();
+        }catch(Exception ex){
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
+    }
+}
+              
       

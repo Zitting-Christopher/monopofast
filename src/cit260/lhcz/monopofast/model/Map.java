@@ -103,10 +103,10 @@ public class Map implements Serializable{
         }
         return true;
     }
-   
     
     
 }
+
 //        Ve1(0,0,"Level 1 - Vendy's Drink Station"),
 //        Ve2(0,1,"Level 2 - Vendy's Fried Food Station"),
 //        Ve3(0,2,"Level 3 - Vendy's Milkshake Station"),

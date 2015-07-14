@@ -26,6 +26,7 @@ public class MainMenuView extends View{
                 + "\nT - View Top Scores"
                 + "\nL - Load Game"
                 + "\nR - Reports"
+                + "\nM - Maps"
                 + "\nB - Bio page"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
@@ -68,6 +69,10 @@ public class MainMenuView extends View{
                 
                     this.highScore();
                     break;
+                    case "M": //save game
+                
+                    this.MapMenuView();
+                    break;
                 case "E": //exit game
              
                     return true;
@@ -87,7 +92,7 @@ public class MainMenuView extends View{
                    private void LoadGame(){
                         // create a new game
                         System.out.println("\n\nEnter the file path for file where the game "
-                        + "is to be saved.");
+                        + "was saved.");
                         String filePath = this.getInput();
                          try {
                             // save the game to the speciried file                        }
@@ -128,6 +133,10 @@ public class MainMenuView extends View{
                         private void ReportMenuView() {
                             ReportMenuView ReportMenu = new ReportMenuView();
                          ReportMenu.display();
+                        }
+                        private void MapMenuView() {
+                            MapMenuView MapMenu = new MapMenuView();
+                         MapMenu.display();
                         }
                          
                     }
