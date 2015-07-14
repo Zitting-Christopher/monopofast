@@ -5,17 +5,11 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.control.MapControl;
-import cit260.lhcz.monopofast.control.ProductControl;
 import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
-import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.SubLevel;
-import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 /**
  *

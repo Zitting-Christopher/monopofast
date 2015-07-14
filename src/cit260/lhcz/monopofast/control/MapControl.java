@@ -2,13 +2,8 @@ package cit260.lhcz.monopofast.control;
 
 
 
-import cit260.lhcz.monopofast.model.Location;
-import cit260.lhcz.monopofast.model.Map;
-import cit260.lhcz.monopofast.model.Player;
-import cit260.lhcz.monopofast.model.Scene;
-import exception.GameControlException;
-
-import exception.MapControlException;
+import cit260.lhcz.monopofast.model.*;
+import exception.*;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import monopofast.Monopofast;

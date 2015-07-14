@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
-import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -25,6 +24,11 @@ public class Player implements Serializable{
     private World[] world;
     private Level[] level;
     private SubLevel[] sublevel[];
+    private String name;
+   
+     
+    public Player() {
+    }
 
     public String getPlayerName() {
         return playerName;
@@ -94,12 +98,13 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "playerName=" + playerName + ", playerId=" + playerId + '}';
     }
-
+    
+   
+    
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.playerName);
-        hash = 83 * hash + this.playerId;
+        int hash = 3;
+        hash = 19 * hash + Objects.hashCode(this.name);
         return hash;
     }
 
@@ -112,28 +117,14 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
-        if (!Objects.equals(this.playerName, other.playerName)) {
-            return false;
-        }
-        if (this.playerId != other.playerId) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
     }
     
-    
 
-    public Player() {
-    }
-
-    public Map getMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Point getCoordinates() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     
     
 }
+

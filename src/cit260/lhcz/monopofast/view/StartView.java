@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.view;
-import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.model.Game;
-import cit260.lhcz.monopofast.model.Player;
+import cit260.lhcz.monopofast.control.*;
+import cit260.lhcz.monopofast.model.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,7 +34,6 @@ public class StartView {
             te.printStackTrace();
             StartView.display();
         }
-        return;
         }
 
     public StartView() {

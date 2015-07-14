@@ -41,7 +41,7 @@ public class MainMenuView extends View{
                     break;
                 case "L": //Load a saved game
                 
-                    this.StartSavedGame();
+                    this.LoadGame();
                     break;
                 case "H": //Help menu
                
@@ -80,18 +80,18 @@ public class MainMenuView extends View{
                    private void startNewGame(){
                         // create a new game
                                           
-                         this.StartSavedGame();                    }
+                         this.LoadGame();                    }
                                  
 
                                  
-                   private void StartSavedGame(){
+                   private void LoadGame(){
                         // create a new game
                         System.out.println("\n\nEnter the file path for file where the game "
                         + "is to be saved.");
                         String filePath = this.getInput();
                          try {
                             // save the game to the speciried file                        }
-                                GameControl.getSaveGame(filePath);
+                                GameControl.getLoadGame(filePath);
                         }catch (Exception ex) {
                             ErrorView.display("MainMenuView", ex.getMessage());
                         }

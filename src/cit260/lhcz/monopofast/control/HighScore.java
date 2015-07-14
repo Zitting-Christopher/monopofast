@@ -5,12 +5,9 @@
  */
 package cit260.lhcz.monopofast.control;
 
-import cit260.lhcz.monopofast.model.Player;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import monopofast.Monopofast;
-import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.model.Game;
 /**
  *
  * @author Logan

@@ -20,6 +20,10 @@ public class Game implements Serializable {
     private Player player;
     private Map map;
 
+    public Game() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 public int[] HighScore(){
    int[] highScore = {12346, 12344, 12343, 12342, 12341};
