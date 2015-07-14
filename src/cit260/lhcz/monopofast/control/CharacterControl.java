@@ -15,9 +15,10 @@ import monopofast.Monopofast;
 /**
  *
  * @author Logan
+ * @author Christopher
  */
 public class CharacterControl {
-    private final String PROMPT = "Input a direction to go or back to return to the menu:";
+   
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
     
