@@ -16,8 +16,7 @@ import monopofast.Monopofast;
  * @author Christopher
  */
 public class StartView {
-    private static Game currentGame = null;
-    private static Player player = null;
+    
     
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();

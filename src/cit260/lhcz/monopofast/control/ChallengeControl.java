@@ -13,9 +13,9 @@ public class ChallengeControl {
     
 
     //Define the variables for this function
-    private int handWash = 20;
-    private double baconEaterSeconds =  6;
-    private int numOrders1 = 15;
+    private final int handWash = 20;
+    private final double baconEaterSeconds =  6;
+    private final int numOrders1 = 15;
     private double challenge1TotalSeconds;
     public double calcChallengeOne(double baconEaterSeconds,int numOrders1){
         //Define the lower and upper limit for the seconds and number of orders for each product
@@ -37,6 +37,30 @@ public class ChallengeControl {
     }
 
 
+    }
+
+    public double getChallenge1TotalSeconds() {
+        return challenge1TotalSeconds;
+    }
+
+    public void setChallenge1TotalSeconds(double challenge1TotalSeconds) {
+        this.challenge1TotalSeconds = challenge1TotalSeconds;
+    }
+
+    public double getChallenge2TotalSeconds() {
+        return challenge2TotalSeconds;
+    }
+
+    public void setChallenge2TotalSeconds(double challenge2TotalSeconds) {
+        this.challenge2TotalSeconds = challenge2TotalSeconds;
+    }
+
+    public double getChallenge3TotalSeconds() {
+        return challenge3TotalSeconds;
+    }
+
+    public void setChallenge3TotalSeconds(double challenge3TotalSeconds) {
+        this.challenge3TotalSeconds = challenge3TotalSeconds;
     }
     
     //Define the variables for this function

@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class Location implements Serializable{
     private int x;
     private int y;
-    private Map mapA;
+    private Map map;
     private Scene scene;
 
     public Location() {
@@ -34,19 +34,21 @@ public class Location implements Serializable{
         this.y = y;
     }
 
-    public Map getMap1() {
-        return mapA;
+    public Map getmap() {
+        return map;
     }
 
-    public void setMap1(Map mapA) {
-        this.mapA = mapA;
+    public void setmap(Map map) {
+        this.map = map;
     }
 
     public Scene getScene() {
         return scene;
     }
 
-   
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
     
     
     @Override
@@ -79,8 +81,4 @@ public class Location implements Serializable{
         }
         return true;
     }   
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
 }
