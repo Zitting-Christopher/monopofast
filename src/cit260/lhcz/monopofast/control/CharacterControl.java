@@ -9,7 +9,6 @@ import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
 import exception.MapControlException;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.PrintWriter;
 import monopofast.Monopofast;
 
