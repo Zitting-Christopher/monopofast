@@ -19,7 +19,7 @@ public enum Scene implements Serializable{
         Queen("This is your one place to go when your on a budget and want","QU"),
         McDumbledore("This wizard theme restruant make you feel as though you have.","MC"),
         ending("You Win","EN");
-        private String symbol;
+     private String symbol;
         private String description;
     
         Scene(String description, String symbol) {
