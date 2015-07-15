@@ -5,69 +5,25 @@
  */
 package cit260.lhcz.monopofast.model;
 import java.io.Serializable;
-import java.util.Objects;
 /**
  *
  * @author Christopher
  */
-public class Game implements Serializable {
-    private String gameName;
-    private int gameId;
-    private String lastSaveDateTime;
-    private int score;
-    private int lastSublevel;
-    
+public class Game implements Serializable{
+    private int stepCounter;
     private Player player;
     private Map map;
-
+  
     public Game() {
         
     }
 
-   
-public int[] HighScore(){
-   int[] highScore = {12346, 12344, 12343, 12342, 12341};
-        return null;
-}
-    
-    public String getGameName() {
-        return gameName;
+    public int getStepCounter() {
+        return stepCounter;
     }
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
-    }
-
-    public int getGameId() {
-        return gameId;
-    }
-
-    public void setGameId(int gameId) {
-        this.gameId = gameId;
-    }
-
-    public String getLastSaveDateTime() {
-        return lastSaveDateTime;
-    }
-
-    public void setLastSaveDateTime(String lastSaveDateTime) {
-        this.lastSaveDateTime = lastSaveDateTime;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public int getLastSublevel() {
-        return lastSublevel;
-    }
-
-    public void setLastSublevel(int lastSublevel) {
-        this.lastSublevel = lastSublevel;
+    public void setStepCounter(int stepCounter) {
+        this.stepCounter = stepCounter;
     }
 
     public Player getPlayer() {
@@ -78,6 +34,8 @@ public int[] HighScore(){
         this.player = player;
     }
 
+    
+
     public Map getMap() {
         return map;
     }
@@ -85,29 +43,13 @@ public int[] HighScore(){
     public void setMap(Map map) {
         this.map = map;
     }
-
     
-
-    @Override
-    public String toString() {
-        return "Game{" + "gameName=" + gameName + ", gameId=" + gameId + ", lastSaveDateTime=" + lastSaveDateTime + ", score=" + score + ", lastSublevel=" + lastSublevel + '}';
-    }
     
-
-    
-    public Game(Player player, Map map) {
-        this.player = player;
-        this.map = map;
-    }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.gameName);
-        hash = 53 * hash + this.gameId;
-        hash = 53 * hash + Objects.hashCode(this.lastSaveDateTime);
-        hash = 53 * hash + this.score;
-        hash = 53 * hash + this.lastSublevel;
+        int hash = 7;
+        hash = 67 * hash + this.stepCounter;
         return hash;
     }
 
@@ -120,24 +62,11 @@ public int[] HighScore(){
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.gameName, other.gameName)) {
-            return false;
-        }
-        if (!Objects.equals(this.gameId, other.gameId)) {
-            return false;
-        }
-        if (!Objects.equals(this.lastSaveDateTime, other.lastSaveDateTime)) {
-            return false;
-        }
-        if (this.score != other.score) {
-            return false;
-        }
-        if (!Objects.equals(this.lastSublevel, other.lastSublevel)) {
+        if (this.stepCounter != other.stepCounter) {
             return false;
         }
         return true;
     }
-    
-    
-    
+
+  
 }
