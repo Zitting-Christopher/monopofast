@@ -63,7 +63,7 @@ public class Monopofast {
     public static void setLogFile(PrintWriter logFile) {
         Monopofast.logFile = logFile;
     }
-    
+
         
     /**
      * @param args the command line arguments

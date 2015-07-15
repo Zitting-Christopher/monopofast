@@ -7,7 +7,14 @@ package cit260.lhcz.monopofast.model;
 import exception.GameControlException;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EnumSet;
+import java.util.List;
 import monopofast.Monopofast;
  /*
  * @author Christopher
@@ -53,8 +60,7 @@ public enum Ingredients implements Serializable {
     topbun(35,"top bun"),
     turkey(36,"turkey"),
     turnover(37,"turnover");
-    
-    
+
     
     private final int ingrId;
     private final String ingrKeyword;
@@ -81,14 +87,29 @@ public enum Ingredients implements Serializable {
         this.ingrId = ingrId;
         this.ingrKeyword = ingrKeyword;
     }
-    public static void saveIngrReport() 
-            throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\IngrReport.txt")){
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-            output.writeObject(Monopofast.getCurrentGame().getMap());
-        }catch(Exception ex){
-            throw new GameControlException(ex.getMessage());
+    public static void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) throws GameControlException, IOException {
+            PrintWriter out = null;
+                fileLoc = "/Users/Christopher/Documents/ingrRpt.txt";
+        try{
+                out = new PrintWriter(fileLoc);
+                out.println("\n \n              Inventory Report                ");
+                out.printf("%n-20s%10s%10s","Ingredient ID","Ingredient Keyword");
+                out.printf("%n-20s%10s%10s","-------------","------------------");
+                for(Ingredients ingr : EnumSet.allOf(Ingredients.class))
+                {
+                out.printf("%n-20s%10s%10s",ingr.getIngrId(),ingr.getIngrKeyword());
+                }
+//                outFile.write(Ingredients<Ingredients[]> ingrList = Arrays.asList(ingrEnum));
+                out.flush();
+                
+//                FileOutputStream fops = new FileOutputStream("C:\\IngrReport.txt")){
+//            ObjectOutputStream output = new ObjectOutputStream(fops);
+//            output.writeObject(Monopofast.getCurrentGame().getMap()
+        }
+        
+        catch(Exception ex){
+//            throw new GameControlException(ex.getMessage());
+    System.out.println("error");
         }
     }
-    
 }

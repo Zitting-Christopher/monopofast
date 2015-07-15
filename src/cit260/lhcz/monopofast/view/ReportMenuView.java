@@ -10,6 +10,9 @@ import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
 import cit260.lhcz.monopofast.model.SubLevel;
+import exception.GameControlException;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,10 +22,6 @@ public class ReportMenuView extends View  {
 
     
         
-        
-         
-    
-    
      public ReportMenuView(){
                   super("\n"
                 + "\n----------------------------------------"
@@ -36,6 +35,8 @@ public class ReportMenuView extends View  {
                 + "\nE - Exit"
                 + "\n----------------------------------------");
                        }
+     
+     
                     @Override
                    public boolean doAction(Object obj){
                        String value = (String) obj; 
@@ -100,12 +101,9 @@ public class ReportMenuView extends View  {
         }
       
     }
-     private void saveIngrReport() {
-        try{
-        Ingredients.saveIngrReport();
-        }catch(Exception ex){
-            ErrorView.display("ReportMenuView", ex.getMessage());
-        }
-      
+     public void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) throws GameControlException, IOException {
+         Ingredients.saveIngrReport(ingrList, fileLoc);
+          
     }
+
 }
