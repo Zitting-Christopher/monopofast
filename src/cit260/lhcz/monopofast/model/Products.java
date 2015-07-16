@@ -8,7 +8,6 @@ import exception.GameControlException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.EnumSet;
 
 /**
@@ -43,9 +42,8 @@ public enum Products implements Serializable {
     McBurger(24,"no connection to a clown"),
     McTriple(25,"it only has two patties...just kidding");
 
-    public static void saveProdReport(ArrayList<Products> prodList, String fileLoc) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    
     public static void saveProdReport() {
     }
     

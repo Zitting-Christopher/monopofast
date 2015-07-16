@@ -5,12 +5,11 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.control.MapControl;
 import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
+import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.SubLevel;
-import java.util.ArrayList;
 import java.util.EnumSet;
 
 /**
@@ -54,7 +53,7 @@ public class ReportMenuView extends View  {
                     Ingredients.saveIngrReport();
                     break;
                  case "S": //SubLevel Report
-                    this.saveSubleReport();
+                    SubLevel.saveSubleReport();
                     break;
                  case "M": //Location Report
                     this.printMap();
@@ -72,7 +71,7 @@ public class ReportMenuView extends View  {
 
     private void printMap() {
         try{
-        MapControl.printMap();
+        Map.printMap();
         }catch(Exception ex){
             ErrorView.display("ReportMenuView", ex.getMessage());
         }
@@ -87,7 +86,7 @@ public class ReportMenuView extends View  {
         }
     
     }
-    public void saveProdReport(ArrayList<Products> prodList, String fileLoc) {
+    public void saveProdReport(EnumSet<Products> prodList, String fileLoc) {
          try{
         Products.saveProdReport(prodList, fileLoc);
              
@@ -97,15 +96,15 @@ public class ReportMenuView extends View  {
     }
     
 
-private void saveSubleReport() {
+private void saveSubleReport(EnumSet<SubLevel> subList, String fileLoc) {
         try{
-        SubLevel.saveSubleReport();
+        SubLevel.saveSubleReport(subList, fileLoc);
         }catch(Exception ex){
             ErrorView.display("ReportMenuView", ex.getMessage());
         }
       
     }
-     public void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) {
+     public void saveIngrReport(EnumSet<Ingredients> ingrList, String fileLoc) {
           try{
          Ingredients.saveIngrReport(ingrList, fileLoc);
           }catch(Exception ex){

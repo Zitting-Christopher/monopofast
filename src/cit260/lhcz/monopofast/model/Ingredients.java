@@ -59,9 +59,7 @@ public enum Ingredients implements Serializable {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
  
     
     private final int ingrId;

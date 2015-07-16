@@ -5,7 +5,10 @@
  */
 package cit260.lhcz.monopofast.model;
 
+import exception.GameControlException;
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import monopofast.Monopofast;
@@ -101,7 +104,16 @@ public class Map implements Serializable{
         return true;
     }
     
-    
+     public static void printMap() 
+            throws GameControlException{
+        try(FileOutputStream fops = new FileOutputStream("C:\\Users\\Logan\\Documents\\mapReport.txt")){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(Monopofast.getCurrentGame().getMap());
+        }catch(Exception ex){
+            throw new GameControlException(ex.getMessage());
+        }
+    }
+
 }
 
 

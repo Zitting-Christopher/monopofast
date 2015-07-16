@@ -6,8 +6,11 @@
 package cit260.lhcz.monopofast.model;
 import exception.GameControlException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.io.Serializable;
+import java.util.EnumSet;
 import monopofast.Monopofast;
 /**
  *
@@ -73,6 +76,10 @@ public enum SubLevel implements Serializable {
     Rcrd24(47,"McDumbledore's Plain Double McBurger Record Breaker",5.0,2.0),
     Qual25(48,"McDumbledore's McTriple Qualification",10.0,5.0),
     Rcrd25(49,"McDumbledore's McTriple Eater Record Breaker",5.0,2.0);
+
+    public static void saveSubleReport() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     //Let's define the variables we'll be using with the enum
     private final int subLevelId;
@@ -125,13 +132,28 @@ public enum SubLevel implements Serializable {
         this.recordTime = recordTime;
     }
     
-     public static void saveSubleReport()
-            throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\mapReport.txt")){
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-            output.writeObject(Monopofast.getCurrentGame().getMap());
-        }catch(Exception ex){
+   
+           public static void saveSubleReport(EnumSet<SubLevel> subList, String fileLoc) throws GameControlException, IOException {
+            PrintWriter out = null;
+                fileLoc = "C:\\Users\\Logan\\Documents\\SLReport.txt";
+        try{
+                out = new PrintWriter(fileLoc);
+                out.println("\n \n              SubLevel Report                ");
+                out.printf("%n-20s%10s%10s","SubLevel ID","SubLevel Description");
+                out.printf("%n-20s%10s%10s","-------------","------------------");
+                for(SubLevel Suble : EnumSet.allOf(SubLevel.class))
+                {
+                out.printf("%n-20s%10s%10s",Suble.getSubLevelId(),Suble.getSLDesc());
+                }
+//                
+                out.flush();
+                
+//              
+        }
+        
+        catch(Exception ex){
             throw new GameControlException(ex.getMessage());
+    
         }
     }
 }
