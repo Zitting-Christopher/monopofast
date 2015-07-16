@@ -29,15 +29,15 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        
+      
         Map map=MapControl.createMap();
         game.setMap(map);
         
         MapControl.startAtLocation(map);
     }
     
-
-      public static void saveGame(Game currentGame, String filePath) 
+    
+    public static void saveGame(Game currentGame, String filePath) 
             throws GameControlException{
         try(FileOutputStream fops = new FileOutputStream(filePath)){
             ObjectOutputStream output = new ObjectOutputStream(fops);
@@ -52,6 +52,7 @@ public class GameControl {
         try(FileInputStream fips = new FileInputStream(filePath)){
             ObjectInputStream input = new ObjectInputStream(fips);
             game = (Game) input.readObject();
+            Monopofast.setCurrentGame(game);
         }catch(FileNotFoundException fnfe){
             throw new GameControlException(fnfe.getMessage());
         }catch(Exception e){
@@ -62,7 +63,7 @@ public class GameControl {
     public static void getLoadGame(String filePath) {
        
 }
-    
+        
     private Player game;
     private Player player; 
     

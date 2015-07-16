@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 public class Monopofast {
     private static Game currentGame=null;
     private static Player player=null;
-    
+    private static Location currentLocation = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     
@@ -64,7 +64,13 @@ public class Monopofast {
         Monopofast.logFile = logFile;
     }
 
-        
+       public static Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public static void setCurrentLocation(Location currentLocation) {
+        Monopofast.currentLocation = currentLocation;
+    }  
     /**
      * @param args the command line arguments
      */

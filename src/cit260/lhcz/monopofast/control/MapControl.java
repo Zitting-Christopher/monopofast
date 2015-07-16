@@ -6,6 +6,7 @@ import cit260.lhcz.monopofast.model.*;
 import exception.*;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import monopofast.Monopofast;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -104,23 +105,34 @@ public class MapControl {
         
     }
 
-   public static void startAtLocation(Map map) throws MapControlException {
-        Player player1 = Monopofast.getPlayer();
-        int row = map.getRowCount();
-        int column = map.getColumnCount();
-        GameControl.moveCharacterToLocation(player1, row, column);
+ 
+    public static void startAtLocation(Map map) throws MapControlException {
+        Player player = Monopofast.getPlayer();
+        int row = 0;
+        int column = 0;
+        CharacterControl.moveCharacterToStart(player, row, column);
     }
-    public static void printMap() 
-            throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\Users\\Logan\\Documents\\mapReport.txt")){
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-            output.writeObject(Monopofast.getCurrentGame().getMap());
-        }catch(Exception ex){
+
+    public static void printMap()
+            throws GameControlException {
+        try (PrintWriter out = new PrintWriter("Game_map.txt")) {
+             Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
+
+            out.println("\n***** Pizza Village ******");
+            out.println("   | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | ");
+
+            for (int i = 0; i < locations[0].length; i++) {
+                out.format("%2d", i);
+                for (int j = 0; j < locations[0].length; j++) {
+                    out.print(" | ");
+                    out.print(locations[i][j].getScene().getSymbol());
+
+                }
+                out.print(" | ");
+            }
+            System.out.println("Map printed");
+        } catch (Exception ex) {
             throw new GameControlException(ex.getMessage());
         }
     }
-
-    
-
-    
 }

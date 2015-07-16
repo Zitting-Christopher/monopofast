@@ -5,6 +5,7 @@
  */
 package cit260.lhcz.monopofast.control;
 
+import cit260.lhcz.monopofast.model.Location;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.Player;
 import exception.MapControlException;
@@ -78,15 +79,24 @@ public class CharacterControl {
         }
     }
     
-    public static void moveCharacterToLocation(Player player, int row, int column)
-        throws MapControlException{
+    public static void moveCharacterToStart(Player player, int row, int column) throws MapControlException{
         Map map = Monopofast.getCurrentGame().getMap();
-        int newRow = row - 1;
-        int newColumn = column - 1;
+        Location location = Monopofast.getCurrentLocation();
         
-        if (newRow < 0 || newRow >= map.getRowCount() || newColumn < 0 || newColumn >= map.getColumnCount()){
+        int startRow = row;
+        int startColumn = column;
+        
+        if (startRow < 0 || startRow >= map.getRowCount() || startColumn < 0 || startColumn >= map.getColumnCount()){
             throw new MapControlException("Cannot move to " + row + "," + column +
                                           "because that location is out of the map boundaries.");
+        }
+        else{
+            Location startLocation = new Location();
+            startLocation.setX(row);
+            startLocation.setY(column);
+            
+            Monopofast.setCurrentLocation(startLocation);
+            
         }
     }
 
