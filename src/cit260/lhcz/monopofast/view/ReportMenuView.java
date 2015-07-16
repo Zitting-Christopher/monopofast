@@ -11,6 +11,7 @@ import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
 import cit260.lhcz.monopofast.model.SubLevel;
 import java.util.ArrayList;
+import java.util.EnumSet;
 
 /**
  *
@@ -42,7 +43,7 @@ public class ReportMenuView extends View  {
                      switch(value){
                 
                 case "C": //Character Report
-                    this.saveCharacterReport();
+                    Character.saveCharacterReport();
                     break;
                     
                 case "P": //Product Report
@@ -77,12 +78,14 @@ public class ReportMenuView extends View  {
         }
       
     }
-    private void saveCharacterReport() {
-        try{
-        Character.saveCharacterReport();
-        }catch(Exception ex){
+    public void saveCharReport(EnumSet<Character> charaList, String fileLoc) {
+          try{
+              
+         Character.saveCharReport(charaList,fileLoc);
+          }catch(Exception ex){
             ErrorView.display("ReportMenuView", ex.getMessage());
         }
+    
     }
     public void saveProdReport(ArrayList<Products> prodList, String fileLoc) {
          try{
