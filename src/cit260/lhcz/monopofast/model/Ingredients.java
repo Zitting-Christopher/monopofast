@@ -61,6 +61,14 @@ public enum Ingredients implements Serializable {
     turkey(36,"turkey"),
     turnover(37,"turnover");
 
+    public static void saveIngrReport() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+ 
     
     private final int ingrId;
     private final String ingrKeyword;
@@ -87,7 +95,7 @@ public enum Ingredients implements Serializable {
         this.ingrId = ingrId;
         this.ingrKeyword = ingrKeyword;
     }
-    public static void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) throws GameControlException, IOException {
+    public static void saveIngrReport(EnumSet<Ingredients> ingrList, String fileLoc) throws GameControlException, IOException {
             PrintWriter out = null;
                 fileLoc = "/Users/Christopher/Documents/ingrRpt.txt";
         try{

@@ -13,6 +13,7 @@ import cit260.lhcz.monopofast.model.SubLevel;
 import exception.GameControlException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.EnumSet;
 
 /**
  *
@@ -52,7 +53,7 @@ public class ReportMenuView extends View  {
                     break;
                     
                 case "I": //Ingredient Report
-                    this.saveIngrReport();
+                    Ingredients.saveIngrReport();
                     break;
                  case "S": //SubLevel Report
                     this.saveSubleReport();
@@ -101,7 +102,7 @@ public class ReportMenuView extends View  {
         }
       
     }
-     public void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) throws GameControlException, IOException {
+     public void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) {
          Ingredients.saveIngrReport(ingrList, fileLoc);
           
     }
