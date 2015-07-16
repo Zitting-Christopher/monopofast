@@ -6,6 +6,7 @@
 package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.model.Location;
 import monopofast.Monopofast;
 
 /**
@@ -137,6 +138,7 @@ public class MainMenuView extends View{
                             MapMenuView MapMenu = new MapMenuView();
                          MapMenu.display();
                         }
-                         
+                          
+                      
                     }
 

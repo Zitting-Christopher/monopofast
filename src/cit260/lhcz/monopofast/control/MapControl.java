@@ -115,7 +115,7 @@ public class MapControl {
 
     public static void printMap()
             throws GameControlException {
-        try (PrintWriter out = new PrintWriter("Game_map.txt")) {
+        try (PrintWriter out = new PrintWriter("GameMap.txt")) {
              Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
 
             out.println("\n***** Pizza Village ******");
