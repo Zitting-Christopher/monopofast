@@ -5,10 +5,11 @@
  */
 package cit260.lhcz.monopofast.model;
 import exception.GameControlException;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
-import monopofast.Monopofast;
+import java.util.ArrayList;
+import java.util.EnumSet;
 
 /**
  *
@@ -41,6 +42,12 @@ public enum Products implements Serializable {
     fries(23,"the proper way to eat a potato"),
     McBurger(24,"no connection to a clown"),
     McTriple(25,"it only has two patties...just kidding");
+
+    public static void saveProdReport(ArrayList<Products> prodList, String fileLoc) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public static void saveProdReport() {
+    }
     
     
     private final int productId;
@@ -77,16 +84,29 @@ public enum Products implements Serializable {
         this.productId= productId;
         this.prodDesc= prodDesc;
     }
- public static void saveProductReport()
-            throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\ProReport.txt")){
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-            output.writeObject(Monopofast.getCurrentGame().getMap());
-        }catch(Exception ex){
+  public static void saveProdReport(EnumSet<Products> prodList, String fileLoc) throws GameControlException, IOException {
+            PrintWriter out = null;
+                fileLoc = "C:\\Users\\Logan\\Documents\\prodReport.txt";
+        try{
+                out = new PrintWriter(fileLoc);
+                out.println("\n \n              Product Report                ");
+                out.printf("%n-20s%10s%10s","Product ID","Product Description");
+                out.printf("%n-20s%10s%10s","-------------","------------------");
+                for(Products prod : EnumSet.allOf(Products.class))
+                {
+                out.printf("%n-20s%10s%10s",prod.getProductId(),prod.getProdDesc());
+                }
+//                
+                out.flush();
+                
+//              
+        }
+        
+        catch(Exception ex){
             throw new GameControlException(ex.getMessage());
+    
         }
     }
-    
 }
     
     

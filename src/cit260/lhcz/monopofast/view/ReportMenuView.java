@@ -10,10 +10,7 @@ import cit260.lhcz.monopofast.model.Products;
 import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
 import cit260.lhcz.monopofast.model.SubLevel;
-import exception.GameControlException;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.EnumSet;
 
 /**
  *
@@ -49,7 +46,7 @@ public class ReportMenuView extends View  {
                     break;
                     
                 case "P": //Product Report
-                    this.saveProductReport();
+                    Products.saveProdReport();
                     break;
                     
                 case "I": //Ingredient Report
@@ -86,15 +83,18 @@ public class ReportMenuView extends View  {
         }catch(Exception ex){
             ErrorView.display("ReportMenuView", ex.getMessage());
         }
-      
-    }private void saveProductReport() {
-        try{
-        Products.saveProductReport();
+    }
+    public void saveProdReport(ArrayList<Products> prodList, String fileLoc) {
+         try{
+        Products.saveProdReport(prodList, fileLoc);
+             
         }catch(Exception ex){
             ErrorView.display("ReportMenuView", ex.getMessage());
         }
-      
-    }private void saveSubleReport() {
+    }
+    
+
+private void saveSubleReport() {
         try{
         SubLevel.saveSubleReport();
         }catch(Exception ex){
@@ -103,8 +103,11 @@ public class ReportMenuView extends View  {
       
     }
      public void saveIngrReport(ArrayList<Ingredients> ingrList, String fileLoc) {
+          try{
          Ingredients.saveIngrReport(ingrList, fileLoc);
-          
+          }catch(Exception ex){
+            ErrorView.display("ReportMenuView", ex.getMessage());
+        }
     }
 
 }
