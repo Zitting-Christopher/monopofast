@@ -5,13 +5,10 @@
  */
 package cit260.lhcz.monopofast.model;
 import exception.GameControlException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.EnumSet;
-import monopofast.Monopofast;
 /**
  *
  * @author Christopher
