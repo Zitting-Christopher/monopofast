@@ -35,7 +35,6 @@ public class ReportMenuView extends View {
                 + "\n----------------------------------------"
                 + "\nC - Save Character Report"
                 + "\nI - Save Ingredient Report"
-                + "\nM - Save Location Report"
                 + "\nP - Save Product Report"
                 + "\nS - Save SubLevel Report"
                 + "\nE - Exit"
@@ -89,15 +88,6 @@ public class ReportMenuView extends View {
                 }
 
                 break;
-            case "M": {
-                try {
-                    //Location Report
-                    Map.printMap();
-                } catch (GameControlException ex) {
-                    Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            break;
             case "E": //exit game
                 return true;
 

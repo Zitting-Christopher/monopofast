@@ -87,15 +87,15 @@ public enum Ingredients implements Serializable {
     public static void saveIngrReport(EnumSet<Ingredients> ingrList, String fileLoc) 
             throws GameControlException, IOException {
             PrintWriter out = null;
-                fileLoc = "C:\\Users\\Logan\\Documents\\ingrReport.txt";
+                fileLoc = "ingrReport.txt";
         try{
                 out = new PrintWriter(fileLoc);
                 out.println("\n \n              Inventory Report                ");
-                out.printf("%n-20s%10s%10s","Ingredient ID","Ingredient Keyword");
-                out.printf("%n-20s%10s%10s","-------------","------------------");
+                out.printf("%n%10s%10s","Ingredient ID","Ingredient Keyword");
+                out.printf("%n%10s%10s","-------------","------------------");
                 for(Ingredients ingr : EnumSet.allOf(Ingredients.class))
                 {
-                out.printf("%n-20s%10s%10s",ingr.getIngrId(),ingr.getIngrKeyword());
+                out.printf("%n%10s%10s","  " + ingr.getIngrId(),"  " + ingr.getIngrKeyword());
                 }
 //                outFile.write(Ingredients<Ingredients[]> ingrList = Arrays.asList(ingrEnum));
                 out.flush();

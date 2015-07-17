@@ -38,9 +38,9 @@ public enum Products implements Serializable {
     BigQueenBurger(19,"a meal meant for a queen"),
     lemonLimeSoda(20,"Soda with lime but no coconut"),
     chocolateMilkshake(21,"it is chocolate ice cream."),
-    fries(23,"the proper way to eat a potato"),
-    McBurger(24,"no connection to a clown"),
-    McTriple(25,"it only has two patties...just kidding");
+    fries(22,"the proper way to eat a potato"),
+    McBurger(23,"no connection to a clown"),
+    McTriple(24,"it only has two patties...just kidding");
 
     
     
@@ -84,15 +84,15 @@ public enum Products implements Serializable {
     }
   public static void saveProdReport(EnumSet<Products> prodList, String fileLoc) throws GameControlException, IOException {
             PrintWriter out = null;
-                fileLoc = "C:\\Users\\Logan\\Documents\\prodReport.txt";
+                fileLoc = "prodReport.txt";
         try{
                 out = new PrintWriter(fileLoc);
                 out.println("\n \n              Product Report                ");
-                out.printf("%n-20s%10s%10s","Product ID","Product Description");
-                out.printf("%n-20s%10s%10s","-------------","------------------");
+                out.printf("%n%10s%10s","Product ID "," Product Description");
+                out.printf("%n%10s%10s","------------- "," ------------------");
                 for(Products prod : EnumSet.allOf(Products.class))
                 {
-                out.printf("%n-20s%10s%10s",prod.getProductId(),prod.getProdDesc());
+                out.printf("%n%10s%10s","  " + prod.getProductId(),"  " + prod.getProdDesc());
                 }
 //                
                 out.flush();

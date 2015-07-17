@@ -23,10 +23,6 @@ public enum Character implements Serializable {
     Jackie(2,"The Vixen"),
     Maria(3,"The Cake Queen"),
     Ron(4,"The Wizard");
-
-    public static void saveCharacterReport() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
     private final int charId;
@@ -61,15 +57,15 @@ public enum Character implements Serializable {
 
      public static void saveCharReport(EnumSet<Character> charaList, String fileLoc) throws GameControlException, IOException {
             PrintWriter out = null;
-                fileLoc = "C:\\Users\\Logan\\Documents\\CharReport.txt";
+                fileLoc = "CharReport.txt";
         try{
                 out = new PrintWriter(fileLoc);
                 out.println("\n \n              Character Report                ");
-                out.printf("%n-20s%10s%10s","Character ID","Character Description");
-                out.printf("%n-20s%10s%10s","-------------","------------------");
+                out.printf("%n%10s%10s","Character ID "," Character Description");
+                out.printf("%n%10s%10s","------------- "," ------------------");
                 for(Character cha : EnumSet.allOf(Character.class))
                 {
-                out.printf("%n-20s%10s%10s",cha.getCharId(),cha.getCharDesc());
+                out.printf("%n%10s%10s","  " + cha.getCharId(),"  " + cha.getCharDesc());
                 }
 //                
                 out.flush();
