@@ -100,9 +100,9 @@ public class MapControl {
 
     public static void startAtLocation(Map map) throws MapControlException {
         Player player = Monopofast.getPlayer();
-        int row = 0;
-        int column = 0;
-        CharacterControl.moveCharacterToStart(player, row, column);
+        int x = 0;
+        int y = 0;
+        CharacterControl.moveCharacterToStart(player, x, y);
     }
 
     public static void printMap()

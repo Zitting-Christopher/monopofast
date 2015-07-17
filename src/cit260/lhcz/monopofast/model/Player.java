@@ -14,9 +14,7 @@ import java.util.Objects;
  */
 public class Player implements Serializable {
 
-    public static Player[] values() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     private String playerName;
     private int playerId;
 
@@ -25,7 +23,6 @@ public class Player implements Serializable {
     private int score;
     private World[] world;
     private Level[] level;
-    private SubLevel[] sublevel[];
     private String name;
 
     public Player() {
@@ -79,14 +76,7 @@ public class Player implements Serializable {
         this.level = level;
     }
 
-    public SubLevel[][] getSublevel() {
-        return sublevel;
-    }
-
-    public void setSublevel(SubLevel[][] sublevel) {
-        this.sublevel = sublevel;
-    }
-
+   
     public int getScore() {
         return score;
     }
@@ -122,8 +112,5 @@ public class Player implements Serializable {
         return true;
     }
 
-    public void setName(String playerName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
 }

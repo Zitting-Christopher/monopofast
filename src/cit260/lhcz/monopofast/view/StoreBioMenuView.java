@@ -21,6 +21,7 @@ public class StoreBioMenuView extends View {
                 + "\nB - Ardy's"
                 + "\nC - Queen's Kitchen"
                 + "\nD - McDumbledore's"
+                + "\nF - Jack and the fox"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
     }
@@ -34,17 +35,23 @@ public class StoreBioMenuView extends View {
                 this.Venny();
                 break;
 
-            case "B": //Challange menu
+            case "B": 
                 this.Ardy();
                 break;
 
-            case "C": //View Map
+            case "C":
                 this.QueenKitchen();
                 break;
-            case "D": //View Map
+            case "D": 
                 this.McDumbledore();
 
                 break;
+               
+            case "F": 
+                this.Jack();
+
+                break;
+
 
             case "E": //exit game
                 return true;
@@ -92,4 +99,12 @@ public class StoreBioMenuView extends View {
                 + "\nThis wizard theme restruant make you feel as though you have"
                 + "\nstepped through the padges of your favorite book seris.");
     }
+    private void Jack() {
+        // create a new game
+        this.console.println("Jack and the Fox"
+                + "\n********************"
+                + "\nThe Vixen that started this company loves to keep her customers"
+                + "\nguessing what will happen next.");
+    }
 }
+
