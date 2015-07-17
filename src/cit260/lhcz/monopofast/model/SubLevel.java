@@ -136,11 +136,11 @@ public enum SubLevel implements Serializable {
         try{
                 out = new PrintWriter(fileLoc);
                 out.println("\n \n              SubLevel Report                ");
-                out.printf("%n-20s%10s%10s","SubLevel ID","SubLevel Description");
-                out.printf("%n-20s%10s%10s","-------------","------------------");
+                out.printf("%n%20s%10s%10s","SubLevel ID","SubLevel Description");
+                out.printf("%n%20s%10s%10s","-------------","------------------");
                 for(SubLevel Suble : EnumSet.allOf(SubLevel.class))
                 {
-                out.printf("%n-20s%10s%10s",Suble.getSubLevelId(),Suble.getSLDesc());
+                out.printf("%n%20s%10s%10s",Suble.getSubLevelId(),Suble.getSLDesc());
                 }
 //                
                 out.flush();

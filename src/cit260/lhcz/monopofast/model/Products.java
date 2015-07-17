@@ -88,11 +88,11 @@ public enum Products implements Serializable {
         try{
                 out = new PrintWriter(fileLoc);
                 out.println("\n \n              Product Report                ");
-                out.printf("%n-20s%10s%10s","Product ID","Product Description");
-                out.printf("%n-20s%10s%10s","-------------","------------------");
+                out.printf("%n%20s%10s%10s","Product ID","Product Description");
+                out.printf("%n%20s%10s%10s","-------------","------------------");
                 for(Products prod : EnumSet.allOf(Products.class))
                 {
-                out.printf("%n-20s%10s%10s",prod.getProductId(),prod.getProdDesc());
+                out.printf("%n%20s%10s%10s",prod.getProductId(),prod.getProdDesc());
                 }
 //                
                 out.flush();

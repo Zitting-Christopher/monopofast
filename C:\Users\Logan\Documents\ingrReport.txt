@@ -1,0 +1,44 @@
+
+ 
+              Inventory Report                
+
+-20sIngredient IDIngredient Keyword
+-20s-------------------------------
+-20s         0     bacon
+-20s         1bottom bun
+-20s         2     bread
+-20s         3    burger
+-20s         4    cheese
+-20s         5chicken nuggets
+-20s         6chocolate milkshake
+-20s         7      cola
+-20s         8diet lemonade
+-20s         9       egg
+-20s        10     fries
+-20s        11    frothy
+-20s        12fruit punch
+-20s        13grilled onions
+-20s        14       ham
+-20s        15heehaw sauce
+-20s        16jalapeno poppers
+-20s        17   ketchup
+-20s        18lemon-lime soda
+-20s        19   lettuce
+-20s        20      mayo
+-20s        21mozzarella sticks
+-20s        22   mustard
+-20s        23     onion
+-20s        24onion rings
+-20s        25pepper sauce
+-20s        26   pickles
+-20s        27     ranch
+-20s        28roast beef
+-20s        29     sauce
+-20s        30   sausage
+-20s        31spicy chicken
+-20s        32strawberry milkshake
+-20s        33strawberry banana milkshake
+-20s        34    tomato
+-20s        35   top bun
+-20s        36    turkey
+-20s        37  turnover
