@@ -13,21 +13,19 @@ import monopofast.Monopofast;
  * @author Christopher
  */
 public class ErrorView {
-    
+
     private static final PrintWriter errorFile = Monopofast.getOutFile();
     private static final PrintWriter logFile = Monopofast.getLogFile();
-    
+
     public static void display(String className, String errorMessage) {
-        
+
         errorFile.println(
-                    "------------------------------------------------------"
-                            + "\n - ERROR - " + errorMessage
-                    +"\n------------------------------------------------------");
-        
+                "------------------------------------------------------"
+                + "\n - ERROR - " + errorMessage
+                + "\n------------------------------------------------------");
+
         //log error
         logFile.println(className + " - " + errorMessage);
     }
-    
-    
-    
+
 }

@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  * @author Logan
  */
 public class GameControlTest {
-    
+
     public GameControlTest() {
     }
 
@@ -31,7 +31,6 @@ public class GameControlTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-
     /**
      * Test of createPlayer method, of class GameControl.
      */
@@ -111,5 +110,5 @@ public class GameControlTest {
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
-    
+
 }

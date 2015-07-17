@@ -20,83 +20,83 @@ import monopofast.Monopofast;
  * @author Christopher
  */
 public class CharacterControl {
+
     private final String PROMPT = "Input a direction to go or back to return to the menu:";
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
-    
-    public void moveCharacter(){
-       char selection=' ';
-       do{
+
+    public void moveCharacter() {
+        char selection = ' ';
+        do {
             //Displays the main menu
             this.console.println(PROMPT);
-            
+
             //Get users input
             String input = this.getInput();
             //Get first character of string
             selection = input.charAt(0);
-            
+
             //Do action based on selection
             this.doAction(selection);
-        } while (selection!='b');         
+        } while (selection != 'b');
     }
+
     private String getInput() {
         boolean valid = false;
         String userInput = "";
-        try{
-            while(valid!=true){            
-        
+        try {
+            while (valid != true) {
+
                 //Get name and trim off blanks
                 userInput = this.keyboard.readLine();
                 userInput = userInput.toLowerCase();
                 userInput = userInput.trim();
-                
-                
+
                 //Checks to see if the name is valid
-                if (userInput.length()==0){
+                if (userInput.length() == 0) {
                     this.console.println("Invalid input - try another option");
-                }else{
-                    valid=true;
+                } else {
+                    valid = true;
                 }
-            } 
-        }catch (IOException ex) {
+            }
+        } catch (IOException ex) {
             this.console.println("Error reading input: " + ex.getMessage());
         }
         return userInput;
     }
 
     private void doAction(char selection) {
-        if(selection=='n'){
+        if (selection == 'n') {
             this.moveNorth();
-        }else if(selection=='e'){
+        } else if (selection == 'e') {
             this.moveEast();
-        }else if(selection=='s'){
+        } else if (selection == 's') {
             this.moveSouth();
-        }else if(selection=='w'){
+        } else if (selection == 'w') {
             this.moveWest();
-        }else if(selection=='b'){
-        }else{
+        } else if (selection == 'b') {
+        } else {
             this.console.println("***Invalid direction-try again***");
         }
     }
-    
-    public static void moveCharacterToStart(Player player, int row, int column) throws MapControlException{
+
+    public static void moveCharacterToStart(Player player, int row, int column) throws MapControlException {
         Map map = Monopofast.getCurrentGame().getMap();
         Location location = Monopofast.getCurrentLocation();
-        
+
         int startRow = row;
         int startColumn = column;
-        
-        if (startRow < 0 || startRow >= map.getRowCount() || startColumn < 0 || startColumn >= map.getColumnCount()){
-            throw new MapControlException("Cannot move to " + row + "," + column +
-                                          "because that location is out of the map boundaries.");
-        }
-        else{
+
+        if (startRow < 0 || startRow >= map.getRowCount() || startColumn < 0 || startColumn >= map.getColumnCount()) {
+            throw new MapControlException("Cannot move to " + row + "," + column
+                    + "because that location is out of the map boundaries.");
+        } else {
             Location startLocation = new Location();
             startLocation.setX(row);
             startLocation.setY(column);
-            
+
             Monopofast.setCurrentLocation(startLocation);
-            
+
         }
     }
 

@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  * @author Logan
  */
 public class MapViewTest {
-    
+
     public MapViewTest() {
     }
 
@@ -67,7 +67,7 @@ public class MapViewTest {
         point coordinates = null;
         int expResult = 0;
         Object result = null;
-        
+
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -78,5 +78,5 @@ public class MapViewTest {
         public point() {
         }
     }
-    
+
 }

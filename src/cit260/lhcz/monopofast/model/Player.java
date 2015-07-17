@@ -4,20 +4,22 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Christopher
  */
-public class Player implements Serializable{
+public class Player implements Serializable {
 
     public static Player[] values() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     private String playerName;
     private int playerId;
-    
+
     private Game game;
     private Character[] character;
     private int score;
@@ -25,7 +27,7 @@ public class Player implements Serializable{
     private Level[] level;
     private SubLevel[] sublevel[];
     private String name;
-   
+
     public Player() {
     }
 
@@ -92,14 +94,12 @@ public class Player implements Serializable{
     public void setScore(int score) {
         this.score = score;
     }
-    
+
     @Override
     public String toString() {
         return "Player{" + "playerName=" + playerName + ", playerId=" + playerId + '}';
     }
-    
-   
-    
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -126,8 +126,4 @@ public class Player implements Serializable{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-
-    
 }
-

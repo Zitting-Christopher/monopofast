@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+
 import java.io.Serializable;
+
 /**
  *
  * @author Logan
  */
-public class Location implements Serializable{
+public class Location implements Serializable {
+
     private int x;
     private int y;
     private Map map;
@@ -49,8 +52,7 @@ public class Location implements Serializable{
     public void setScene(Scene scene) {
         this.scene = scene;
     }
-    
-    
+
     @Override
     public String toString() {
         return "Location{" + "x=" + x + ", y=" + y + '}';
@@ -80,5 +82,5 @@ public class Location implements Serializable{
             return false;
         }
         return true;
-    }   
+    }
 }

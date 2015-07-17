@@ -4,29 +4,31 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Christopher
  */
 public enum World implements Serializable {
-    
+
     //Define the worlds
-    V(0,"Venti's"),
-    A(1,"Ardy's"),
-    J(2,"Jack and the Fox"),
-    Q(3,"Queen Burger"),
-    M(4,"McDumbledore's");
-    
+    V(0, "Venti's"),
+    A(1, "Ardy's"),
+    J(2, "Jack and the Fox"),
+    Q(3, "Queen Burger"),
+    M(4, "McDumbledore's");
+
     //Create variables
     private final int worldId;
     private final String worldDesc;
-    
-   private Level[] level;
-   private Character[] character;
-   private Products[] products;
-   private Map map;
+
+    private Level[] level;
+    private Character[] character;
+    private Products[] products;
+    private Map map;
 
     public Map getMap() {
         return map;
@@ -67,12 +69,9 @@ public enum World implements Serializable {
     public void setProducts(Products[] products) {
         this.products = products;
     }
-    
-    
 
+    World(int worldId, String worldDesc) {
 
-    World(int worldId,String worldDesc) {
-    
         this.worldId = worldId;
         this.worldDesc = worldDesc;
     }

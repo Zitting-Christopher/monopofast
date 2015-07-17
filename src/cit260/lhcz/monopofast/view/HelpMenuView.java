@@ -5,17 +5,15 @@
  */
 package cit260.lhcz.monopofast.view;
 
-
-
 /**
  *
  * @author Christopher
  * @author Logan the I
  */
 public class HelpMenuView extends View {
-    
-    public HelpMenuView(){
-                  super("\n"
+
+    public HelpMenuView() {
+        super("\n"
                 + "\n----------------------------------------"
                 + "\n| Help Menu                            |"
                 + "\n----------------------------------------"
@@ -24,35 +22,34 @@ public class HelpMenuView extends View {
                 + "\nP - View Products"
                 + "\nR - Return to Main Menu"
                 + "\n----------------------------------------");
-   
-    
+
     }
-    
-           @Override
-                   public boolean doAction(Object obj){
-                       String value = (String) obj; 
-                       value = value.toUpperCase(); // convert to upper case
-                     switch(value){
-                case "C": //view Commands
-                 this.commandsList();
-                    break;
-                                  
-                case "I": //view Ingredients
-                                  this.ingredientsList();
-                   break;
-                    
-                case "P": //view Products
-                                  this.productsList();
-                    break;
-                
-                case "R": //exit game
-                   return true;
-                default:
-                    ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection ***");
-                    break;
-                     }
-    return false;
-    } 
+
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        value = value.toUpperCase(); // convert to upper case
+        switch (value) {
+            case "C": //view Commands
+                this.commandsList();
+                break;
+
+            case "I": //view Ingredients
+                this.ingredientsList();
+                break;
+
+            case "P": //view Products
+                this.productsList();
+                break;
+
+            case "R": //exit game
+                return true;
+            default:
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection ***");
+                break;
+        }
+        return false;
+    }
 
     private void commandsList() {
         String stars = "***************************************************************************************";
@@ -113,7 +110,7 @@ public class HelpMenuView extends View {
         this.console.println("top bun");
         this.console.println("turkey");
         this.console.println("turnover");
-        
+
     }
 
     private void productsList() {
@@ -157,13 +154,7 @@ public class HelpMenuView extends View {
         this.console.println("\tLevel 3 - fries");
         this.console.println("\tLevel 4 - McBurger");
         this.console.println("\tLevel 5 - McTriple");
-        
-        
+
     }
 
-    
 }
-                         
-
-
-

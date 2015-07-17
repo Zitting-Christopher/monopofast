@@ -34,5 +34,4 @@ public class MapControlException extends Exception {
      * Creates a new instance of <code>MapControlException</code> without detail
      * message.
      */
-  
 }

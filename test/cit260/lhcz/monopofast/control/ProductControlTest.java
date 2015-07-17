@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author Logan
  */
 public class ProductControlTest {
-    
+
     public ProductControlTest() {
     }
 
@@ -22,5 +22,5 @@ public class ProductControlTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }

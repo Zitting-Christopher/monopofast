@@ -4,18 +4,21 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
+
 import java.io.Serializable;
+
 /**
  *
  * @author Christopher
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
+
     private int stepCounter;
     private Player player;
     private Map map;
-  
+
     public Game() {
-        
+
     }
 
     public int getStepCounter() {
@@ -34,8 +37,6 @@ public class Game implements Serializable{
         this.player = player;
     }
 
-    
-
     public Map getMap() {
         return map;
     }
@@ -43,8 +44,6 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -68,5 +67,4 @@ public class Game implements Serializable{
         return true;
     }
 
-  
 }

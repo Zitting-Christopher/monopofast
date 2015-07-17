@@ -10,7 +10,10 @@ package cit260.lhcz.monopofast.view;
  * @author Logan
  */
 public interface ViewInterface {
-public void display();
-public String getInput();
-public boolean doAction(Object obj);
+
+    public void display();
+
+    public String getInput();
+
+    public boolean doAction(Object obj);
 }

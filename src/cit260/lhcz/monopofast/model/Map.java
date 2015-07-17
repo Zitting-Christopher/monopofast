@@ -17,37 +17,39 @@ import monopofast.Monopofast;
  *
  * @author Christopher
  */
-public class Map implements Serializable{
+public class Map implements Serializable {
+
     private int rowCount;
     private int columnCount;
     private Location[][] locations;
 
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
+
     public Map() {
     }
 
     public Map(int rows, int columns) {
-        if (rows<0||columns<0){
+        if (rows < 0 || columns < 0) {
             this.console.println("Invalid map size.");
             return;
         }
-        this.rowCount=rows;
-        this.columnCount=columns;
-        
+        this.rowCount = rows;
+        this.columnCount = columns;
+
         //Create 2d array for location objects
-        this.locations=new Location[rowCount][columnCount];
-        
-        for(int row=0;row<rowCount;row++){
-            for(int column=0;column<columnCount;column++){
-                Location location=new Location();
+        this.locations = new Location[rowCount][columnCount];
+
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                Location location = new Location();
                 location.setY(column);
                 location.setX(row);
-                locations[row][column]=location;
+                locations[row][column] = location;
             }
         }
     }
-    
+
     public int getRowCount() {
         return rowCount;
     }
@@ -71,7 +73,6 @@ public class Map implements Serializable{
     public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
-
 
     @Override
     public String toString() {
@@ -103,19 +104,18 @@ public class Map implements Serializable{
         }
         return true;
     }
-    
-     public static void printMap() 
-            throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\Users\\Logan\\Documents\\mapReport.txt")){
+
+    public static void printMap()
+            throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream("mapReport.txt")) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             output.writeObject(Monopofast.getCurrentGame().getMap());
-        }catch(Exception ex){
+        } catch (Exception ex) {
             throw new GameControlException(ex.getMessage());
         }
     }
 
 }
-
 
 //        Ve1(0,0,"Level 1 - Vendy's Drink Station"),
 //        Ve2(0,1,"Level 2 - Vendy's Fried Food Station"),
@@ -146,5 +146,4 @@ public class Map implements Serializable{
 //        Mc3(4,2,"Level 23 - McDumbledore's Fried Food Station"),
 //        Mc4(4,3,"Level 24 - McDumbledore's Plain Double McBurger Station"),
 //        Mc5(4,4,"Level 25 - McDumbledore's McTriple Eater Station");
-        
-       
+
