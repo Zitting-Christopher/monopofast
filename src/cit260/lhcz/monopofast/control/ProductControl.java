@@ -4,36 +4,32 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.control;
+
 import cit260.lhcz.monopofast.model.Products;
+
 /**
  *
  * @author Christopher
  */
 public class ProductControl {
-    private int selectProduct(int id)
-    {
+
+    private int selectProduct(int id) {
         return 1;
     }
-    
-    
-    
-    private String makeProduct(String ingredients)
-    {
+
+    private String makeProduct(String ingredients) {
         return "Product Completed";
     }
-    
-    private int specProdPerLevel(int id)
-    {
+
+    private int specProdPerLevel(int id) {
         return 1;
     }
-    
-    private String validateIngredients(String ingredients)
-    {
+
+    private String validateIngredients(String ingredients) {
         return "Ingredients Validated";
     }
-    
-    private String addIngredient(String ingredient)
-    {
+
+    private String addIngredient(String ingredient) {
         return "Ingredient Added";
     }
 }

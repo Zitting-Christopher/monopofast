@@ -10,11 +10,11 @@ package exception;
  * @author Logan
  */
 public class ChallangeControlException extends Exception {
-    
+
     public ChallangeControlException() {
-        
+
     }
-    
+
     public ChallangeControlException(String message) {
         super(message);
     }
@@ -30,5 +30,5 @@ public class ChallangeControlException extends Exception {
     public ChallangeControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
+
 }

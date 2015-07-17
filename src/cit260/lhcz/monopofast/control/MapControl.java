@@ -1,7 +1,5 @@
 package cit260.lhcz.monopofast.control;
 
-
-
 import cit260.lhcz.monopofast.model.*;
 import exception.*;
 import java.io.PrintWriter;
@@ -16,10 +14,7 @@ import monopofast.Monopofast;
  *
  * @author Logan
  */
-
-
 public class MapControl {
-
 
     public static Map createMap() {
         Map map = new Map(7, 7);
@@ -100,10 +95,9 @@ public class MapControl {
         locations[6][5].setScene(Scene.Vendy);
         locations[6][6].setScene(Scene.ending);
 //        
-        
+
     }
 
- 
     public static void startAtLocation(Map map) throws MapControlException {
         Player player = Monopofast.getPlayer();
         int row = 0;
@@ -114,7 +108,7 @@ public class MapControl {
     public static void printMap()
             throws GameControlException {
         try (PrintWriter out = new PrintWriter("GameMap.txt")) {
-             Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
+            Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
 
             out.println("\n***** Pizza Village ******");
             out.println("   | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | ");

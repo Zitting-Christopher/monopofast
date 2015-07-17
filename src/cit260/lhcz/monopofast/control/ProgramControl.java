@@ -13,23 +13,22 @@ import monopofast.Monopofast;
  * @author Logan
  */
 public class ProgramControl {
-private final static ChallengeControl challengeControl = new ChallengeControl();    
-    private final static GameControl gameControl = new GameControl();    
+
+    private final static ChallengeControl challengeControl = new ChallengeControl();
+    private final static GameControl gameControl = new GameControl();
     private final static ProductControl productControl = new ProductControl();
-    
+
     public static Player createPlayer(String playerName) {
-        if (playerName==null){
+        if (playerName == null) {
             return null;
         }
-        Player player=new Player();
+        Player player = new Player();
         player.setName(playerName);
-        
+
         Monopofast.setPlayer(player);
-        
+
         return player;
     }
-    
-    
 
     public static ChallengeControl getChallengeControl() {
         return challengeControl;
@@ -42,6 +41,5 @@ private final static ChallengeControl challengeControl = new ChallengeControl();
     public static ProductControl getProductControl() {
         return productControl;
     }
-    
-      
+
 }

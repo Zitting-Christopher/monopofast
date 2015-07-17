@@ -9,9 +9,6 @@ package cit260.lhcz.monopofast.control;
  *
  * @author Logan
  */
-
 public class SceneControl {
-    
-    }
-    
-   
+
+}

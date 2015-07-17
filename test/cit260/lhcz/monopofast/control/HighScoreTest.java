@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author Logan
  */
 public class HighScoreTest {
-    
+
     public HighScoreTest() {
     }
 
@@ -39,11 +39,10 @@ public class HighScoreTest {
 //        int[] result = HighScore.highScoreArray(scores);
 //        assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
+
     }
 
     /**
      * Test of highScoreArray method, of class HighScore.
      */
-   
 }
