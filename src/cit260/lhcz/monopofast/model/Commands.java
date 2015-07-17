@@ -25,7 +25,7 @@ public enum Commands implements Serializable {
     private final String commDesc;
     private final String commKeyword;
 
-    private Level[] level;
+
 
     public int getCommId() {
         return commId;
@@ -39,14 +39,7 @@ public enum Commands implements Serializable {
         return commKeyword;
     }
 
-    public Level[] getLevel() {
-        return level;
-    }
-
-    public void setLevel(Level[] level) {
-        this.level = level;
-    }
-
+   
     Commands(int commId, String commDesc, String commKeyword) {
         this.commId = commId;
         this.commDesc = commDesc;
