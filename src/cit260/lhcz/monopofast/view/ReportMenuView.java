@@ -50,6 +50,7 @@ public class ReportMenuView extends View {
             case "C": //Character Report
                 try {
                     Character.saveCharReport(charaList, fileLoc);
+                    System.out.println("Report saved successfully");
                 } catch (GameControlException ex) {
                     Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
@@ -60,6 +61,7 @@ public class ReportMenuView extends View {
             case "P": //Product Report
                 try {
                     Products.saveProdReport(prodList, fileLoc);
+                            System.out.println("Report saved successfully");
                 } catch (GameControlException ex) {
                     Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
@@ -70,6 +72,7 @@ public class ReportMenuView extends View {
 
                 try {
                     Ingredients.saveIngrReport(ingrList, fileLoc);
+                    System.out.println("Report saved successfully");
                 } catch (GameControlException ex) {
                     Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
@@ -81,6 +84,7 @@ public class ReportMenuView extends View {
 
                 try {
                     SubLevel.saveSubleReport(subList, fileLoc);
+                    System.out.println("Report saved successfully");
                 } catch (GameControlException ex) {
                     Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
