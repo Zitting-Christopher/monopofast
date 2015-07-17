@@ -51,7 +51,6 @@ public enum Level implements Serializable {
     private World world;
     private Products products;
     private Ingredients[] ingredients;
-    private SubLevel[] subLevel;
     private Commands[] commands;
     private Map map;
 
@@ -95,14 +94,7 @@ public enum Level implements Serializable {
         this.ingredients = ingredients;
     }
 
-    public SubLevel[] getSubLevel() {
-        return subLevel;
-    }
-
-    public void setSubLevel(SubLevel[] subLevel) {
-        this.subLevel = subLevel;
-    }
-
+   
     public Commands[] getCommands() {
         return commands;
     }

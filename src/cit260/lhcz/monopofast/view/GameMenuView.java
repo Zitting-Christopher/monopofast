@@ -21,7 +21,6 @@ public class GameMenuView extends View {
                 + "\nF - Challange Menu"
                 + "\nM - View Map"
                 + "\nS - Save Game"
-                + "\nH - View High Score"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
     }
@@ -42,9 +41,7 @@ public class GameMenuView extends View {
             case "M": //View Map
                 this.viewMap();
                 break;
-            case "H": //View Map
-                this.highScore();
-
+            
             case "S": //save game
                 this.saveGame();
                 break;
@@ -80,10 +77,6 @@ public class GameMenuView extends View {
         map.display();
     }
 
-    private void highScore() {
-
-        HighScoreView highScore = new HighScoreView();
-        highScore.display();
-    }
+   
 
 }

@@ -26,7 +26,6 @@ public class MainMenuView extends View {
                 + "\nG - Start Game"
                 + "\nH - Get Help"
                 + "\nS - Save Game"
-                + "\nT - View Top Scores"
                 + "\nL - Load Game"
                 + "\nR - Reports"
                 + "\nM - Maps"
@@ -75,10 +74,7 @@ public class MainMenuView extends View {
 
                 this.saveGame();
                 break;
-            case "T": //save game
-
-                this.highScore();
-                break;
+           
             case "M": //save game
 
                 this.MapMenuView();
@@ -132,12 +128,7 @@ Player player = null;
         helpMenu.display();
     }
 
-    private void highScore() {
-
-        HighScoreView highScore = new HighScoreView();
-        highScore.display();
-    }
-
+    
     private void StoreBioMenuView() {
 
         StoreBioMenuView StoreBioMenu = new StoreBioMenuView();

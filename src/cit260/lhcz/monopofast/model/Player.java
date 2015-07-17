@@ -25,7 +25,6 @@ public class Player implements Serializable {
     private int score;
     private World[] world;
     private Level[] level;
-    private SubLevel[] sublevel[];
     private String name;
 
     public Player() {
@@ -79,14 +78,7 @@ public class Player implements Serializable {
         this.level = level;
     }
 
-    public SubLevel[][] getSublevel() {
-        return sublevel;
-    }
-
-    public void setSublevel(SubLevel[][] sublevel) {
-        this.sublevel = sublevel;
-    }
-
+   
     public int getScore() {
         return score;
     }
