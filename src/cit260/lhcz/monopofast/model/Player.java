@@ -16,12 +16,11 @@ public class Player implements Serializable {
 
    
     private String playerName;
-    private int playerId;
-
     private Game game;
     private Character[] character;
    private Location location = null;
-    private String name;
+    
+     
 
     public Player() {
     }
@@ -34,14 +33,16 @@ public class Player implements Serializable {
         this.playerName = playerName;
     }
 
-    public int getPlayerId() {
-        return playerId;
+   
+    public Location getLocation() {
+        return location;
     }
 
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
+    
     public Game getGame() {
         return game;
     }
@@ -60,23 +61,15 @@ public class Player implements Serializable {
 
    
    
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
     @Override
     public String toString() {
-        return "Player{" + "playerName=" + playerName + ", playerId=" + playerId + '}';
+        return "Player{" + "playerName=" + playerName + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 19 * hash + Objects.hashCode(this.name);
+        hash = 19 * hash + Objects.hashCode(this.playerName);
         return hash;
     }
 
@@ -89,7 +82,7 @@ public class Player implements Serializable {
             return false;
         }
         final Player other = (Player) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.playerName, other.playerName)) {
             return false;
         }
         return true;
