@@ -20,7 +20,7 @@ public class Player implements Serializable {
 
     private Game game;
     private Character[] character;
-    private int score;
+   private Location location = null;
     private String name;
 
     public Player() {
@@ -60,12 +60,12 @@ public class Player implements Serializable {
 
    
    
-    public int getScore() {
-        return score;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override

@@ -21,7 +21,7 @@ import java.io.ObjectOutputStream;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) throws MapControlException {
+     public static void createNewGame(Player player) {
         Game game = new Game();
         Monopofast.setCurrentGame(game);
 
@@ -30,30 +30,35 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
 
-        MapControl.startAtLocation(map);
+        player.setLocation(map.getLocations()[0][0]);
+
     }
 
-    public static void saveGame(Game currentGame, String filePath)
-            throws GameControlException {
+    public static void saveGame(Game currentGame, String filePath) throws GameControlException {
         try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
+
             output.writeObject(currentGame);
         } catch (IOException e) {
             throw new GameControlException(e.getMessage());
         }
+
     }
 
     public static void loadGame(String filePath) throws GameControlException {
         Game game = null;
+
         try (FileInputStream fips = new FileInputStream(filePath)) {
-            ObjectInputStream input = new ObjectInputStream(fips);
-            game = (Game) input.readObject();
-            Monopofast.setCurrentGame(game);
+            ObjectInputStream output = new ObjectInputStream(fips);
+
+            game = (Game) output.readObject();
         } catch (FileNotFoundException fnfe) {
             throw new GameControlException(fnfe.getMessage());
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
+
+        Monopofast.setCurrentGame(game);
     }
 
     public static void getLoadGame(String filePath) {
