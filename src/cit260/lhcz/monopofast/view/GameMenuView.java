@@ -5,10 +5,6 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.control.GameControl;
-import java.util.Scanner;
-import monopofast.Monopofast;
-
 /**
  * @author Logan
  *
