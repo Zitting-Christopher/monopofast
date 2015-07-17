@@ -73,9 +73,7 @@ public enum SubLevel implements Serializable {
     Qual25(48, "McDumbledore's McTriple Qualification", 10.0, 5.0),
     Rcrd25(49, "McDumbledore's McTriple Eater Record Breaker", 5.0, 2.0);
 
-    public static void saveSubleReport() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     //Let's define the variables we'll be using with the enum
     private final int subLevelId;
@@ -127,7 +125,7 @@ public enum SubLevel implements Serializable {
 
     public static void saveSubleReport(EnumSet<SubLevel> subList, String fileLoc) throws GameControlException, IOException {
         PrintWriter out = null;
-        fileLoc = "C:\\Users\\Logan\\Documents\\SLReport.txt";
+        fileLoc = "SLReport.txt";
         try {
             out = new PrintWriter(fileLoc);
             out.println("\n \n              SubLevel Report                ");

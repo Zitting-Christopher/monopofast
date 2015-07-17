@@ -37,7 +37,7 @@ public class CharacterControl {
             selection = input.charAt(0);
 
             //Do action based on selection
-            this.doAction(selection);
+            
         } while (selection != 'b');
     }
 
@@ -65,20 +65,7 @@ public class CharacterControl {
         return userInput;
     }
 
-    private void doAction(char selection) {
-        if (selection == 'n') {
-            this.moveNorth();
-        } else if (selection == 'e') {
-            this.moveEast();
-        } else if (selection == 's') {
-            this.moveSouth();
-        } else if (selection == 'w') {
-            this.moveWest();
-        } else if (selection == 'b') {
-        } else {
-            this.console.println("***Invalid direction-try again***");
-        }
-    }
+   
 
     public static void moveCharacterToStart(Player player, int row, int column) throws MapControlException {
         Map map = Monopofast.getCurrentGame().getMap();
@@ -98,21 +85,7 @@ public class CharacterControl {
             Monopofast.setCurrentLocation(startLocation);
 
         }
-    }
+   
 
-    private void moveNorth() {
-        this.console.println("***moveNorth function called***");
-    }
-
-    private void moveEast() {
-        this.console.println("***moveEast function called***");
-    }
-
-    private void moveSouth() {
-        this.console.println("***moveSouth function called***");
-    }
-
-    private void moveWest() {
-        this.console.println("***moveWest function called***");
     }
 }

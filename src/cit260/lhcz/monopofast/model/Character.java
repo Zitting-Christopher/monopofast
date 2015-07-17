@@ -24,10 +24,7 @@ public enum Character implements Serializable {
     Maria(3, "The Cake Queen"),
     Ron(4, "The Wizard");
 
-    public static void saveCharacterReport() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     private final int charId;
     private final String charDesc;
 
@@ -56,7 +53,7 @@ public enum Character implements Serializable {
 
     public static void saveCharReport(EnumSet<Character> charaList, String fileLoc) throws GameControlException, IOException {
         PrintWriter out = null;
-        fileLoc = "C:\\Users\\Logan\\Documents\\CharReport.txt";
+        fileLoc = "CharReport.txt";
         try {
             out = new PrintWriter(fileLoc);
             out.println("\n \n              Character Report                ");
