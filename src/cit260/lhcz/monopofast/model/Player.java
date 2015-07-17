@@ -14,9 +14,7 @@ import java.util.Objects;
  */
 public class Player implements Serializable {
 
-    public static Player[] values() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     private String playerName;
     private int playerId;
 
@@ -114,8 +112,5 @@ public class Player implements Serializable {
         return true;
     }
 
-    public void setName(String playerName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
 }
