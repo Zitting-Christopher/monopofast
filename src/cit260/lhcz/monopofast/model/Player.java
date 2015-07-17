@@ -21,8 +21,6 @@ public class Player implements Serializable {
     private Game game;
     private Character[] character;
     private int score;
-    private World[] world;
-    private Level[] level;
     private String name;
 
     public Player() {
@@ -60,22 +58,7 @@ public class Player implements Serializable {
         this.character = character;
     }
 
-    public World[] getWorld() {
-        return world;
-    }
-
-    public void setWorld(World[] world) {
-        this.world = world;
-    }
-
-    public Level[] getLevel() {
-        return level;
-    }
-
-    public void setLevel(Level[] level) {
-        this.level = level;
-    }
-
+   
    
     public int getScore() {
         return score;

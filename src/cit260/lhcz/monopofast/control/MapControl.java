@@ -17,7 +17,7 @@ import monopofast.Monopofast;
 public class MapControl {
 
     public static Map createMap() {
-        Map map = new Map(7, 7);
+        Map map = new Map(6,6);
         assignScenesToLocations(map);
 
         return map;
@@ -82,18 +82,7 @@ public class MapControl {
         locations[5][2].setScene(Scene.Vendy);
         locations[5][3].setScene(Scene.Vendy);
         locations[5][4].setScene(Scene.Vendy);
-        locations[5][5].setScene(Scene.Vendy);
-        locations[5][6].setScene(Scene.Vendy);
-        locations[5][7].setScene(Scene.Vendy);
-        locations[5][8].setScene(Scene.Vendy);
-        locations[5][9].setScene(Scene.Vendy);
-        locations[6][0].setScene(Scene.Vendy);
-        locations[6][1].setScene(Scene.Vendy);
-        locations[6][2].setScene(Scene.Vendy);
-        locations[6][3].setScene(Scene.Vendy);
-        locations[6][4].setScene(Scene.Vendy);
-        locations[6][5].setScene(Scene.Vendy);
-        locations[6][6].setScene(Scene.ending);
+        locations[5][5].setScene(Scene.ending);
 //        
 
     }
