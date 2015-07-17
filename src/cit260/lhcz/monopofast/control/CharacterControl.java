@@ -67,19 +67,19 @@ public class CharacterControl {
 
    
 
-    public static void moveCharacterToStart(Player player, int row, int column) throws MapControlException {
+    public static void moveCharacterToStart(Player player, int x, int column) throws MapControlException {
         Map map = Monopofast.getCurrentGame().getMap();
         Location location = Monopofast.getCurrentLocation();
 
-        int startRow = row;
+        int startRow = x;
         int startColumn = column;
 
-        if (startRow < 0 || startRow >= map.getRowCount() || startColumn < 0 || startColumn >= map.getColumnCount()) {
-            throw new MapControlException("Cannot move to " + row + "," + column
+        if (startRow < 0 || startRow >= map.getNoOfXs() || startColumn < 0 || startColumn >= map.getNoOfYs()) {
+            throw new MapControlException("Cannot move to " + x + "," + column
                     + "because that location is out of the map boundaries.");
         } else {
             Location startLocation = new Location();
-            startLocation.setX(row);
+            startLocation.setX(x);
             startLocation.setY(column);
 
             Monopofast.setCurrentLocation(startLocation);

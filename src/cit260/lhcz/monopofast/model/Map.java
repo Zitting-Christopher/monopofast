@@ -5,13 +5,9 @@
  */
 package cit260.lhcz.monopofast.model;
 
-import exception.GameControlException;
-import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
+import cit260.lhcz.monopofast.view.ErrorView;
 import java.io.Serializable;
-import monopofast.Monopofast;
+import java.util.Arrays;
 
 /**
  *
@@ -19,51 +15,54 @@ import monopofast.Monopofast;
  */
 public class Map implements Serializable {
 
-    private int rowCount;
-    private int columnCount;
+    private int x;
+    private int y;
     private Location[][] locations;
-
-    protected final BufferedReader keyboard = Monopofast.getInFile();
-    protected final PrintWriter console = Monopofast.getOutFile();
+    private int noOfXs;
+    private int noOfYs;
 
     public Map() {
     }
 
-    public Map(int rows, int columns) {
-        if (rows < 0 || columns < 0) {
-            this.console.println("Invalid map size.");
+    public Map(int noOfXs, int noOfYs) {
+
+        if (noOfXs < 1 || noOfYs < 1) {
+            ErrorView.display(this.getClass().getName(), "The number of ys and xs must be > than 0");
             return;
         }
-        this.rowCount = rows;
-        this.columnCount = columns;
 
-        //Create 2d array for location objects
-        this.locations = new Location[rowCount][columnCount];
+        this.noOfXs = noOfXs;
+        this.noOfYs = noOfYs;
 
-        for (int row = 0; row < rowCount; row++) {
-            for (int column = 0; column < columnCount; column++) {
+        this.locations = new Location[noOfXs][noOfYs];
+
+        for (int x = 0; x < noOfXs; x++) {
+            for (int y = 0; y < noOfYs; y++) {
+
                 Location location = new Location();
-                location.setY(column);
-                location.setX(row);
-                locations[row][column] = location;
+                location.setY(y);
+                location.setX(x);
+                
+                locations[x][y] = location;
             }
         }
+
     }
 
-    public int getRowCount() {
-        return rowCount;
+    public int getX() {
+        return x;
     }
 
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public int getColumnCount() {
-        return columnCount;
+    public int getY() {
+        return y;
     }
 
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
+    public void setY(int y) {
+        this.y = y;
     }
 
     public Location[][] getLocations() {
@@ -74,16 +73,35 @@ public class Map implements Serializable {
         this.locations = locations;
     }
 
+    public int getNoOfXs() {
+        return noOfXs;
+    }
+
+    public void setNoOfXs(int noOfXs) {
+        this.noOfXs = noOfXs;
+    }
+
+    public int getNoOfYs() {
+        return noOfYs;
+    }
+
+    public void setNoOfYs(int noOfYs) {
+        this.noOfYs = noOfYs;
+    }
+
     @Override
     public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+        return "Map{" + "row" + x + ", column" + y + ", locations=" + locations + ", noOfXs=" + noOfXs + ", noOfYs=" + noOfYs + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 79 * hash + this.rowCount;
-        hash = 79 * hash + this.columnCount;
+        hash = 79 * hash + this.x;
+        hash = 79 * hash + this.y;
+        hash = 79 * hash + Arrays.deepHashCode(this.locations);
+        hash = 79 * hash + this.noOfXs;
+        hash = 79 * hash + this.noOfYs;
         return hash;
     }
 
@@ -96,25 +114,22 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (this.rowCount != other.rowCount) {
+        if (this.x != other.x) {
             return false;
         }
-        if (this.columnCount != other.columnCount) {
+        if (this.y != other.y) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
+            return false;
+        }
+        if (this.noOfXs != other.noOfXs) {
+            return false;
+        }
+        if (this.noOfYs != other.noOfYs) {
             return false;
         }
         return true;
     }
 
-    public static void printMap()
-            throws GameControlException {
-        try (FileOutputStream fops = new FileOutputStream("mapReport.txt")) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-            output.writeObject(Monopofast.getCurrentGame().getMap());
-        } catch (Exception ex) {
-            throw new GameControlException(ex.getMessage());
-        }
-    }
-
 }
-
-
