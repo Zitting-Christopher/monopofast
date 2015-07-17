@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
-
 import exception.GameControlException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.EnumSet;
+
 
 /**
  *
@@ -17,24 +17,28 @@ import java.util.EnumSet;
  * @author Logan
  */
 public enum Character implements Serializable {
-
-    Vivian(0, "The Bacon Lady"),
-    Hardy(1, "The Horse King"),
-    Jackie(2, "The Vixen"),
-    Maria(3, "The Cake Queen"),
-    Ron(4, "The Wizard");
+    
+    Vivian(0,"The Bacon Lady"),
+    Hardy(1,"The Horse King"),
+    Jackie(2,"The Vixen"),
+    Maria(3,"The Cake Queen"),
+    Ron(4,"The Wizard");
 
     
     private final int charId;
     private final String charDesc;
-
+    
     private World world;
 
-    public int getCharId() {
+   
+
+      public int getCharId() {
         return charId;
     }
 
-    public String getCharDesc() {
+  
+
+    public String getCharDesc () {
         return charDesc;
     }
 
@@ -46,9 +50,9 @@ public enum Character implements Serializable {
         this.world = world;
     }
 
-    Character(int charId, String charDesc) {
-        this.charId = charId;
-        this.charDesc = charDesc;
+     Character(int charId ,String charDesc) {
+        this.charId= charId;
+        this.charDesc= charDesc;
     }
 
     public static void saveCharReport(EnumSet<Character> charaList, String fileLoc) throws GameControlException, IOException {
@@ -63,12 +67,14 @@ public enum Character implements Serializable {
                 out.printf("%n-20s%10s%10s", cha.getCharId(), cha.getCharDesc());
             }
 //                
-            out.flush();
-
+                out.flush();
+                
 //              
-        } catch (Exception ex) {
+        }
+        
+        catch(Exception ex){
             throw new GameControlException(ex.getMessage());
-
+    
         }
     }
 }
