@@ -8,6 +8,7 @@ package cit260.lhcz.monopofast.view;
 import cit260.lhcz.monopofast.control.GameControl;
 import cit260.lhcz.monopofast.model.Player;
 import exception.MapControlException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import monopofast.Monopofast;
@@ -119,9 +120,12 @@ Player player = null;
         System.out.println("\n\nEnter the file path for file where the game "
                 + "is to be saved.");
         String filePath = this.getInput();
+        PrintWriter out = null;
         try {
+            
+            out = new PrintWriter(filePath);
             // save the game to the specified file                        }
-            GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
+//            GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
