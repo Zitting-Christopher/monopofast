@@ -10,16 +10,22 @@ import cit260.lhcz.monopofast.model.Character;
 import cit260.lhcz.monopofast.model.Ingredients;
 import cit260.lhcz.monopofast.model.Map;
 import cit260.lhcz.monopofast.model.SubLevel;
+import exception.GameControlException;
+import java.io.IOException;
 import java.util.EnumSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Christopher
  */
 public class ReportMenuView extends View  {
-
-    
-        
+EnumSet<SubLevel> subList;
+    EnumSet<Ingredients> ingrList;
+    EnumSet<Products> prodList;
+    EnumSet<Character> charaList;
+        String fileLoc;
      public ReportMenuView(){
                   super("\n"
                 + "\n----------------------------------------"
@@ -42,18 +48,45 @@ public class ReportMenuView extends View  {
                      switch(value){
                 
                 case "C": //Character Report
-                    Character.saveCharacterReport();
+                    try{
+                    Character.saveCharReport(charaList,fileLoc);
+                           } catch (GameControlException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           } catch (IOException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           }
                     break;
                     
                 case "P": //Product Report
-                    Products.saveProdReport();
-                    break;
+                     try {
+                               Products.saveProdReport(prodList,fileLoc);
+                           } catch (GameControlException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           } catch (IOException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           }
                     
-                case "I": //Ingredient Report
-                    Ingredients.saveIngrReport();
+                case "I": 
+                          
+                           try {
+                               Ingredients.saveIngrReport(ingrList,fileLoc);
+                           } catch (GameControlException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           } catch (IOException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           }
+                       
                     break;
                  case "S": //SubLevel Report
-                    SubLevel.saveSubleReport();
+                 
+                     try {
+                              SubLevel.saveSubleReport(subList,fileLoc);
+                           } catch (GameControlException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           } catch (IOException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           }
+                 
                     break;
                  case "M": //Location Report
                     this.printMap();

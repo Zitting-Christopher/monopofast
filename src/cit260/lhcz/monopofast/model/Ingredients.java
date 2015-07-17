@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.EnumSet;
+
  /*
  * @author Christopher
  */
@@ -54,10 +55,7 @@ public enum Ingredients implements Serializable {
     turkey(36,"turkey"),
     turnover(37,"turnover");
 
-    public static void saveIngrReport() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
    
  
     
@@ -86,7 +84,8 @@ public enum Ingredients implements Serializable {
         this.ingrId = ingrId;
         this.ingrKeyword = ingrKeyword;
     }
-    public static void saveIngrReport(EnumSet<Ingredients> ingrList, String fileLoc) throws GameControlException, IOException {
+    public static void saveIngrReport(EnumSet<Ingredients> ingrList, String fileLoc) 
+            throws GameControlException, IOException {
             PrintWriter out = null;
                 fileLoc = "C:\\Users\\Logan\\Documents\\ingrReport.txt";
         try{
