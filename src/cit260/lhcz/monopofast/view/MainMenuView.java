@@ -118,8 +118,8 @@ Player player = null;
         String filePath = this.getInput();
         PrintWriter out = null;
         try {
-            
             out = new PrintWriter(filePath);
+            
             // save the game to the specified file                        }
 //            GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
         } catch (Exception ex) {
