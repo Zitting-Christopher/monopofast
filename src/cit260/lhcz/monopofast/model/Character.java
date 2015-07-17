@@ -61,10 +61,10 @@ public enum Character implements Serializable {
         try {
             out = new PrintWriter(fileLoc);
             out.println("\n \n              Character Report                ");
-            out.printf("%n-20s%10s%10s", "Character ID", "Character Description");
-            out.printf("%n-20s%10s%10s", "-------------", "------------------");
+            out.printf("%n%10s%10s", "Character ID", "Character Description");
+            out.printf("%n%10s%10s", "-------------", "------------------");
             for (Character cha : EnumSet.allOf(Character.class)) {
-                out.printf("%n-20s%10s%10s", cha.getCharId(), cha.getCharDesc());
+                out.printf("%n%10s%10s", cha.getCharId(), cha.getCharDesc());
             }
 //                
                 out.flush();
