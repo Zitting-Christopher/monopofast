@@ -88,8 +88,14 @@ EnumSet<SubLevel> subList;
                            }
                  
                     break;
-                 case "M": //Location Report
-                    this.printMap();
+                 case "M": {
+                           try {
+                               //Location Report
+                               Map.printMap();
+                           } catch (GameControlException ex) {
+                               Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                           }
+                       }
                     break;
                 case "E": //exit game
                     return true;
@@ -102,47 +108,6 @@ EnumSet<SubLevel> subList;
     
 }
 
-    private void printMap() {
-        try{
-        Map.printMap();
-        }catch(Exception ex){
-            ErrorView.display("ReportMenuView", ex.getMessage());
-        }
-      
-    }
-    public void saveCharReport(EnumSet<Character> charaList, String fileLoc) {
-          try{
-              
-         Character.saveCharReport(charaList,fileLoc);
-          }catch(Exception ex){
-            ErrorView.display("ReportMenuView", ex.getMessage());
-        }
-    
-    }
-    public void saveProdReport(EnumSet<Products> prodList, String fileLoc) {
-         try{
-        Products.saveProdReport(prodList, fileLoc);
-             
-        }catch(Exception ex){
-            ErrorView.display("ReportMenuView", ex.getMessage());
-        }
-    }
-    
-
-private void saveSubleReport(EnumSet<SubLevel> subList, String fileLoc) {
-        try{
-        SubLevel.saveSubleReport(subList, fileLoc);
-        }catch(Exception ex){
-            ErrorView.display("ReportMenuView", ex.getMessage());
-        }
-      
-    }
-     public void saveIngrReport(EnumSet<Ingredients> ingrList, String fileLoc) {
-          try{
-         Ingredients.saveIngrReport(ingrList, fileLoc);
-          }catch(Exception ex){
-            ErrorView.display("ReportMenuView", ex.getMessage());
-        }
-    }
+   
 
 }

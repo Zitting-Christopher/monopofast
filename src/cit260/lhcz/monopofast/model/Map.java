@@ -106,7 +106,7 @@ public class Map implements Serializable{
     
      public static void printMap() 
             throws GameControlException{
-        try(FileOutputStream fops = new FileOutputStream("C:\\Users\\Logan\\Documents\\mapReport.txt")){
+        try(FileOutputStream fops = new FileOutputStream("mapReport.txt")){
             ObjectOutputStream output = new ObjectOutputStream(fops);
             output.writeObject(Monopofast.getCurrentGame().getMap());
         }catch(Exception ex){
