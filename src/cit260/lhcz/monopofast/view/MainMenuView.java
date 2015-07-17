@@ -6,7 +6,10 @@
 package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.model.Location;
+import cit260.lhcz.monopofast.model.Player;
+import exception.MapControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import monopofast.Monopofast;
 
 /**
@@ -37,9 +40,15 @@ public class MainMenuView extends View {
         String value = (String) obj;
         value = value.toUpperCase(); // convert to upper case
         switch (value) {
-            case "G": //create and start a new game
-
+            case "G": {
+            try {
+                //create and start a new game
+                
                 this.startNewGame();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case "L": //Load a saved game
 
@@ -84,10 +93,10 @@ public class MainMenuView extends View {
         return false;
     }
 
-    private void startNewGame() {
+    private void startNewGame() throws MapControlException {
         // create a new game
-
-        this.LoadGame();
+Player player = null;
+        GameControl.createNewGame(player);
     }
 
     private void LoadGame() {
