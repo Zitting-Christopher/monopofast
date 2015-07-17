@@ -5,7 +5,7 @@
  */
 package cit260.lhcz.monopofast.model;
 
-import cit260.lhcz.monopofast.view.ErrorView;
+import cit260.lhcz.monopofast.view.*;
 import java.io.Serializable;
 import java.util.Arrays;
 

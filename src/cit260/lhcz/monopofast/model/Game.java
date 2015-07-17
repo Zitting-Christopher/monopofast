@@ -13,28 +13,12 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
 
-    private int stepCounter;
-    private Player player;
     private Map map;
+    private Player player;
+
+    
 
     public Game() {
-
-    }
-
-    public int getStepCounter() {
-        return stepCounter;
-    }
-
-    public void setStepCounter(int stepCounter) {
-        this.stepCounter = stepCounter;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 
     public Map getMap() {
@@ -45,26 +29,13 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + this.stepCounter;
-        return hash;
+    public Player getPlayer() {
+        return player;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (this.stepCounter != other.stepCounter) {
-            return false;
-        }
-        return true;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
+    
 }

@@ -5,8 +5,8 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.control.GameControl;
-import cit260.lhcz.monopofast.model.Player;
+import cit260.lhcz.monopofast.control.*;
+import cit260.lhcz.monopofast.model.*;
 import exception.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

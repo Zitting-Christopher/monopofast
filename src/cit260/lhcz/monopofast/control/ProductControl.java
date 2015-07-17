@@ -5,8 +5,6 @@
  */
 package cit260.lhcz.monopofast.control;
 
-import cit260.lhcz.monopofast.model.Products;
-
 /**
  *
  * @author Christopher

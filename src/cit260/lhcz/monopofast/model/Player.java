@@ -18,7 +18,7 @@ public class Player implements Serializable {
     private String playerName;
     private Game game;
     private Character[] character;
-   private Location location = null;
+   private Location location;
     
      
 

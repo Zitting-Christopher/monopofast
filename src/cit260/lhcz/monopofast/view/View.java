@@ -5,8 +5,6 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.model.Player;
-import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,7 +23,7 @@ public abstract class View implements ViewInterface {
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
 
-    private Point coordinates;
+    
 
     public View(String messagePrompt) {
         this.messagePrompt = messagePrompt;
@@ -33,13 +31,18 @@ public abstract class View implements ViewInterface {
 
     @Override
     public void display() {
-        String value = "";
-        boolean done = false;
+
+        char firstLetter;
+
         do {
-            this.console.println(this.messagePrompt);// view prompt
-            value = this.getInput(); // get value that player
-            done = this.doAction(value); // do Action
-        } while (!done);
+            this.console.println(messagePrompt);
+
+            String selection = this.getInput();
+            firstLetter = selection.toUpperCase().charAt(0);
+
+            this.doAction(selection);
+
+        } while (firstLetter != 'E' && firstLetter != 'Q');
     }
 
     @Override
@@ -64,11 +67,7 @@ public abstract class View implements ViewInterface {
         return value; //return the name
     }
 
-    public boolean mapControlException() {
-        Player player = null;
-
-        return false;
-    }
+   
 
     public String getMessagePrompt() {
         return messagePrompt;

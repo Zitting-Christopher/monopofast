@@ -5,9 +5,7 @@
  */
 package cit260.lhcz.monopofast.control;
 
-import cit260.lhcz.monopofast.model.Location;
-import cit260.lhcz.monopofast.model.Map;
-import cit260.lhcz.monopofast.model.Player;
+import cit260.lhcz.monopofast.model.*;
 import exception.MapControlException;
 import java.io.BufferedReader;
 import java.io.IOException;
