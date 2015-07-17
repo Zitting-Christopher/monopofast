@@ -28,7 +28,6 @@ public class MainMenuView extends View {
                 + "\nS - Save Game"
                 + "\nL - Load Game"
                 + "\nR - Reports"
-                + "\nM - Maps"
                 + "\nB - Bio page"
                 + "\nE - Exit"
                 + "\n----------------------------------------");
@@ -75,10 +74,6 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
            
-            case "M": //save game
-
-                this.MapMenuView();
-                break;
             case "E": //exit game
 
                 return true;
@@ -140,9 +135,5 @@ Player player = null;
         ReportMenu.display();
     }
 
-    private void MapMenuView() {
-        MapMenuView MapMenu = new MapMenuView();
-        MapMenu.display();
-    }
-
+    
 }

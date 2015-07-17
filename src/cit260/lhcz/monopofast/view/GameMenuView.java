@@ -73,8 +73,8 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        MapMenuView map = new MapMenuView();
-        map.display();
+       
+
     }
 
    
