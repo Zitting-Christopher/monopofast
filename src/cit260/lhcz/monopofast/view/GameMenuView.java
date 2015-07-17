@@ -5,6 +5,11 @@
  */
 package cit260.lhcz.monopofast.view;
 
+import cit260.lhcz.monopofast.control.GameControl;
+import cit260.lhcz.monopofast.model.Location;
+import cit260.lhcz.monopofast.model.Map;
+import monopofast.Monopofast;
+
 /**
  * @author Logan
  *
@@ -37,7 +42,9 @@ public class GameMenuView extends View {
             case "F": //Challange menu
                 this.challangeMenu();
                 break;
-
+            case "H": //Challange menu
+                this.displayHelpMenu();
+                break;
             case "M": //View Map
                 this.viewMap();
                 break;
@@ -61,8 +68,20 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
+        this.console.println("\n\n Please enter the file path where you would like this game to be saved.");
+        String filePath = this.getInput();
 
-        this.console.println("Save game");
+        try {
+            GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    }
+
+    private void displayHelpMenu() {
+
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
     }
 
     private void challangeMenu() {
@@ -72,11 +91,28 @@ public class GameMenuView extends View {
         challengeMenu.display();
     }
 
-    private void viewMap() {
-       
+   private void viewMap() {
 
+        Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
+
+        this.console.println("\n***** Pizza Village ******");
+        this.console.println("   |  0 |  1 |  2 |  3 |  4 |  5 | 6 |");
+
+        for (int i = 0; i < locations[0].length; i++) {
+            this.console.println("\n----------------------------------");
+            this.console.format("%2d", i);
+            for (int j = 0; j < locations[0].length; j++) {
+                this.console.print(" | ");
+                this.console.print(locations[i][j].getScene().getSymbol());
+
+            }
+            this.console.print(" | ");
+        }
+        this.console.println("\n----------------------------------");
+
+        Map map = new Map();
+        map.display();
     }
 
    
-
 }

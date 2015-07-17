@@ -132,4 +132,8 @@ public class Map implements Serializable {
         return true;
     }
 
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
