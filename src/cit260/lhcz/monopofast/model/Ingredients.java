@@ -97,17 +97,15 @@ public enum Ingredients implements Serializable {
                 {
                 out.printf("%n%10s%10s","  " + ingr.getIngrId(),"  " + ingr.getIngrKeyword());
                 }
-//                outFile.write(Ingredients<Ingredients[]> ingrList = Arrays.asList(ingrEnum));
+
                 out.flush();
                 
-//                FileOutputStream fops = new FileOutputStream("C:\\IngrReport.txt")){
-//            ObjectOutputStream output = new ObjectOutputStream(fops);
-//            output.writeObject(Monopofast.getCurrentGame().getMap()
+
         }
         
         catch(Exception ex){
-//            throw new GameControlException(ex.getMessage());
-    System.out.println("error");
+            throw new GameControlException(ex.getMessage());
+   
         }
     }
 }

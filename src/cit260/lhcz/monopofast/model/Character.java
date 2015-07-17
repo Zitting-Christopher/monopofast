@@ -23,7 +23,7 @@ public enum Character implements Serializable {
     Jackie(2,"The Vixen"),
     Maria(3,"The Cake Queen"),
     Ron(4,"The Wizard");
-    
+
     
     private final int charId;
     private final String charDesc;
@@ -55,18 +55,17 @@ public enum Character implements Serializable {
         this.charDesc= charDesc;
     }
 
-     public static void saveCharReport(EnumSet<Character> charaList, String fileLoc) throws GameControlException, IOException {
-            PrintWriter out = null;
-                fileLoc = "CharReport.txt";
-        try{
-                out = new PrintWriter(fileLoc);
-                out.println("\n \n              Character Report                ");
-                out.printf("%n%10s%10s","Character ID "," Character Description");
-                out.printf("%n%10s%10s","-------------  "," ------------------");
-                for(Character cha : EnumSet.allOf(Character.class))
-                {
-                out.printf("%n%10s%10s","  " + cha.getCharId(),"  " + cha.getCharDesc());
-                }
+    public static void saveCharReport(EnumSet<Character> charaList, String fileLoc) throws GameControlException, IOException {
+        PrintWriter out = null;
+        fileLoc = "CharReport.txt";
+        try {
+            out = new PrintWriter(fileLoc);
+            out.println("\n \n              Character Report                ");
+            out.printf("%n-20s%10s%10s", "Character ID", "Character Description");
+            out.printf("%n-20s%10s%10s", "-------------", "------------------");
+            for (Character cha : EnumSet.allOf(Character.class)) {
+                out.printf("%n-20s%10s%10s", cha.getCharId(), cha.getCharDesc());
+            }
 //                
                 out.flush();
                 
