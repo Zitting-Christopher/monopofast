@@ -110,7 +110,7 @@ public class GameMenuView extends View {
         this.console.println("\n----------------------------------");
 
         Map map = new Map();
-        map.display();
+        MapControl.printScene();
     }
 
    

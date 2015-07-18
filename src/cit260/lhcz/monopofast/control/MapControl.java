@@ -96,4 +96,10 @@ public class MapControl {
             throw new GameControlException(ex.getMessage());
         }
     }
+     
+    public static void printScene(){
+        Map map = Monopofast.getCurrentGame().getMap();
+        Location[][] locations = map.getLocations();
+        System.out.println("\n" + locations[Monopofast.getCurrentLocation().getX()][Monopofast.getCurrentLocation().getY()].getScene().getDescription());
+    }
 }
