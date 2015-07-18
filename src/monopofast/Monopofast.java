@@ -87,18 +87,12 @@ public class Monopofast {
             Monopofast.logFile = new PrintWriter(filePath);
 
             StartView StartView = new StartView();
-          try {
                 StartView.startProgram();
             } catch (Throwable te) {
-                System.out.println(te.getMessage());
+            System.out.println("Exception: " + te.toString()
+                    + "\nCause: " + te.getCause()
+                    + "\nMessage: " + te.getMessage());
                 te.printStackTrace();
-                StartView.startProgram();
-            }
-        } catch (Throwable e) {
-
-            System.out.println("Exception: " + e.toString() + "\nCause: " + e.getCause() + "\nMessage: " + e.getMessage());
-
-            e.printStackTrace();;
         } finally {
             try {
                 if (Monopofast.inFile != null) {
