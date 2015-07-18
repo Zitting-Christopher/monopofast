@@ -41,6 +41,7 @@ public class Monopofast {
         Monopofast.player = player;
     }
 
+
     public static PrintWriter getOutFile() {
         return outFile;
     }
@@ -68,7 +69,7 @@ public class Monopofast {
     public static Location getCurrentLocation() {
         return currentLocation;
     }
-
+   
     public static void setCurrentLocation(Location currentLocation) {
         Monopofast.currentLocation = currentLocation;
     }
@@ -86,12 +87,18 @@ public class Monopofast {
             Monopofast.logFile = new PrintWriter(filePath);
 
             StartView StartView = new StartView();
-            StartView.startProgram();
-        } catch (Throwable te) {
-            System.out.println("Exception: " + te.toString()
-                    + "\nCause: " + te.getCause()
-                    + "\nMessage: " + te.getMessage());
-            te.printStackTrace();
+          try {
+                StartView.startProgram();
+            } catch (Throwable te) {
+                System.out.println(te.getMessage());
+                te.printStackTrace();
+                StartView.startProgram();
+            }
+        } catch (Throwable e) {
+
+            System.out.println("Exception: " + e.toString() + "\nCause: " + e.getCause() + "\nMessage: " + e.getMessage());
+
+            e.printStackTrace();;
         } finally {
             try {
                 if (Monopofast.inFile != null) {
@@ -110,3 +117,4 @@ public class Monopofast {
         }
     }
 }
+ 
