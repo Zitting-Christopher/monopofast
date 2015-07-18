@@ -20,6 +20,7 @@ public class Map implements Serializable {
     private Location[][] locations;
     private int noOfXs;
     private int noOfYs;
+    public Object Scene;
 
     public Map() {
     }

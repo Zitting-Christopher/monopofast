@@ -16,9 +16,8 @@ import java.io.PrintWriter;
  * @author Christopher
  */
 public class Monopofast {
-
-    private static Game currentGame = null;
-    private static Player player = null;
+private static Game currentGame=null;
+    private static Player player=null;
     private static Location currentLocation = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
