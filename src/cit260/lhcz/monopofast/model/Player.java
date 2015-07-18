@@ -22,9 +22,7 @@ public class Player implements Serializable {
     
      
 
-    public Player() {
-    }
-
+    
     public String getPlayerName() {
         return playerName;
     }

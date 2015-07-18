@@ -84,18 +84,7 @@ public class GameControl {
         this.player = player;
     }
 
-    public static Player createPlayer(String playerName) {
-        if (playerName == null) {
-            return null;
-        }
-        Player player = new Player();
-        player.setPlayerName(playerName);
-
-        Monopofast.setPlayer(player);
-
-        return player;
-    }
-
+   
     public static void moveCharacterToLocation(Player player, int x, int y)
             throws MapControlException {
         Map map = Monopofast.getCurrentGame().getMap();

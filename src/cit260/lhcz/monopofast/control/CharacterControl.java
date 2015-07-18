@@ -6,6 +6,7 @@
 package cit260.lhcz.monopofast.control;
 
 import cit260.lhcz.monopofast.model.*;
+import exception.GameControlException;
 import exception.MapControlException;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,6 +19,24 @@ import monopofast.Monopofast;
  * @author Christopher
  */
 public class CharacterControl {
+
+
+    public static Player createPlayer(String playersName) throws GameControlException {
+
+        if (playersName == null || playersName.length() < 2) {
+            throw new GameControlException("Player's name is not valid."
+                    + " Please enter a name with atleast"
+                    + " two characters in it.");
+        }
+
+        Player player = new Player();
+        player.setPlayerName(playersName);
+
+        Monopofast.setPlayer(player);
+
+        return player;
+    }
+
 
     private final String PROMPT = "Input a direction to go or back to return to the menu:";
     protected final BufferedReader keyboard = Monopofast.getInFile();

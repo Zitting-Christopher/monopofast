@@ -7,6 +7,7 @@ package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.*;
 import cit260.lhcz.monopofast.model.*;
+import exception.GameControlException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -39,7 +40,7 @@ public class StartView {
 
     }
 
-    public void startProgram() throws IOException {
+    public void startProgram() throws IOException, GameControlException {
         //Display the banner screen
         this.displayBanner();
 
@@ -47,7 +48,7 @@ public class StartView {
         String playerName = this.getPlayerName();
 
         //Create and save the player object
-        Player player = GameControl.createPlayer(playerName);
+        Player player = CharacterControl.createPlayer(playerName);
 
         //Create a personalized welcome message
         this.displayWelcomeMessage(player);
