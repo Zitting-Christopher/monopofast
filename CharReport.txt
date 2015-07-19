@@ -1,0 +1,11 @@
+
+ 
+              Character Report                
+
+Character IDCharacter Description
+-------------------------------
+         0The Bacon Lady
+         1The Horse King
+         2 The Vixen
+         3The Cake Queen
+         4The Wizard

@@ -11,7 +11,6 @@ import exception.MapControlException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import monopofast.Monopofast;
 
 /**
  * @author Logan
@@ -98,7 +97,7 @@ Player player = null;
         String filePath = this.getInput();
         try {
             // save the game to the speciried file                        }
-            GameControl.getLoadGame(filePath);
+            GameControl.loadGame(filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }

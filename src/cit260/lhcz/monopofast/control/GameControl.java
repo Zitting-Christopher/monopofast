@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import cit260.lhcz.monopofast.model.Game;
 
 /**
  *
@@ -21,7 +22,8 @@ import java.io.ObjectOutputStream;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) throws MapControlException {
+    public void createNewGame(Player player) throws MapControlException {
+        Game.setxLoc() = 0;
         Game game = new Game();
         Monopofast.setCurrentGame(game);
 
@@ -31,6 +33,7 @@ public class GameControl {
         game.setMap(map);
 
         MapControl.startAtLocation(map);
+        
     }
 
     public static void saveGame(Game currentGame, String filePath)
@@ -54,10 +57,6 @@ public class GameControl {
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-    }
-
-    public static void getLoadGame(String filePath) {
-
     }
 
     private Player game;
