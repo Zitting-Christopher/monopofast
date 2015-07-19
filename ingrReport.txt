@@ -1,0 +1,44 @@
+
+ 
+              Inventory Report                
+
+Ingredient IDIngredient Keyword
+-------------------------------
+         0     bacon
+         1  bottom bun
+         2     bread
+         3    burger
+         4    cheese
+         5  chicken nuggets
+         6  chocolate milkshake
+         7      cola
+         8  diet lemonade
+         9       egg
+        10     fries
+        11    frothy
+        12  fruit punch
+        13  grilled onions
+        14       ham
+        15  heehaw sauce
+        16  jalapeno poppers
+        17   ketchup
+        18  lemon-lime soda
+        19   lettuce
+        20      mayo
+        21  mozzarella sticks
+        22   mustard
+        23     onion
+        24  onion rings
+        25  pepper sauce
+        26   pickles
+        27     ranch
+        28  roast beef
+        29     sauce
+        30   sausage
+        31  spicy chicken
+        32  strawberry milkshake
+        33  strawberry banana milkshake
+        34    tomato
+        35   top bun
+        36    turkey
+        37  turnover
