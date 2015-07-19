@@ -13,36 +13,39 @@ import java.io.Serializable;
  */
 public class Location implements Serializable {
 
-    private int x;
-    private int y;
-    private Map map;
+    private int row;
+    private int column;
+    private boolean visited;
+
     private Scene scene;
+   
+        private Player player = null;
 
     public Location() {
     }
 
-    public int getX() {
-        return x;
+    public int getRow() {
+        return row;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public int getY() {
-        return y;
+    public int getColumn() {
+        return column;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setColumn(int column) {
+        this.column = column;
     }
 
-    public Map getmap() {
-        return map;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setmap(Map map) {
-        this.map = map;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
     public Scene getScene() {
@@ -53,16 +56,28 @@ public class Location implements Serializable {
         this.scene = scene;
     }
 
+    
+    
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
     @Override
     public String toString() {
-        return "Location{" + "x=" + x + ", y=" + y + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + this.x;
-        hash = 67 * hash + this.y;
+        int hash = 5;
+        hash = 83 * hash + this.row;
+        hash = 83 * hash + this.column;
+        hash = 83 * hash + (this.visited ? 1 : 0);
         return hash;
     }
 
@@ -75,12 +90,17 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        if (this.x != other.x) {
+        if (this.row != other.row) {
             return false;
         }
-        if (this.y != other.y) {
+        if (this.column != other.column) {
+            return false;
+        }
+        if (this.visited != other.visited) {
             return false;
         }
         return true;
     }
+
+   
 }

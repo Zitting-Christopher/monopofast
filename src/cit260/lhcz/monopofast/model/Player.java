@@ -14,24 +14,26 @@ import java.util.Objects;
  */
 public class Player implements Serializable {
 
-   
-    private String playerName;
-    private Game game;
-    private Character[] character;
-   private Location location;
-    
-     
-
-    
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
+    private String name;
 
    
+    private Location location = null;
+
+    private double skillPoints = 10.0;
+
+    public Player() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+   
+
     public Location getLocation() {
         return location;
     }
@@ -40,34 +42,24 @@ public class Player implements Serializable {
         this.location = location;
     }
 
-    
-    public Game getGame() {
-        return game;
+    public double getSkillPoints() {
+        return skillPoints;
     }
 
-    public void setGame(Game game) {
-        this.game = game;
+    public void setSkillPoints(double skillPoints) {
+        this.skillPoints = skillPoints;
     }
 
-    public Character[] getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(Character[] character) {
-        this.character = character;
-    }
-
-   
-   
     @Override
     public String toString() {
-        return "Player{" + "playerName=" + playerName + '}';
+        return "Player{" + "name=" + name +  ", location=" + location + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 19 * hash + Objects.hashCode(this.playerName);
+        int hash = 5;
+        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.location);
         return hash;
     }
 
@@ -80,11 +72,14 @@ public class Player implements Serializable {
             return false;
         }
         final Player other = (Player) obj;
-        if (!Objects.equals(this.playerName, other.playerName)) {
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        
+        if (!Objects.equals(this.location, other.location)) {
             return false;
         }
         return true;
     }
 
-   
 }

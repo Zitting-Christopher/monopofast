@@ -2,6 +2,7 @@ package cit260.lhcz.monopofast.control;
 
 import cit260.lhcz.monopofast.model.*;
 import exception.*;
+import java.awt.Point;
 import java.io.PrintWriter;
 import monopofast.Monopofast;
 /*
@@ -16,15 +17,18 @@ import monopofast.Monopofast;
  */
 public class MapControl {
 
-    public static Map createMap() {
-        Map map = new Map(6,6);
-        assignScenesToLocations(map);
+    static Map createMap() {
+        Map map = new Map(6, 6);
+
+        MapControl.assignScenesToLocations(map);
 
         return map;
     }
 
+
     private static void assignScenesToLocations(Map map) {
         Location[][] locations = map.getLocations();
+
 
         //start point
         locations[0][0].setScene(Scene.start);
@@ -67,39 +71,38 @@ public class MapControl {
 
     }
 
-    public static void startAtLocation(Map map) throws MapControlException {
-        Player player = Monopofast.getPlayer();
-        int x = 0;
-        int y = 0;
-        CharacterControl.moveCharacterToStart(player, x, y);
-    }
+   public static Location movePlayerToLocation(Player player, Point coordinates) throws MapControlException {
 
-    public static void printMap()
-            throws GameControlException {
-        try (PrintWriter out = new PrintWriter("GameMap.txt")) {
-            Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
 
-            out.println("\n***** Pizza Village ******");
-            out.println("   | 0  | 1  | 2  | 3  | 4  | 5  | 6  |");
+        // get map (location)
+        Location[][] locations = Monopofast.getCurrentGame().getMap().getLocations();
 
-            for (int i = 0; i < locations[0].length; i++) {
-                out.format("%2d", i);
-                for (int j = 0; j < locations[0].length; j++) {
-                    out.print(" | ");
-                    out.print(locations[i][j].getScene().getSymbol());
-
-                }
-                out.print(" | ");
-            }
-            System.out.println("Map printed");
-        } catch (Exception ex) {
-            throw new GameControlException(ex.getMessage());
+        // if player == null, throw MapControlException
+        if (player == null) {
+            throw new MapControlException("Player is null");
         }
+
+        //if coordinates x and y > 5 or < 0 throw exception
+        if (coordinates.x > locations.length - 1 || coordinates.y > locations[0].length - 1 || coordinates.x < 0 || coordinates.y < 0) {
+            throw new MapControlException("Location is out of map boundaries");
+        }
+
+        Location targetLocation = locations[coordinates.x][coordinates.y];
+
+        //move out of current location
+        player.getLocation().setPlayer(null);
+
+        //put in new location[coordinates.x][coordinates.y]
+        targetLocation.setPlayer(player);
+
+        // Assign new location to player
+        player.setLocation(targetLocation);
+
+        //return the new location
+        return targetLocation;
+        
     }
-     
-    public static void printScene(){
-        Map map = Monopofast.getCurrentGame().getMap();
-        Location[][] locations = map.getLocations();
-        System.out.println("\n" + locations[Monopofast.getCurrentLocation().getX()][Monopofast.getCurrentLocation().getY()].getScene().getDescription());
-    }
+    
+   
+
 }

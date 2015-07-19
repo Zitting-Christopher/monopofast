@@ -21,7 +21,7 @@ import java.io.ObjectOutputStream;
  */
 public class GameControl {
 
-     public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) {
         Game game = new Game();
         Monopofast.setCurrentGame(game);
 
@@ -59,42 +59,21 @@ public class GameControl {
         }
 
         Monopofast.setCurrentGame(game);
-    }
-
-    public static void getLoadGame(String filePath) {
-
-    }
-
-    private Player game;
-    private Player player;
-
-    public Player getGame() {
-        return player;
-    }
-
-    public void setGame(Player player) {
-        this.player = game;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
    
-    public static void moveCharacterToLocation(Player player, int x, int y)
-            throws MapControlException {
-        Map map = Monopofast.getCurrentGame().getMap();
-        int newX = x - 1;
-        int newY = y - 1;
-
-        if (newX < 0 || newX >= map.getNoOfXs() || newY < 0 || newY >= map.getNoOfYs()) {
-            throw new MapControlException("Cannot move to " + x + "," + y
-                    + "because that location is out of the map boundaries.");
-        }
     }
+    public static Player createPlayer(String playersName) throws GameControlException {
 
+        if (playersName == null || playersName.length() < 2) {
+            throw new GameControlException("Player's name is not valid."
+                    + " Please enter a name with atleast"
+                    + " two characters in it.");
+        }
+
+        Player player = new Player();
+        player.setName(playersName);
+
+        Monopofast.setPlayer(player);
+
+        return player;
+    }
 }
