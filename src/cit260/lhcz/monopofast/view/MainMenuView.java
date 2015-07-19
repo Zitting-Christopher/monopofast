@@ -51,7 +51,7 @@ public class MainMenuView extends View {
                 this.HelpMenuView();
 
                 break;
-            case "B": //Help menu
+            case "B": //Bio Menu
 
                 this.StoreBioMenuView();
 

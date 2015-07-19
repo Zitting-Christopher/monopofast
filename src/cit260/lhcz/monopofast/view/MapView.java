@@ -12,7 +12,7 @@ import monopofast.Monopofast;
 
 /**
  *
- * @author Logan
+ * @author us
  */
 public class MapView extends View {
 
