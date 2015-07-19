@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.lhcz.monopofast.model;
-import exception.GameControlException;
+import exception.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;

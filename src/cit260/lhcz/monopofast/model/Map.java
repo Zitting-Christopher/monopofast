@@ -5,7 +5,7 @@
  */
 package cit260.lhcz.monopofast.model;
 
-import cit260.lhcz.monopofast.view.ErrorView;
+import cit260.lhcz.monopofast.view.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -15,54 +15,55 @@ import java.util.Arrays;
  */
 public class Map implements Serializable {
 
-    private int x;
-    private int y;
+    private int row;
+    private int column;
     private Location[][] locations;
-    private int noOfXs;
-    private int noOfYs;
+    private int noOfRows;
+    private int noOfColumns;
 
     public Map() {
     }
 
-    public Map(int noOfXs, int noOfYs) {
+    public Map(int noOfRows, int noOfColumns) {
 
-        if (noOfXs < 1 || noOfYs < 1) {
-            ErrorView.display(this.getClass().getName(), "The number of ys and xs must be > than 0");
+        if (noOfRows < 1 || noOfColumns < 1) {
+            ErrorView.display(this.getClass().getName(), "The number of columns and rows must be > than 0");
             return;
         }
 
-        this.noOfXs = noOfXs;
-        this.noOfYs = noOfYs;
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
 
-        this.locations = new Location[noOfXs][noOfYs];
+        this.locations = new Location[noOfRows][noOfColumns];
 
-        for (int x = 0; x < noOfXs; x++) {
-            for (int y = 0; y < noOfYs; y++) {
+        for (int row = 0; row < noOfRows; row++) {
+            for (int column = 0; column < noOfColumns; column++) {
 
                 Location location = new Location();
-                location.setY(y);
-                location.setX(x);
-                
-                locations[x][y] = location;
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+
+                locations[row][column] = location;
             }
         }
 
     }
 
-    public int getX() {
-        return x;
+    public int getRow() {
+        return row;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public int getY() {
-        return y;
+    public int getColumn() {
+        return column;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setColumn(int column) {
+        this.column = column;
     }
 
     public Location[][] getLocations() {
@@ -73,35 +74,35 @@ public class Map implements Serializable {
         this.locations = locations;
     }
 
-    public int getNoOfXs() {
-        return noOfXs;
+    public int getNoOfRows() {
+        return noOfRows;
     }
 
-    public void setNoOfXs(int noOfXs) {
-        this.noOfXs = noOfXs;
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
     }
 
-    public int getNoOfYs() {
-        return noOfYs;
+    public int getNoOfColumns() {
+        return noOfColumns;
     }
 
-    public void setNoOfYs(int noOfYs) {
-        this.noOfYs = noOfYs;
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "row" + x + ", column" + y + ", locations=" + locations + ", noOfXs=" + noOfXs + ", noOfYs=" + noOfYs + '}';
+        return "Map{" + "row=" + row + ", column=" + column + ", locations=" + locations + ", noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 79 * hash + this.x;
-        hash = 79 * hash + this.y;
+        hash = 79 * hash + this.row;
+        hash = 79 * hash + this.column;
         hash = 79 * hash + Arrays.deepHashCode(this.locations);
-        hash = 79 * hash + this.noOfXs;
-        hash = 79 * hash + this.noOfYs;
+        hash = 79 * hash + this.noOfRows;
+        hash = 79 * hash + this.noOfColumns;
         return hash;
     }
 
@@ -114,19 +115,19 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (this.x != other.x) {
+        if (this.row != other.row) {
             return false;
         }
-        if (this.y != other.y) {
+        if (this.column != other.column) {
             return false;
         }
         if (!Arrays.deepEquals(this.locations, other.locations)) {
             return false;
         }
-        if (this.noOfXs != other.noOfXs) {
+        if (this.noOfRows != other.noOfRows) {
             return false;
         }
-        if (this.noOfYs != other.noOfYs) {
+        if (this.noOfColumns != other.noOfColumns) {
             return false;
         }
         return true;

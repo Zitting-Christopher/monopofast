@@ -5,13 +5,8 @@
  */
 package cit260.lhcz.monopofast.view;
 
-import cit260.lhcz.monopofast.model.Player;
-import java.awt.Point;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import monopofast.Monopofast;
 
 /**
@@ -20,62 +15,64 @@ import monopofast.Monopofast;
  */
 public abstract class View implements ViewInterface {
 
-    private String messagePrompt;
+    String promptMessage;
 
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
 
-    private Point coordinates;
+    public View(String promptMessage) {
+        this.promptMessage = promptMessage;
+    }
 
-    public View(String messagePrompt) {
-        this.messagePrompt = messagePrompt;
+    public String getPromptMessage() {
+        return promptMessage;
+    }
+
+    public void setPromptMessage(String promptMessage) {
+        this.promptMessage = promptMessage;
     }
 
     @Override
     public void display() {
-        String value = "";
-        boolean done = false;
+
+        char firstLetter;
+
         do {
-            this.console.println(this.messagePrompt);// view prompt
-            value = this.getInput(); // get value that player
-            done = this.doAction(value); // do Action
-        } while (!done);
+            this.console.println(promptMessage);
+
+            String selection = this.getInput();
+            firstLetter = selection.toUpperCase().charAt(0);
+
+            this.doAction(selection);
+
+        } while (firstLetter != 'E' && firstLetter != 'Q');
+
     }
 
     @Override
     public String getInput() {
         boolean valid = false;
-        String value = null;
-        // while a valid name not retrived 
+        String menuItem = "";
+
         while (!valid) {
+
             try {
-                value = this.keyboard.readLine();
-            } catch (IOException ex) {
-                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            value = value.trim();
-            if (value.length() < 1) {// blank value entered
-                ErrorView.display(this.getClass().getName(), "You must enter a value.");
-                continue;
-            }
-            break;
+                this.console.println("Please make a selection.");
 
+                menuItem = this.keyboard.readLine();
+                menuItem = menuItem.trim();
+                menuItem = menuItem.toUpperCase();
+
+                if (menuItem.length() < 1) {
+                    ErrorView.display(this.getClass().getName(), "Invalid option, please try again");
+                    continue;
+                }
+                break;
+            } catch (Exception e) {
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
+            }
         }
-        return value; //return the name
+
+        return menuItem;
     }
-
-    public boolean mapControlException() {
-        Player player = null;
-
-        return false;
-    }
-
-    public String getMessagePrompt() {
-        return messagePrompt;
-    }
-
-    public void setMessagePrompt(String messagePrompt) {
-        this.messagePrompt = messagePrompt;
-    }
-
 }

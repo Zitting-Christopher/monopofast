@@ -22,8 +22,7 @@ import cit260.lhcz.monopofast.model.Game;
  */
 public class GameControl {
 
-    public void createNewGame(Player player) throws MapControlException {
-        Game.setxLoc() = 0;
+    public static void createNewGame(Player player) {
         Game game = new Game();
         Monopofast.setCurrentGame(game);
 
@@ -32,74 +31,50 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
 
-        MapControl.startAtLocation(map);
-        
+        player.setLocation(map.getLocations()[0][0]);
+
     }
 
-    public static void saveGame(Game currentGame, String filePath)
-            throws GameControlException {
+    public static void saveGame(Game currentGame, String filePath) throws GameControlException {
         try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
+
             output.writeObject(currentGame);
         } catch (IOException e) {
             throw new GameControlException(e.getMessage());
         }
+
     }
 
     public static void loadGame(String filePath) throws GameControlException {
         Game game = null;
+
         try (FileInputStream fips = new FileInputStream(filePath)) {
-            ObjectInputStream input = new ObjectInputStream(fips);
-            game = (Game) input.readObject();
-            Monopofast.setCurrentGame(game);
+            ObjectInputStream output = new ObjectInputStream(fips);
+
+            game = (Game) output.readObject();
         } catch (FileNotFoundException fnfe) {
             throw new GameControlException(fnfe.getMessage());
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-    }
-
-    private Player game;
-    private Player player;
-
-    public Player getGame() {
-        return player;
-    }
-
-    public void setGame(Player player) {
-        this.player = game;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public static Player createPlayer(String playerName) {
-        if (playerName == null) {
-            return null;
         }
+
         Player player = new Player();
-        player.setPlayerName(playerName);
+        player.setName(playersName);
 
         Monopofast.setPlayer(player);
 
         return player;
     }
-
-    public static void moveCharacterToLocation(Player player, int x, int y)
-            throws MapControlException {
-        Map map = Monopofast.getCurrentGame().getMap();
-        int newX = x - 1;
-        int newY = y - 1;
-
-        if (newX < 0 || newX >= map.getNoOfXs() || newY < 0 || newY >= map.getNoOfYs()) {
-            throw new MapControlException("Cannot move to " + x + "," + y
-                    + "because that location is out of the map boundaries.");
-        }
-    }
-
 }
+
+        Monopofast.setCurrentGame(game);
+   
+    }
+    public static Player createPlayer(String playersName) throws GameControlException {
+
+        if (playersName == null || playersName.length() < 2) {
+            throw new GameControlException("Player's name is not valid."
+                    + " Please enter a name with atleast"
+                    + " two characters in it.");

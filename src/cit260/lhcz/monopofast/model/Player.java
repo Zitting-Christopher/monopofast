@@ -14,69 +14,46 @@ import java.util.Objects;
  */
 public class Player implements Serializable {
 
-   
-    private String playerName;
-    private int playerId;
-
-    private Game game;
-    private Character[] character;
-    private int score;
     private String name;
+
+   
+    private Location location = null;
+
+ 
 
     public Player() {
     }
 
-    public String getPlayerName() {
-        return playerName;
+    public String getName() {
+        return name;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
-    public int getPlayerId() {
-        return playerId;
-    }
-
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
-    }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public Character[] getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(Character[] character) {
-        this.character = character;
+    public void setName(String name) {
+        this.name = name;
     }
 
    
-   
-    public int getScore() {
-        return score;
+
+    public Location getLocation() {
+        return location;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setLocation(Location location) {
+        this.location = location;
     }
+
+  
 
     @Override
     public String toString() {
-        return "Player{" + "playerName=" + playerName + ", playerId=" + playerId + '}';
+        return "Player{" + "name=" + name +  ", location=" + location + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 19 * hash + Objects.hashCode(this.name);
+        int hash = 5;
+        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.location);
         return hash;
     }
 
@@ -92,8 +69,11 @@ public class Player implements Serializable {
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
+        
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
         return true;
     }
 
-   
 }

@@ -7,56 +7,38 @@ package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.*;
 import cit260.lhcz.monopofast.model.*;
+import exception.GameControlException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import monopofast.Monopofast;
-
 /**
  *
  * @author Christopher
  */
-public class StartView {
-
+public class StartView{
+    
     protected final BufferedReader keyboard = Monopofast.getInFile();
     protected final PrintWriter console = Monopofast.getOutFile();
 
-    private static void display() {
+    public void startProgram() throws GameControlException {
 
-    }
-
-    public StartView(String[] args) {
-        StartProgramView startProgramView = StartProgramView();
-        try {
-            startProgramView.display();
-        } catch (Throwable te) {
-            this.console.println(te.getMessage());
-            te.printStackTrace();
-            StartView.display();
-        }
-    }
-
-    public StartView() {
-
-    }
-
-    public void startProgram() throws IOException {
-        //Display the banner screen
+        //Display the banner scren
         this.displayBanner();
-
-        //Prompt the user to press S for Start
-        String playerName = this.getPlayerName();
-
-        //Create and save the player object
-        Player player = GameControl.createPlayer(playerName);
-
-        //Create a personalized welcome message
+        //Get player's name
+        String name = this.getName();
+        //Create a new player
+        Player player = GameControl.createPlayer(name);
+        Monopofast.setPlayer(player);
+        //DISPLAY a customized welcome message
         this.displayWelcomeMessage(player);
-
-        //Display the Main Menu
+        //DISPLAY main menu
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
+
     }
+
+    
 
     public void displayBanner() {
 
@@ -77,49 +59,46 @@ public class StartView {
 
     }
 
-    private String getPlayerName() throws IOException {
-        boolean valid = false; //indicates if the name has been retrieved
-        String playerName = null;
+    private String getName() throws GameControlException {
+        boolean valid = false;
+        String playersName = null;
 
         while (!valid) {
-            //prompt player for name
-            this.console.println("Enter the player's name below:");
 
-            //get the name from the keyboard and trim the blanks
-            playerName = this.keyboard.readLine();
-            playerName = playerName.trim();
+            this.console.println("Enter your name");
 
-            //if name is invalid (less than two character in length)
-            if (playerName.length() < 2) {
-                ErrorView.display(this.getClass().getName(), "Invalid name - the name must not be blank");
-                continue; // and repeat again
+            try {
+                playersName = this.keyboard.readLine();
+            } catch (IOException ex) {
+               System.out.println("I/O Error: " + ex.getMessage());
             }
-            break; // out of the (exit) the repition
-        }
-        return playerName; //returns the player name 
-    }
+            playersName = playersName.trim();
 
-    public void displayWelcomeMessage(Player player) {
+            if (playersName.length() < 2) {
+                try {
+                    GameControl.createPlayer(playersName);
+                } catch (GameControlException pe) {
+                    this.console.println(pe.getMessage());
+                }
+                continue;
+            }
+            break;
+        }
+
+        return playersName;
+    }
+    
+  
+
+      public void displayWelcomeMessage(Player player) {
         this.console.println("\n\n================================================="
-                + "\n\tWelcome to Monopofast, " + player.getPlayerName() + "!");
+                + "\n\tWelcome to Monopofast, " + player.getName() + "!");
         this.console.println("\tWe hope you enjoy our game!"
                 + "\n=================================================");
 
-    }
 
-    private StartProgramView StartProgramView() {
-        return null;
-
-    }
-
-    private static class StartProgramView {
-
-        public StartProgramView() {
-        }
-
-        private void display() {
-
-        }
     }
 
 }
+   
+   
