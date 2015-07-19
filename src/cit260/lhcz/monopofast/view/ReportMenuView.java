@@ -48,9 +48,7 @@ public class ReportMenuView extends View {
                 try {
                     Character.saveCharReport(charaList, fileLoc);
                     System.out.println("Report saved successfully");
-                } catch (GameControlException ex) {
-                    Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
+                } catch (GameControlException | IOException ex) {
                     Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 break;
@@ -59,9 +57,7 @@ public class ReportMenuView extends View {
                 try {
                     Products.saveProdReport(prodList, fileLoc);
                             System.out.println("Report saved successfully");
-                } catch (GameControlException ex) {
-                    Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
+                } catch (GameControlException | IOException ex) {
                     Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -70,9 +66,7 @@ public class ReportMenuView extends View {
                 try {
                     Ingredients.saveIngrReport(ingrList, fileLoc);
                     System.out.println("Report saved successfully");
-                } catch (GameControlException ex) {
-                    Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
+                } catch (GameControlException | IOException ex) {
                     Logger.getLogger(ReportMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
