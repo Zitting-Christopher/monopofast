@@ -19,7 +19,7 @@ public class Player implements Serializable {
    
     private Location location = null;
 
-    private double skillPoints = 10.0;
+ 
 
     public Player() {
     }
@@ -42,13 +42,7 @@ public class Player implements Serializable {
         this.location = location;
     }
 
-    public double getSkillPoints() {
-        return skillPoints;
-    }
-
-    public void setSkillPoints(double skillPoints) {
-        this.skillPoints = skillPoints;
-    }
+  
 
     @Override
     public String toString() {
