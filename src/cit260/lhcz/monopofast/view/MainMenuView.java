@@ -111,8 +111,7 @@ public class MainMenuView extends View {
  private void ReportMenuView() {
         ReportMenuView ReportMenu = new ReportMenuView();
         ReportMenu.display();
-    }
-
+ }
 }
    
     
