@@ -45,9 +45,8 @@ public class GameControl {
         }
 
     }
-
-    public static void loadGame(String filePath) throws GameControlException {
-        Game game = null;
+public static void loadGame(String filePath) throws GameControlException {
+   Game game = null;
 
         try (FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream output = new ObjectInputStream(fips);
@@ -58,23 +57,21 @@ public class GameControl {
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-        }
 
-        Player player = new Player();
-        player.setName(playersName);
-
-        Monopofast.setPlayer(player);
-
-        return player;
-    }
-}
-
-        Monopofast.setCurrentGame(game);
+       Monopofast.setCurrentGame(game);
    
-    }
-    public static Player createPlayer(String playersName) throws GameControlException {
+}
+public static Player createPlayer(String playersName) throws GameControlException {
 
         if (playersName == null || playersName.length() < 2) {
             throw new GameControlException("Player's name is not valid."
                     + " Please enter a name with atleast"
                     + " two characters in it.");
+}
+        Player player = new Player();
+        player.setName(playersName);
+
+        Monopofast.setPlayer(player);
+        return player;
+}
+}
