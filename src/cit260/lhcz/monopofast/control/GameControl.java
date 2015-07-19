@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import cit260.lhcz.monopofast.model.Game;
 
 /**
  *
@@ -57,16 +58,6 @@ public class GameControl {
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-
-        Monopofast.setCurrentGame(game);
-   
-    }
-    public static Player createPlayer(String playersName) throws GameControlException {
-
-        if (playersName == null || playersName.length() < 2) {
-            throw new GameControlException("Player's name is not valid."
-                    + " Please enter a name with atleast"
-                    + " two characters in it.");
         }
 
         Player player = new Player();
@@ -77,3 +68,13 @@ public class GameControl {
         return player;
     }
 }
+
+        Monopofast.setCurrentGame(game);
+   
+    }
+    public static Player createPlayer(String playersName) throws GameControlException {
+
+        if (playersName == null || playersName.length() < 2) {
+            throw new GameControlException("Player's name is not valid."
+                    + " Please enter a name with atleast"
+                    + " two characters in it.");
