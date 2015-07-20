@@ -22,7 +22,7 @@ public class Monopofast {
 
     private static Game currentGame = null;
     private static Player player = null;
-    
+    private static Location currentLocation = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
 
@@ -110,5 +110,12 @@ public class Monopofast {
     public static void setLogFile(PrintWriter logFile) {
         Monopofast.logFile = logFile;
     }
+  public static Location getCurrentLocation() {
+        return currentLocation;
+    }
 
+    public static void setCurrentLocation(Location currentLocation) {
+        Monopofast.currentLocation = currentLocation;
+    }
+    
 }

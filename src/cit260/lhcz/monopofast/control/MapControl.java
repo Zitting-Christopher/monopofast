@@ -89,20 +89,26 @@ public class MapControl {
 
         Location targetLocation = locations[coordinates.x][coordinates.y];
 
-        //move out of current location
+        //move out of the current location
         player.getLocation().setPlayer(null);
 
-        //put in new location[coordinates.x][coordinates.y]
+        //put in new location
         targetLocation.setPlayer(player);
 
-        // Assign new location to player
+        // Assign a new location to the player
         player.setLocation(targetLocation);
 
-        //return the new location
+        //return new location
         return targetLocation;
         
     }
     
+    
+    public static void printScene(){
+        Map map = Monopofast.getCurrentGame().getMap();
+        Location[][] locations = map.getLocations();
+        System.out.println("\n" + locations[Monopofast.getCurrentLocation().getRow()][Monopofast.getCurrentLocation().getColumn()].getScene().getDescription());
+    }
    
 
 }
