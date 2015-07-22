@@ -87,10 +87,11 @@ public class GameMenuView extends View {
    
     private void saveGame() {
         this.console.println("\n\n Please enter the file path where you would like this game to be saved.");
-        String filePath = this.getInput();
+        String filePath = "SavedGames/" + this.getInput();
 
         try {
             GameControl.saveGame(Monopofast.getCurrentGame(), filePath);
+            this.console.println("Game saved successfully!");
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
