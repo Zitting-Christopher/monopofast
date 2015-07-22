@@ -35,7 +35,7 @@ public class HighScoreTest {
     public void testHighScoreArray_intArr() {
         System.out.println("highScoreArray");
         int[] scores = {12346, 12344, 12343, 12342, 12341};
-        int[] expResult = {12346, 12344, 12343, 12342, 12341};
+//        int[] expResult = {12346, 12344, 12343, 12342, 12341};
 //        int[] result = HighScore.highScoreArray(scores);
 //        assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

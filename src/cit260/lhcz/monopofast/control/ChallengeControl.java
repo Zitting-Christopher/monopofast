@@ -60,8 +60,8 @@ public class ChallengeControl {
     }
 
     //Define the variables for this function
-    private double turnOverSeconds;
-    private double mozzaSeconds;
+    private final double turnOverSeconds=14;
+    private final double mozzaSeconds=13;
     private double rootBeerSeconds;
     private int numOrders2;
     private double challenge2TotalSeconds;

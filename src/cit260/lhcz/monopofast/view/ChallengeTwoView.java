@@ -30,7 +30,7 @@ public class ChallengeTwoView extends View {
     double turnOverSeconds = 8;
     int numOrders2 = 15;
     double mozzaSeconds = 7;
-    double rootBeerSeconds = 7;
+    static final int rootBeerSeconds = 7;
     private double total = turnOverSeconds + mozzaSeconds + rootBeerSeconds * numOrders2;
 
     @Override
