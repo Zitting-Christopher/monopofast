@@ -6,11 +6,6 @@
 package cit260.lhcz.monopofast.view;
 
 import cit260.lhcz.monopofast.control.*;
-import cit260.lhcz.monopofast.model.*;
-import exception.MapControlException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import monopofast.Monopofast;
 
 /**

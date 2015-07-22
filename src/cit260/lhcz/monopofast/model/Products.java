@@ -76,7 +76,7 @@ public enum Products implements Serializable {
     }
   public static void saveProdReport(EnumSet<Products> prodList, String fileLoc) throws GameControlException, IOException {
             PrintWriter out = null;
-                fileLoc = "prodReport.txt";
+                fileLoc = "Reports/prodReport.txt";
         try{
                 out = new PrintWriter(fileLoc);
                 out.println("\n \n              Product Report                ");

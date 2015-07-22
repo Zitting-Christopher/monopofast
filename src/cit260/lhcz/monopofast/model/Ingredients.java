@@ -87,7 +87,7 @@ public enum Ingredients implements Serializable {
     public static void saveIngrReport(EnumSet<Ingredients> ingrList, String fileLoc) 
             throws GameControlException, IOException {
             PrintWriter out = null;
-                fileLoc = "ingrReport.txt";
+                fileLoc = "Reports/ingrReport.txt";
         try{
                 out = new PrintWriter(fileLoc);
                 out.println("\n \n              Inventory Report                ");

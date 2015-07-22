@@ -49,7 +49,7 @@ public enum Character implements Serializable {
 
     public static void saveCharReport(EnumSet<Character> charaList, String fileLoc) throws GameControlException, IOException {
         PrintWriter out = null;
-        fileLoc = "CharReport.txt";
+        fileLoc = "Reports/CharReport.txt";
         try {
             out = new PrintWriter(fileLoc);
             out.println("\n \n              Character Report                ");

@@ -3,7 +3,6 @@ package cit260.lhcz.monopofast.control;
 import cit260.lhcz.monopofast.model.*;
 import exception.*;
 import java.awt.Point;
-import java.io.PrintWriter;
 import monopofast.Monopofast;
 /*
  * To change this license header, choose License Headers in Project Properties.
